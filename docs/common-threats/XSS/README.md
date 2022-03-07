@@ -2,7 +2,7 @@
 
 ## XSS in a nutshell
 
-Malicious script entered in a web application by an attacker through a web request.
+Malicious script entered a web application by an attacker through a web request.
 
 The script is included in dynamic content that is reflected back to the victim's web browser without validation for malicious content.
 
@@ -27,3 +27,52 @@ This attack happens mostly because the web application or API uses inputs from a
 | DOM based                 | Modifying the DOM environment in the victim browser.                                                               | Introduced by DOM modification.|                   |https://www.neuralegion.com/blog/dom-based-xss/                                                  |
 | Mutation                  | ?                                                                                                                  | Mutated by browser.            |                   |                                                                                                 |
 | Blind Cross-Site scripting| Script is saved on server side and reflected back in the backend application.                                      |                                |                   |https://samcurry.net/cracking-my-windshield-and-earning-10000-on-the-tesla-bug-bounty-program/   |
+
+
+## Is my application vulnerable to XSS ?
+
+XSS vulnerabilities are difficult to identify and completely be removed from web applications or API.
+
+Worldline forge provides DAST tools such as OWASP ZAP that can scan your application and help you detect these XSS flaws.
+
+You can also request a complete scan of your application from the Worldline CCAP (Competence Center Application Protection) team.
+
+## What can I do to prevent XSS ?
+
+- Use frameworks that natively escape XSS by design.
+- Sanitize all users inputs. Sanitization is the inspection of an untrusted value, turning it into a value that is safe to use in the DOM.
+- Apply OWASP XSS prevention rules
+- Use sonarLint in your IDE in order to alert on vulnerable code while you are developing.
+- Request code reviews from acknowledged Security Reviewers in your team.
+- Scan your code with automated code analysis tools like SonarQube in your merge requests and prevent pushing any vulnerable code in your application.
+- Perform regular SAST scans of your code with SonarQube and fix the vulnerabilities raised.
+- Perform regular SCA scans of your dependencies with Dependency Track and fix the vulnerabilities raised.
+- Perform regular penetration testing with DAST tools like OWASP ZAP and fix the findings.
+
+## What are the XSS defense mechanisms available in Angular ?
+
+### Angular Built in defense
+
+The good news is that Angular treats all users inputs as untrusted data by default.
+
+Therefore, it has an XSS defense by default.
+
+### Contextual escaping
+
+*insert image here*
+
+Angular displays any input (malicious or not) as plain text on your webpage.
+
+It won't interpret the input as HTML (for example in comments) if you don't explicitly tell him to.
+
+### Input Sanitization
+
+Use angular properties to bind user inputs:
+
+- **[innerHtml]**: binds html tags
+- **[style]**: binds CSS attributes
+- **[href]**: binds dynamic links
+
+Angular will interpret the bound inputs if you explicitly use the corresponding property.
+
+Angular automatically recognizes <script> tags as unsafe and removes it. A warning appears in the browser console to notify you if Angular has sanitized an input value.
