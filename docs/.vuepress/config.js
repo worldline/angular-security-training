@@ -5,11 +5,18 @@ module.exports = {
     description: 'Learn how to prevent common threats in your Angular web application !',
 
     // theme and its config
-    theme: '@vuepress/theme-default',
+   // theme: '@vuepress/theme-default',
     themeConfig: {
         logo: '/logo.svg',
         nav : [
-            { text: 'Home', link: '/'}
+            { text: 'Home', link: '/'},
+            { text: 'Common Threats', link: '/common-threats/'},
+            { text: 'Prevention', link: '/prevention/'},
+        ],
+        sidebar : [
+            { text: 'Home', link: '/'},
+            { text: 'Common Threats', link: '/common-threats/'},
+            { text: 'Prevention', link: '/prevention/'},
         ]
     },
 }
