@@ -4,25 +4,19 @@
 
 CSRF is an attack where a malicious website causes a logged-on user’s web browser to perform an unwanted action on a trusted site.
 
-Source: https://owasp.org/www-community/attacks/csrf
-
 ## Why CSRF is dangerous ?
 
 A successful CSRF attack can force the user to perform state changing requests like transferring funds, changing their email address, and so forth. If the victim is an administrative account, CSRF can compromise the entire web application.
 
 ## What are CSRF famous real life cases ?
 
-- **TikTok** : In 2020, a vulnerability that allowed attackers to send messages containing malware to Tiktok users. The attackers could perform CSRF or cross-site scripting (XSS) attacks, causing other user accounts to submit requests on their behalf to the TikTok application.
+- **[TikTok](https://www.zdnet.com/article/tiktok-patches-reflected-xss-bug-one-click-account-takeover-exploit/)** : In 2020, a vulnerability that allowed attackers to send messages containing malware to Tiktok users. The attackers could perform CSRF or cross-site scripting (XSS) attacks, causing other user accounts to submit requests on their behalf to the TikTok application.
 
-Source: https://www.zdnet.com/article/tiktok-patches-reflected-xss-bug-one-click-account-takeover-exploit/
-
-- **Netflix** : In 2006, Netflix website had numerous vulnerabilities regarding CSRF, which could have allowed any attacker to perform actions such as adding a DVD to the victim’s rental queue, changing the shipping address on the account, or altering the victim’s login credentials to fully compromise the account.
-
-Source:  https://appsecnotes.blogspot.com/2009/01/netflix-csrf-revisited.html
-
-- **ING Direct** : In 2008, ING Direct, the banking website of a Dutch-owned multinational banking group, had a CSRF vulnerability that allowed attackers to transfer money from users’ accounts, even though users were authenticated with SSL. The website did not have any protection against CSRF attacks, and the process of transferring funds was easy for attackers to see and replicate. 
-
-Source: https://people.eecs.berkeley.edu/~daw/teaching/cs261-f11/reading/csrf.pdf
+- **[Netflix](https://appsecnotes.blogspot.com/2009/01/netflix-csrf-revisited.html
+  )** : In 2006, Netflix website had numerous vulnerabilities regarding CSRF, which could have allowed any attacker to perform actions such as adding a DVD to the victim’s rental queue, changing the shipping address on the account, or altering the victim’s login credentials to fully compromise the account.
+ 
+- **[ING Direct](https://people.eecs.berkeley.edu/~daw/teaching/cs261-f11/reading/csrf.pdf
+  )** : In 2008, ING Direct, the banking website of a Dutch-owned multinational banking group, had a CSRF vulnerability that allowed attackers to transfer money from users’ accounts, even though users were authenticated with SSL. The website did not have any protection against CSRF attacks, and the process of transferring funds was easy for attackers to see and replicate. 
 
 ## What makes CSRF attacks possible ?
 
@@ -72,7 +66,7 @@ Source: https://owasp.org/www-community/attacks/csrf
 - Apply OWASP CSRF prevention cheat sheet
 - Use sonarLint in your IDE in order to alert on vulnerable code while you are developing. 
   
-- Request code reviews from aknowledged Security Reviewers in your team.
+- Request code reviews from acknowledged Security Reviewers in your team.
   
 - Scan your code with automated code analysis tools like SonarQube in your merge requests and prevent pushing any vulnerable code in your application.
   
@@ -106,4 +100,8 @@ Use HttpClientXsrfModule in the import section of the module where your componen
 
 You can customize the cookie and header name with the withOptions method.
 
-The CSRF module implements the default interceptor HttpXsrfInterceptor
+The CSRF module implements the default interceptor HttpXsrfInterceptor.
+
+## Further resources
+
+https://owasp.org/www-community/attacks/csrf

@@ -6,13 +6,9 @@ Malicious script entered a web application by an attacker through a web request.
 
 The script is included in dynamic content that is reflected back to the victim's web browser without validation for malicious content.
 
-Source: https://owasp.org/www-community/attacks/xss/
-
 ## Why is XSS dangerous ?
 
 The impact of XSS is moderate for reflected and DOM XSS, and severe for stored XSS, with remote code execution on the victim’s browser, such as stealing credentials, sessions, MFA bypass, DOM node replacement or defacement (such as trojan login panels), key logging or delivering malware to the victim.
-
-Source: https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)
 
 ## What causes XSS ?
 
@@ -33,9 +29,7 @@ This attack happens mostly because the web application or API uses inputs from a
 
 XSS vulnerabilities are difficult to identify and completely be removed from web applications or API.
 
-Worldline forge provides DAST tools such as OWASP ZAP that can scan your application and help you detect these XSS flaws.
-
-You can also request a complete scan of your application from the Worldline CCAP (Competence Center Application Protection) team.
+DAST tools such as OWASP ZAP can scan your application and help you detect these XSS flaws.
 
 ## What can I do to prevent XSS ?
 
@@ -76,3 +70,8 @@ Use angular properties to bind user inputs:
 Angular will interpret the bound inputs if you explicitly use the corresponding property.
 
 Angular automatically recognizes <script> tags as unsafe and removes it. A warning appears in the browser console to notify you if Angular has sanitized an input value.
+
+##Further resources
+
+https://owasp.org/www-community/attacks/xss/
+https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)
