@@ -55,8 +55,6 @@ Here are some myths which unfortunately will not save your application from CSRF
 - **JSON APIs** are also vulnerable to CSRF attacks
 - **Samesite Cookie Attribute** can be useful against CSRF but not sufficient by itself because it is not support by all browsers and can be bypassed by attackers.
 
-Source: https://owasp.org/www-community/attacks/csrf
-
 ## What can I do to continuously prevent CSRF attacks ?
 
 - Use built-in CSRF protection in your Framework. Check the Security Hardening by Framework section bellow.
@@ -87,7 +85,9 @@ Angular has a built-in CSRF prevention mechanism called cookie-to-header token.
 3. Angular sends the cookie in the headers for each request.
 4. Server compares the token received from the client.
 5. Server decides to verify the action only if the tokens match.
+
  TO_DO add image/diagram
+   
 ::: warning
 CSRF prevention needs to be implemented in both your server (back-end) side, and your client (front-end) side.
 
