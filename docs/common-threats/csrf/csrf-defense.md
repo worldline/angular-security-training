@@ -35,13 +35,14 @@ Here are some myths which unfortunately will not save your application from CSRF
 - CSRF prevention needs to be done on both client (front-end) and server (back-end) side:
  TO_DO add table here
   
-- Apply OWASP CSRF prevention cheat sheet
+- Apply [OWASP CSRF prevention cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
+  
 - Use sonarLint in your IDE in order to alert on vulnerable code while you are developing. 
   
 - Request code reviews from acknowledged Security Reviewers in your team.
   
-- Scan your code with automated code analysis tools like SonarQube in your merge requests and prevent pushing any vulnerable code in your application.
+- Scan your code with automated code analysis tools in your merge requests and prevent pushing any vulnerable code in your application.
   
-- Perform regular SAST scans of your code with SonarQube and fix the vulnerabilities raised.
+- Perform regular SAST scans of your code and fix the vulnerabilities raised.
   
 - Perform regular penetration testing with DAST tools like OWASP ZAP and fix the findings.
