@@ -1,4 +1,4 @@
-# XSS - Cross Site Scripting
+# 2.2 XSS - Cross Site Scripting
 
 ## XSS in a nutshell
 

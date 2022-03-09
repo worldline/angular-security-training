@@ -1,5 +1,6 @@
 module.exports = {
     // site config
+    base: '/angular-security-training/',
     lang: 'en-US',
     title: 'Angular Security Hardening Training',
     description: 'Learn how to prevent common threats in your Angular web application !',
@@ -12,21 +13,14 @@ module.exports = {
     // theme and its config
    // theme: '@vuepress/theme-default',
     themeConfig: {
-        base: '/angular-security-training/',
-        logo: '/logo.svg',
-        sidebar: {
-            '/prerequisites/':[
-                ''
-            ],
-            '/common-threats/':[
-                '',
-                'xss.md',
-                'csrf.md'
-            ],
-            '/continuous-prevention/':[
-                ''
-            ]
-        }
 
+        logo: '/logo.svg',
+        sidebar: [
+            "/prerequisites/",
+            "/common-threats/",
+            "/common-threats/csrf.md",
+            "/common-threats/xss.md",
+            "/continuous-prevention/",
+        ]
     },
 }
