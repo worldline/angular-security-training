@@ -72,7 +72,7 @@ If you really need to generate templates with users inputs, you must always use 
 
 ### Further protection
 
-Angular suggests to complete their built-in XSS prevention with the following:
+Angular suggests completing their built-in XSS prevention with the following:
 
  - Use Content-Security-Policy HTTP header:
 We recommend you to use strict CSP instead of allow-list CSP as it is more effective and does not need customization.
@@ -98,15 +98,21 @@ To learn further please check this page: https://web.dev/strict-csp/
     - `angular`  This policy is used in security-reviewed code that is internal to Angular, and is required for Angular to function when Trusted Types are enforced. Any inline template values or content sanitized by Angular is treated as safe by this policy.
   
         ``` typescript
-        Content-Security-Policy: trusted-types angular; require-trusted-types-for 'script';
+        Content-Security-Policy: 
+            trusted-types angular; 
+            require-trusted-types-for 'script';
         ```
     - `angular#unsafe-bypass` - This policy is used for applications that use any of the methods in Angular DomSanitizer that bypass security, such as `bypassSecurityTrustHtml`. Any application that uses these methods must enable this policy.
         ``` typescript
-        Content-Security-Policy: trusted-types angular angular#unsafe-bypass; require-trusted-types-for 'script';
+        Content-Security-Policy: 
+            trusted-types angular angular#unsafe-bypass; 
+            require-trusted-types-for 'script';
         ```
     - `angular#unsafe-jit`  This policy is used by the JIT compiler. You must enable this policy if your application interacts directly with the JIT compiler or is running in JIT mode using the platform browser dynamic.
         ``` typescript
-        Content-Security-Policy: trusted-types angular angular#unsafe-jit; require-trusted-types-for 'script';
+        Content-Security-Policy: 
+            trusted-types angular angular#unsafe-jit; 
+            require-trusted-types-for 'script';
         ```
 
 - Use the AOT template compiler for all production deployments. Another alternative is JIT compiler which compiles templates to executable template code within the browser runtime.
