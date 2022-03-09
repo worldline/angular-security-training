@@ -4,7 +4,7 @@
 
 CSRF is an attack where a malicious website causes a logged-on user’s web browser to perform an unwanted action on a trusted site.
 
-## Why CSRF is dangerous ?
+## Why CSRF can be dangerous ?
 
 A successful CSRF attack can force the user to perform state changing requests like transferring funds, changing their email address, and so forth. If the victim is an administrative account, CSRF can compromise the entire web application.
 
