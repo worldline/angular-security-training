@@ -1,2 +1,2 @@
-# 3- Continuous prevention
+# 3. Continuous prevention
 

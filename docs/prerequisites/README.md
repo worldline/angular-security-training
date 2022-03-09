@@ -1,4 +1,4 @@
-# 1- Prerequisites
+# 1. Prerequisites
 
 - Basic knowledge of Angular.
 - OWASP Top 10 Vulnerabilities.
