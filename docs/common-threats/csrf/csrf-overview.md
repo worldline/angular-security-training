@@ -4,6 +4,14 @@
 
 CSRF (Cross-Site Request Forgery) is an attack where a malicious website causes a logged-on user’s web browser to perform an unwanted action on a trusted site.
 
+![csrf-wf-1](../../assets/csrf-wf-1.png)
+
+![csrf-wf-2](../../assets/csrf-wf-2.png)
+
+![csrf-wf-3](../../assets/csrf-wf-3.png)
+
+![csrf-wf-4](../../assets/csrf-wf-4.png)
+
 ## Why CSRF can be dangerous ?
 
 A successful CSRF attack can force the user to perform state changing requests like transferring funds, changing their email address, and so forth. If the victim is an administrative account, CSRF can compromise the entire web application.

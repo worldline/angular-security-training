@@ -14,7 +14,7 @@ Angular has a built-in CSRF prevention mechanism called cookie-to-header token.
 4. Server compares the token received from the client.
 5. Server decides to verify the action only if the tokens match.
 
-TO_DO add image/diagram
+![cookie-to-header](../../assets/cookie-to-header.png)
 
 ::: warning
 CSRF prevention needs to be implemented in both your server (back-end) side, and your client (front-end) side.
