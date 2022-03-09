@@ -75,7 +75,7 @@ If you really need to generate templates with users inputs, you must always use 
 Angular suggests to complete their built-in XSS prevention with the following:
 
  - Use Content-Security-Policy HTTP header:
-We recommend you to use strict CSP instead of allowlist CSP as it is more effective and does not need customization.
+We recommend you to use strict CSP instead of allow-list CSP as it is more effective and does not need customization.
 You can choose to use Nonce-based strict CSP or Hash-based strict CSP.
 
 ``` typescript
@@ -100,7 +100,7 @@ To learn further please check this page: https://web.dev/strict-csp/
         ``` typescript
         Content-Security-Policy: trusted-types angular; require-trusted-types-for 'script';
         ```
-    - `angular#unsafe-bypass` - This policy is used for applications that use any of the methods in Angular's DomSanitizer that bypass security, such as `bypassSecurityTrustHtml`. Any application that uses these methods must enable this policy.
+    - `angular#unsafe-bypass` - This policy is used for applications that use any of the methods in Angular DomSanitizer that bypass security, such as `bypassSecurityTrustHtml`. Any application that uses these methods must enable this policy.
         ``` typescript
         Content-Security-Policy: trusted-types angular angular#unsafe-bypass; require-trusted-types-for 'script';
         ```
