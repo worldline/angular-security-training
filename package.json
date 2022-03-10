@@ -1,0 +1,27 @@
+{
+  "name": "angular-sec-training",
+  "version": "1.0.0",
+  "description": "Angular security training",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/worldline/angular-security-training.git"
+  },
+  "keywords": [
+    "angular",
+    "security"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/worldline/angular-security-training/issues"
+  },
+  "homepage": "https://github.com/worldline/angular-security-training#readme",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.36"
+  }
+}
