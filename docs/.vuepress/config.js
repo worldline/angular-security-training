@@ -28,6 +28,11 @@ module.exports = {
             "/common-threats/xss/xss-defense.md",
             "/common-threats/xss/xss-angular.md",
             "/common-threats/xss/xss-pw.md",
+            "/jwt/jwt-overview.md",
+            "/jwt/jwt-workflow.md",
+            "/jwt/jwt-storage.md",
+            "/jwt/jwt-known-threats.md",
+            "/jwt/jwt-best-current-practices.md",
             "/continuous-prevention/",
         ]
     },

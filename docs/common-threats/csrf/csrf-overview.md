@@ -1,4 +1,4 @@
-# 2.1.1 CSRF overview
+# 2.1.1 CSRF Overview
 
 ## CSRF in a nutshell
 
