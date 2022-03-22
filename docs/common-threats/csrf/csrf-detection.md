@@ -1,4 +1,4 @@
-# 2.1.2 CSRF Detection
+# 1.2 CSRF Detection
 
 ## How do I know if my application is vulnerable to CSRF ?
 

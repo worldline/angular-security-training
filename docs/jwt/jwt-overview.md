@@ -13,7 +13,8 @@ JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and s
 ## What is JWT Structure ?
 
 JWT  looks like the following in its JWS compact serialization :
-TO_DO add image
+
+![pw](assets/jwt-structure.png)
 
 **JOSE Header:** Indicates to the receiver which type of signature algorithm to use for payload validation.
 

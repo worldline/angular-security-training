@@ -1,5 +1,7 @@
 # 1.2 JWT Workflow
 
+![pw](assets/jwt-workflow.png)
+
 1. The user submits the username and password to an Authentication server.
 
 2. The Authentication server validates the username and password combination and creates a Bearer Token: JWT token with a payload containing the user technical identifier, and an expiration timestamp.

@@ -1,4 +1,4 @@
-# 2.1.4 CSRF Protection in Angular 
+# 1.3 CSRF Protection in Angular 
 
 What are the defense mechanisms against CSRF available in Angular ?
 
@@ -13,8 +13,8 @@ It is a mix of 2 protection patterns : "Double submit cookie" and "Custom header
 2. Angular reads the token from the cookie.
 3. Angular puts token in request header.
 4. For each request, the browser sends the cookie and the request header.
-4. Server extract and compares both tokens received from the client.
-5. Server decides to verify the action only if the tokens match.
+5. Server extract and compares both tokens received from the client.
+6. Server decides to verify the action only if the tokens match.
 
 ![cookie-to-header](../../assets/cookie-to-header.png)
 

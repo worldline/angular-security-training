@@ -1,4 +1,4 @@
-# 2.2.1 XSS Detection
+# 2.2 XSS Detection
 
 ## Is my application vulnerable to XSS ?
 

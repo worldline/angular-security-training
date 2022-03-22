@@ -1,4 +1,4 @@
-# 2.2.4 XSS Protection in Angular
+# 2.4 XSS Protection in Angular
 
 ## What are the XSS defense mechanisms available in Angular ?
 

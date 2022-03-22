@@ -1,3 +1,3 @@
-# 1.3 JWT storage
+# 1.3 JWT Storage
 
 TO_DO

@@ -1,4 +1,4 @@
-# 1.4 JWT known threats
+# 1.4 JWT Known Threats
 
 ## Weak signature and insufficient Signature validation
 

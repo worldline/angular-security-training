@@ -1,4 +1,4 @@
-# 2.1.3 CSRF Defense Best Practices
+# 1.3 CSRF Defense Best Practices
 
 ## What are the primary defense mechanisms against CSRF ?
 
