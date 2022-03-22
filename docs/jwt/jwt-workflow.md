@@ -1,6 +1,6 @@
 # 1.2 JWT Workflow
 
-![pw](assets/jwt-workflow.png)
+![pw](../../assets/jwt-workflow.png)
 
 1. The user submits the username and password to an Authentication server.
 
