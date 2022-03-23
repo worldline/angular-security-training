@@ -34,6 +34,7 @@ module.exports = {
             "/common-threats/xss/xss-defense.md",
             "/common-threats/xss/xss-angular.md",
             "/common-threats/xss/xss-pw.md",
+            "/common-threats/template-injection/template-injection-overview.md",
             "/continuous-prevention/",
         ]
     },
