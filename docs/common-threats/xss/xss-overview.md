@@ -8,7 +8,7 @@ The script is included in dynamic content that is reflected back to the victim's
 
 ![xss-wf](../../assets/xss-wf.png)
 
-## Why is XSS dangerous ?
+## Why XSS is dangerous ?
 
 The impact of XSS is moderate for reflected and DOM XSS, and severe for stored XSS, with remote code execution on the victim’s browser, such as stealing credentials, sessions, MFA bypass, DOM node replacement or defacement (such as trojan login panels), key logging or delivering malware to the victim.
 
