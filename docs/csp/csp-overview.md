@@ -38,7 +38,7 @@ CSP evolution with `script-src` directive :
     
 - `frame-ancestors` : Defines locations from which another web page can be loaded using a frame, iframe, object, embed, or applet element.
     
-- `form-action` : Specifies URLs that can be used as part of an action in a <form> tag, meaning the browser restricts where form results can be sent. The form action does not revert to default-src, so this is a mandatory property if you are using form elements on your site.
+- `form-action` : Specifies URLs that can be used as part of an action in a `<form>` tag, meaning the browser restricts where form results can be sent. The form action does not revert to `default-src`, so this is a mandatory property if you are using form elements on your site.
     
 - `plugin-types` : Identifies the set of plugins that can be invoked via objects, embeds, or applets, defined using MIME types.
     
