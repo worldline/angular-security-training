@@ -35,6 +35,9 @@ module.exports = {
             "/common-threats/xss/xss-angular.md",
             "/common-threats/xss/xss-pw.md",
             "/common-threats/ssti/ssti-overview.md",
+            "/common-threats/ssti/ssti-defense.md",
+            "/common-threats/ssti/ssti-angular.md",
+            "/csp/csp-overview.md",
             "/continuous-prevention/",
         ]
     },
