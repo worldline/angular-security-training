@@ -6,22 +6,13 @@ Content Security Policy (CSP) is a standard introduced to prevent cross-site-scr
 CSP defines a standard methods for web application developers to declare approved origins of content that browsers should allow loading.
 
 ::: warning
-CSP is not intended as a first level of defense against code injection attacks. CSP is best used as defense-in-depth. 
+CSP is not intended as a first level of defense against code injection attacks like XSS. CSP is best used as defense-in-depth. 
 It reduces the risk that malicious injection can cause, but it is not a replacement for careful input validation and output encoding.
 :::
 
 To enable CSP, you need to configure your web application to return the `Content-Security-Policy` HTTP header.
 
-## CSP evolution
-
-CSP evolution with `script-src` directive :
-
-| version 1 | version 2 | version 3 |
-| `http: ... https: ...` | `nonce-{random}` | `strict-dynamic` |
-| white-list strategy | random id associated with script blocks | propagates trust to `nonced` blocks |
-| Unsecure, can be easily bypassed | restrictive with trusted external resources | with nonce, security & flexibility |
-
-## CSP header common properties
+## CSP common white-list properties
 
 
 - `default-src` : Optional property if no other attributes are defined. In most cases, the value of this property is `default-src 'self'`  meaning the browser can only upload resources from the current website. 
@@ -44,4 +35,33 @@ CSP evolution with `script-src` directive :
     
 - `base-uri` : Allows URLs in the src attribute of any tag.
 
+::: warning
+As of today, some CSP properties may not be supported by recent browsers.
+You can verify the compatibility of CSP properties with browser with several online tools like this one: [https://caniuse.com/?search=csp](https://caniuse.com/?search=csp)
+:::
+
+## Common white-list CSP example
+
+``` typescript
+Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com https://themes.googleusercontent.com; frame-src https://www.slideshare.net www.youtube.com twitter.com; object-src 'none'; font-src 'self' data: https://themes.googleusercontent.com https://fonts.googleapis.com; script-src 'strict-dynamic' 'nonce-rAnd0m123' 'unsafe-inline' 'self' https://www.google.com twitter.com https://themes.googleusercontent.com; base-uri 'none'; img-src 'self' https://www.google.com data: https://pbs.twimg.com https://img.youtube.com twitter.com
+```
+
+::: tip
+[This online tool](https://csp-evaluator.withgoogle.com/) can help you evaluate the strength of your CSP.
+:::
+
+## CSP evolution to strict CSP
+
+white-list CSP properties requires a lot of customization and maintenance.
+
+CSP evolution with `script-src` directive :
+
+| version 1 | version 2 | version 3 |
+| `http: ... https: ...` | `nonce-{random}` | `strict-dynamic` |
+| white-list strategy | random id associated with `<script>` tag | propagates trust to `nonced` blocks |
+| Unsecure, can be easily bypassed | restrictive with trusted external resources | with nonce, security & flexibility |
+
+::: tip
+A **nonce** is a random number generated for single usage to mark a `<script>` tag as trusted.
+:::
 
