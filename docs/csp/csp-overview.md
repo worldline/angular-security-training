@@ -61,7 +61,9 @@ CSP evolution with `script-src` directive :
 | white-list strategy | random id associated with `<script>` tag | propagates trust to `nonced` blocks |
 | Unsecure, can be easily bypassed | restrictive with trusted external resources | with nonce, security & flexibility |
 
-::: tip
 A **nonce** is a random number generated for single usage to mark a `<script>` tag as trusted.
-:::
 
+::: warning
+Browsers still not support all CSP version 3 features.
+Most recent browsers version support CSP version 2.
+:::
