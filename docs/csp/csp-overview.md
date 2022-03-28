@@ -2,7 +2,7 @@
 
 TO_DO: add graph
 
-Content Security Policy (CSP) is a standard introduced to prevent cross-site-scripting, click-jacking and other code injection attacks resulting of malicious inputs in the trusted web page context.
+Content Security Policy (CSP) is a W3C standard introduced to prevent cross-site-scripting, click-jacking and other code injection attacks resulting of malicious inputs in the trusted web page context.
 CSP defines a standard methods for web application developers to declare approved origins of content that browsers should allow loading.
 
 ::: warning
@@ -13,7 +13,6 @@ It reduces the risk that malicious injection can cause, but it is not a replacem
 To enable CSP, you need to configure your web application to return the `Content-Security-Policy` HTTP header.
 
 ## CSP common white-list properties
-
 
 - `default-src` : Optional property if no other attributes are defined. In most cases, the value of this property is `default-src 'self'`  meaning the browser can only upload resources from the current website. 
   
@@ -36,7 +35,7 @@ To enable CSP, you need to configure your web application to return the `Content
 - `base-uri` : Allows URLs in the src attribute of any tag.
 
 ::: warning
-As of today, some CSP properties may not be supported by recent browsers.
+As of today, some CSP properties may not be supported by all browsers. IE is known to have limited support for CSP
 You can verify the compatibility of CSP properties with browser with several online tools like this one: [https://caniuse.com/?search=csp](https://caniuse.com/?search=csp)
 :::
 
@@ -47,7 +46,7 @@ Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline' 'self' ht
 ```
 
 ::: tip
-[This online tool](https://csp-evaluator.withgoogle.com/) can help you evaluate the strength of your CSP.
+[This online tool](https://csper.io/evaluator) can help you evaluate the strength of your CSP.
 :::
 
 ## CSP evolution to strict CSP
