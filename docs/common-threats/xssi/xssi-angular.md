@@ -3,6 +3,9 @@
 Angular automatically strips the `)]}',\n` prefix if any
 Configure your server to prefix: `)]}',\n` before all your JSON responses.
 
-A normal response of:	       will be returns as : 
-
-TO_DO add images
+A normal response of `['one', 'two']` will be returned as :
+``` typescript
+)]}',
+['one', 'two']
+```
+![xssi-jax-rs](../../assets/xssi-jax-rs.png)

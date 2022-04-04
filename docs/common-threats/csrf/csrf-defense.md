@@ -51,8 +51,8 @@ Here are some myths which unfortunately will not save your application from CSRF
 - **Multi-Step transactions:** Attackers can always predict and deduce transaction steps.
 - **URL rewriting:** The session cookie is exposed in the url which introduces another security flaw.
 - **HTTPS alone** does nothing to defend against CSRF by itself.
-- **http_only** session cookie will not protect you from CSRF
-- **JSON APIs** are also vulnerable to CSRF attacks
+- **http_only** session cookie will not protect you from CSRF.
+- **JSON APIs** are also vulnerable to CSRF attacks.
 - **Same-site Cookie Attribute** can be useful against CSRF but not sufficient by itself because it is not support by all browsers and can be bypassed by attackers.
 
 ## What can I do to continuously prevent CSRF attacks ?

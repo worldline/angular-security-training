@@ -20,6 +20,8 @@ Hide template portions depending on user profile:
 
 Allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served.
 
+![api-cors](../../assets/api-cors.png)
+
 Request headers:
 
 - Origin
@@ -35,6 +37,4 @@ Response headers:
 - Access-Control-Allow-Methods
 - Access-Control-Allow-Headers
 
-TO_DO: add image
-
-TO_DO: add graph
+![api-decision-tree](../../assets/api-decision-tree.png)
