@@ -1,6 +1,6 @@
 # 4.1 CSP Overview
 
-TO_DO: add graph
+![csp-workflow](../assets/csp-wf.png)
 
 Content Security Policy (CSP) is a W3C standard introduced to prevent cross-site-scripting, click-jacking and other code injection attacks resulting of malicious inputs in the trusted web page context.
 CSP defines a standard methods for web application developers to declare approved origins of content that browsers should allow loading.
