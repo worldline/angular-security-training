@@ -12,7 +12,7 @@ SCA reports requires further analysis from your end in order to identify the rea
 
 ## Detecting known vulnerable JavaScript libraries with Retire.js
 
-TO_DO add retire js link and install guide
+[Retire.js Setup Guide](http://retirejs.github.io/retire.js/)
 
 Features :
 - For Single Page Application , NodeJS apps, traditional web applications
