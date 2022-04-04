@@ -8,7 +8,11 @@ Including code from third-party providers requires a lot of trust
 
 ## Sub-Resource Integrity (SRI)
 
-TO_DO add image
+``` typescript
+<script src="https://example.com/angular.js"
+        integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"
+        crossorigin="anonymous"></script>
+```
 
 - SRI allows you to define what you want to include
 - Browser calculates and verifies the checksum before including the resources
