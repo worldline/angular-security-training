@@ -1,0 +1,36 @@
+
+<div class="k-pagination">
+
+    <p class="total-pages"> ( {{firstItem}}-{{lastItem}} ) / <strong>{{totalNbItems}}</strong></p>
+
+	<ul class="page-numbers">
+		<!-- first page -->
+		<li>
+			<a href="#" (click)="switchToFirst()">
+				<img [src]="'/assets/styles/ktheme/img/' + getFirstPageImage()" alt="[ First page ]" />
+			</a>
+		</li>
+		<!-- previous page -->
+		<li>
+			<a href="#" (click)="switchToPrev()">
+				<img [src]="'/assets/styles/ktheme/img/' + getPrevPageImage()" alt="[ Previous page ]" />
+			</a>
+		</li>
+		<li *ngFor="let page of nbPagesSet;">
+			<a (click)="switchPage(page)" href="#" [style.fontWeight]=" (page) == currentPage?'bold':'inherit'" >
+				{{page}}
+			</a>
+		</li>
+		<li>
+			<a href="#" (click)="switchToNext()">
+				<img [src]="'/assets/styles/ktheme/img/' + getNextPageImage()" alt="[ Next page ]" />
+			</a>
+		</li>
+		<li>
+			<a href="#" (click)="switchToLast()">
+				<img [src]="'/assets/styles/ktheme/img/' + getLastPageImage()" alt="[ Last page ]" />
+			</a>
+		</li>    		
+	</ul>
+
+</div>

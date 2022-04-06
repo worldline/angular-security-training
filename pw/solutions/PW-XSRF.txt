@@ -1,0 +1,46 @@
+PW - XSRF
+
+1 - Enable and configure the csrf protection server-side
+    a) declare the csrf protection in /bookstore/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java
+    b) use cookie strategy
+    c) make sure the cookie is NOT HttpOnly 
+
+2 - Test the CSRF protection
+    a) in "Home" page, add a "news" : analyze request and response's headers, verify that expected cookies (XSRF-TOKEN) and headers (X-XSRF-Token) are set (use a client debugger)
+    b) Try to forge a request : use a curl command on  'http://localhost:4200/api/news/like/8' (use firefox client debugger, right click on the request ("Add" a like on a news to see the request), "select copy for curl", then, execute the command in a shell)
+       Explain the result ?  How can we change this result ?
+    c) Do the same for 'http://localhost:4200/api/news' and modify CSRF tokens and explain the result. 
+    
+    Hint : Try to understand the spring implementation of the csrf protection. Take a look at the following source files : 
+      - org.springframework.security.web.csrf.CsrfFilter class
+      - org.springframework.security.web.csrf.CookieCsrfTokenRepository class
+      - org.springframework.security.config.annotation.web.configurers.CrsfConfigurer class
+    
+ 
+ 
+ Solutions : 
+ 
+ 1 - In SecurityConfiguration.java 
+ 
+      @Override
+      protected void configure(HttpSecurity http) throws Exception {
+        http
+            ...
+        .and()
+            .csrf()
+            .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+        ...
+      }    
+ 
+ 2 -  a) Observe request and response's headers : XSRF-TOKEN and X-XSRF-Token from header and cookie must match
+      b) Use firefox client debugger, right click on PUT request ("Add" a like on a news to see the request), "select copy for curl" 
+         Then, in a shell command  : curl 'http://localhost:4200/api/news/like/8' -X POST -H 'Host: localhost:4200' -H 'User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Accept-Language: fr,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: text/plain' -H 'X-XSRF-TOKEN: 7c033759-cdf8-4fe5-a3f4-b191fb0c8f8c' -H 'Referer: http://localhost:4200/' -H 'Cookie: XSRF-TOKEN=7c033759-cdf8-4fe5-a3f4-b191fb0c8f8c' -H 'Connection: keep-alive' -H 'Content-Length: 0'
+         See the result : it's ok as far as you post the header and the cookie with same token - if we modify one of the token values or remove it, we get forbidden access to the page because the the CsrfFilter
+      c) Success (HTTP 200) in any case, even if we modify tokens or don't send them. It's because : 
+         - Angular doesn't send X-XSRF-TOKEN for GET or HEAD methods (see https://github.com/angular/angular/blob/5.2.8/packages/common/http/src/xsrf.ts#L81)  
+         - Also, at server-side level, GET requests are allowed by default (see CsrfFilter#DefaultRequiresCsrfMatcher)
+          
+          - org.springframework.security.web.csrf.CsrfFilter : the csrf filter, check that token from header and from cookie match. Otherwise, redirect to error page with HTTP 403 status
+          - org.springframework.security.web.csrf.CookieCsrfTokenRepository  : used for CSRF token repository strategy (session, cookie, ...)
+          - org.springframework.security.config.annotation.web.configurers.CrsfConfigurer  : Adds CSRF protection for the methods  (uses antMatchers)   
+       

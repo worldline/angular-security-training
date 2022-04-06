@@ -2,4 +2,19 @@
 
 ![pw](../../assets/uncle-pw.png)
 
-PW steps
+1 - Load a js script from Content Delivery Network (CDN) with SRI
+-  In index.html, load the minified version 3.2.1 of "jquery" from `cdnjs.cloudflare.com` (take care of the version number)  
+-  Implement sub resource integrity (SRI) to check the resource integrity 
+   
+Hints :
+- Get resources with SRI from https://cdnjs.com or use the online tool https://www.srihash.org/ to generate SRI hash
+- if CSP is configured, you will have to update it in order to allow external resources from CDN (add appropriate hash in `script-src` directive - work only for Chrome) 
+
+2 - Detect known vulnerable third party components
+- Detect known vulnerable JavaScript libraries
+- Detect known vulnerable maven dependencies
+
+Hints : 
+- npm install and execute `retire` in root folder
+      
+- Install and launch maven plugin `MavenDependencyCheck` under `bookstore` folder 

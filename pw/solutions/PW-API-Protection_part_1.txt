@@ -1,0 +1,101 @@
+PW API-Protection (Part 1)
+
+For this PW, we need to have an authentication process. So, we recommend to implement/use the JWT authentication before starting.
+You can get the JWT OAuth implementation from the previous PW-JWT-OAuth  : "git clone -b PW-JWT-OAuth https://gitlab.kazan.priv.atos.fr/trainingangular2/secure-angular-training-app.git" 
+
+1 - Protect your API - Add server-side protection for the following actions : 
+    a) Unauthenticated users have access to the news API (/api/news/**)
+    b) Only "Admin" profil can delete a news (authenticated user with "ROLE_ADMIN" role)
+    c) Only "User" profil can add news (authenticated user with "ROLE_USER" role)
+    d) Any authenticated user can "like" news
+    
+    Hints : 
+      - use spring security annotation org.springframework.security.access.annotation.Secured to protect your REST endpoints 
+      - Check existing roles in /bookstore/src/main/resources/config/liquibase/authorities.csv file
+      - for a globale setting, use the org.springframework.security.config.annotation.web.builders.HttpSecurity in SecurityConfiguration#configure method
+      - More details on spring security api : https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#jc-method
+   
+2 - Protect the GUI  - Adapt client-side according to server-side protection
+    a) Unauthenticated users have access to the news API (/api/news/**)
+    b) Only "Admin" profil can delete a news (authenticated user with "ROLE_ADMIN" role)
+    c) Only "User" profil can add news (authenticated user with "ROLE_USER" role)
+    d) Any authenticated user can "like" news 
+
+    Hints : 
+    - in src/app/services/auth/principal.service.ts, declare implement functions "isAdmin" and "isUser" (check roles from authorities's list of "this._identity" attribute)
+    - in home.html, use "ngIf" directive and previous functions to hide portions of template
+    - declare 'principal' service in constructor as public in home.ts to make it accessible from home.html
+    - don't forget to 'ng build' the frontend (and 'mvn' the backend) after any modification (no live reloading for this PW)
+  
+
+Solution : 
+
+1- Server-side protection
+
+    NewsResources.java
+    
+        @PostMapping("/news")
+        @Timed
+        @Secured({ AuthoritiesConstants.USER })
+        public ResponseEntity<News> createNews(@Valid @RequestBody News news) throws URISyntaxException {
+        
+        @PutMapping("/news")
+        @Timed
+        @Secured({ AuthoritiesConstants.USER, AuthoritiesConstants.ADMIN })
+        public ResponseEntity<News> updateNews(@Valid @RequestBody News news) throws URISyntaxException {
+    
+        @DeleteMapping("/news/{id}")
+        @Timed
+        @Secured({AuthoritiesConstants.ADMIN})
+        public ResponseEntity<Void> deleteNews(@PathVariable Long id) {
+    
+    SecurityConfiguration#configure
+    
+          http().and()
+          .authorizeRequests().antMatchers("/api/news/like/**").authenticated() 
+          //.antMatchers("/api/**").permitAll()   //comment or remove this line
+            
+            
+2- Client-side protection
+
+    services/auth/princial.service.ts
+    
+        get isAuthenticated (): boolean {
+          return this.authenticated;
+        }
+
+        
+        get isAdmin(): boolean {
+            return this.isIdentityResolved () ? this._identity.authorities.indexOf("ROLE_ADMIN")!==-1 : false;
+        }
+    
+        get isUser(): boolean {
+            return this.isIdentityResolved () ? this._identity.authorities.indexOf("ROLE_USER")!==-1 && !this.isAdmin : false;
+        }
+
+      home/home.ts
+        
+        ...
+        import {Principal} from '../services/auth/principal.service';
+        ...
+        
+        constructor(
+      		private newsService: NewsService,
+==>    		public principal: Principal
+      	) {}
+
+    home/home.html
+        
+        ...
+        <td><button *ngIf="principal.isAuthenticated" class="btn" (click)="addLike(currentNew)"><img src="assets/styles/ktheme/img/like.png" /> {{currentNew.likes}}</button></td>
+        <td><button *ngIf="principal.isAdmin" class="btn" (click)="deleteNews(currentNew)"><img src="assets/styles/ktheme/img/delete.png"/></button></td>
+        ...
+        
+         <tr class="gradeA" *ngIf="principal.isUser" >
+            <td><input type="text" [(ngModel)]="nextNews.author" placeholder="author"/></td>
+            <td><input type="text" [(ngModel)]="nextNews.category" placeholder="category"/></td>
+            <td><input type="text" [(ngModel)]="nextNews.content" placeholder="content"/></td>
+            <td></td>
+            <td><button class="btn" (click)="addNews()"><img src="assets/styles/ktheme/img/add.png"/></button></td>
+        </tr>
+    

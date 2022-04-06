@@ -1,0 +1,76 @@
+PW - JWT Authentication
+
+
+1 - In app/src/services/auth/auth-jwt.service.ts, implement the "authenticateSuccess" function by following the comments
+
+2 - Implement HttpInterceptor "app/src/services/auth/auth-jwt.interceptor.ts" in order to send the JWT via the Authorization request header
+
+3 - Make sure that the JWT controler filter is active - See /bookstore/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java
+
+4 - Test the JWT authentication : http://localhost:4200/#/login - Check that the JWT is stored in client storage
+
+
+
+Solutions : 
+
+1 - In app/src/components/login/login.ts : 
+
+      this.userService.login({
+            username: this.login,
+            password: this.password,
+    ==>     rememberMe: false
+        }).then(() => {...} 
+
+    In  app/src/services/auth/auth-jwt.service.ts
+
+        // In case of authentication success , get the JWT from the response and store it in client storage
+        function authenticateSuccess (resp) {
+            let bearerToken = resp.headers.get('Authorization');
+            if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') {
+                let jwt = bearerToken.slice(7, bearerToken.length);
+                this.storeAuthenticationToken(jwt, credentials.rememberMe);
+                return jwt;
+            }
+        }
+
+2 -  In  app/src/services/auth/auth-jwt.interceptor.ts
+      
+      ...
+      
+      @Injectable()
+      export class JwtInterceptor implements HttpInterceptor {
+          ...
+          intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+            
+            //  retrieve jwt token from client storage with the key 'authenticationToken'
+            let token = this.ng2localStorage.retrieve('authenticationToken') || this.ng2sessionStorage.retrieve('authenticationToken');
+            
+            //  set authorization header with the token : 'Authorization: Bearer __token__'
+            if (token){
+                req = req.clone({
+                    setHeaders: {
+                      Authorization: 'Bearer '+token
+                    }
+                  });
+            }
+            ...
+          }
+      }     
+        
+
+3 - In /bookstore/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+    
+        http
+        ...
+        .and()
+    ==>       .apply(securityConfigurerAdapter());
+        ...
+    }
+    
+4 - Check the JWT after login process in the response header and then in all following request headers - check also the session storage
+    Decode the token in https://jwt.io/
+
+ 

@@ -1,0 +1,14 @@
+id;name;author;price;description;category;is_new
+1;AngularJS;Brad Green, Shyam Seshadri;15.34;Description...;book;false
+2;Angularjs in Action;Brian Ford, Lukas Ruebbelke;34.51;Description...;book;true
+3;Instant AngularJS Starter;Dan Menard;16.26;Description...;book;false
+4;Javascript: The Definitive Guide;David Flanagan;34.44;Description...;book;false
+5;JavaScript and HTML5 Now;Kyle Simpson;24.35;Description...;book;false
+6;Tapestry in Action;Lewis M Ship;34.40;Description...;book;false
+7;High Performance Flash;Elad Elrom, R.J. Owen;36.04;Description...;book;true
+8;Programming Windows 8 Apps;Kraig Brockschmidt;0.00;Description...;book;false
+9;JavaScript Design Patterns;Addy Osmani;22.63;Description...;book;false
+10;Functional JavaScript;Michael Fogus;22.63;Description...;book;false
+11;ng-book;Ari Lerner;15.34;The Complete Book on AngularJS;book;false
+12;Devenez un ninja avec AngularJS;Ninja-Squad;20.00;Devenir un Ninja avec AngularJS.;book;false
+13;Tapestry 5 - Rapid web application development in Java;Igor Drobiazko;20.00;Tapestry 5 - Rapid web application development in Java is a comprehensive guide.;book;false

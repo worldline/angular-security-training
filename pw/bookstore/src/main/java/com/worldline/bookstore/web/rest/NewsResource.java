@@ -1,0 +1,178 @@
+package com.worldline.bookstore.web.rest;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+import javax.annotation.security.PermitAll;
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codahale.metrics.annotation.Timed;
+import com.worldline.bookstore.domain.News;
+import com.worldline.bookstore.repository.NewsRepository;
+import com.worldline.bookstore.security.AuthoritiesConstants;
+import com.worldline.bookstore.web.rest.util.HeaderUtil;
+
+import io.github.jhipster.web.util.ResponseUtil;
+
+/**
+ * REST controller for managing News.
+ */
+@RestController
+@RequestMapping("/api")
+public class NewsResource {
+
+    private final Logger log = LoggerFactory.getLogger(NewsResource.class);
+
+    private static final String ENTITY_NAME = "news";
+        
+    private final NewsRepository newsRepository;
+
+    public NewsResource(NewsRepository newsRepository) {
+        this.newsRepository = newsRepository;
+    }
+
+    /**
+     * POST  /news : Create a new news.
+     *
+     * @param news the news to create
+     * @return the ResponseEntity with status 201 (Created) and with body the new news, or with status 400 (Bad Request) if the news has already an ID
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping("/news")
+    @Timed
+    @Secured({ AuthoritiesConstants.USER })
+    public ResponseEntity<News> createNews(@Valid @RequestBody News news) throws URISyntaxException {
+        log.debug("REST request to save News : {}", news);
+        if (news.getId() != null) {
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new news cannot already have an ID")).body(null);
+        }
+        News result = newsRepository.save(news);
+        return ResponseEntity.created(new URI("/api/news/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+            .body(result);
+    }
+
+    /**
+     * PUT  /news : Updates an existing news.
+     *
+     * @param news the news to update
+     * @return the ResponseEntity with status 200 (OK) and with body the updated news,
+     * or with status 400 (Bad Request) if the news is not valid,
+     * or with status 500 (Internal Server Error) if the news couldnt be updated
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PutMapping("/news")
+    @Timed
+    @Secured({ AuthoritiesConstants.USER, AuthoritiesConstants.ADMIN })
+    public ResponseEntity<News> updateNews(@Valid @RequestBody News news) throws URISyntaxException {
+        log.debug("REST request to update News : {}", news);
+        if (news.getId() == null) {
+            return createNews(news);
+        }
+        News result = newsRepository.save(news);
+        return ResponseEntity.ok()
+            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, news.getId().toString()))
+            .body(result);
+    }
+
+    /**
+     * GET  /news : get all the news.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of news in body
+     */
+    @GetMapping("/news")
+    @Timed
+    public List<News> getAllNews() {
+        log.debug("REST request to get all News");
+        List<News> news = newsRepository.findAll();
+        return news;
+    }
+
+    /**
+     * GET  /news/:id : get the "id" news.
+     *
+     * @param id the id of the news to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the news, or with status 404 (Not Found)
+     */
+    @GetMapping("/news/{id}")
+    @Timed
+    public ResponseEntity<News> getNews(@PathVariable Long id) {
+        log.debug("REST request to get News : {}", id);
+        News news = newsRepository.findOne(id);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(news));
+    }
+
+    /**
+     * DELETE  /news/:id : delete the "id" news.
+     *
+     * @param id the id of the news to delete
+     * @return the ResponseEntity with status 200 (OK)
+     */
+    @DeleteMapping("/news/{id}")
+    @Timed
+    @Secured({AuthoritiesConstants.ADMIN})
+    public ResponseEntity<Void> deleteNews(@PathVariable Long id) {
+        log.debug("REST request to delete News : {}", id);
+        newsRepository.delete(id);
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
+    }
+    
+    
+    
+    /**
+     * POST  /news/like/:id : add like to a given news.
+     *
+     * @param id the id of the news which will have its like number enhanced
+     * @return the ResponseEntity with status 201 (Created) and with body the new news, or with status 400 (Bad Request) if the news has already an ID
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping("/news/like/{id}")
+    @Timed
+    public ResponseEntity<News> addLikeforNews(@PathVariable Long id) throws URISyntaxException {
+        log.debug("REST request to add like to News : {}", id);
+        News news = newsRepository.findOne(id);
+        int likes = news.getLikes();
+        likes += 1; 
+        news.setLikes(likes);
+        News result = newsRepository.save(news);
+        return ResponseEntity.ok()
+            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, news.getId().toString()))
+            .body(result);
+    }
+
+    /**
+     * GET  /news/:id : get the "id" news.
+     *
+     * @param id the id of the news to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the news, or with status 404 (Not Found)
+     */
+    @GetMapping("/news/random")
+    @Timed
+    public ResponseEntity<News> getNews() {
+    	log.debug("REST request to get a random News");
+        List<News> news = newsRepository.findAll();
+        News randomNews = null;
+        if(news != null ) {
+        	double index= Math.floor( Math.random() * news.size());
+        	randomNews = news.get((int) index);
+        }
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(randomNews));
+    }
+
+    
+}
