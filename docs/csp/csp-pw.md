@@ -5,13 +5,13 @@
 
 1 - Starter Content Security Policy
 
-- Configure a minimalistic CSP with the following value and observe the result (see console log) : "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';"
+- Configure a minimalistic CSP with the following value and observe the result (see console log) : `default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';`
        
 Hints : 
           
 - This policy allows images, scripts, AJAX, and CSS from the same origin, and does not allow any other resources to load (eg inline scripting, inline styles, object, frame, media, etc). It is a good starting point but often too restrictive for many existing sites
           
-- You can declare your CSP as a meta tag with "http-equiv" directive in index.html : <meta http-equiv="__directive__" content="__value__">
+- You can declare your CSP as a meta tag with `http-equiv` directive in index.html :`<meta http-equiv="__directive__" content="__value__">`
     
 - Update step by step the configuration in order to make the website load properly (Content-Security-Policy-Report-Only header)
        
@@ -30,7 +30,7 @@ Hints :
 
 - Use CSP to secure your app against inline scripting
   
-    - In index.html, declare an arbitrary inline scripting : "<script>document.write('<h1>Inline scripting is <b>not recommended</b>! But if you have not the choice, <b>secure your app with CSP</b></h1>');</script>"
+    - In index.html, declare an arbitrary inline scripting : `<script>document.write('<h1>Inline scripting is <b>not recommended</b>! But if you have not the choice, <b>secure your app with CSP</b></h1>');</script>"`
   
     - Update the CSP in order to block the inline scripting.
   
@@ -144,8 +144,8 @@ Then we will add inline scripting and secure it with a nonce.
 ```              
            
 Note : Implement a CSP wrapper class (used by the CSPResource class) with 2 attributes : 
-    - "config" : stores the complete Content-Security-Policy
-    - "nonce" : stores the nonce
+    - `config` : stores the complete Content-Security-Policy
+    - `nonce` : stores the nonce
 
 - Remove the csp configuration loaded from the SecurityConfiguration.java if any
 
@@ -197,7 +197,7 @@ Note : Implement a CSP wrapper class (used by the CSPResource class) with 2 attr
 Note : you will have to import and declare this new service in app.module.ts
         
         
-- Load the CSP with a meta tag and add an arbitrary "script" block with a nonce
+- Load the CSP with a meta tag and add an arbitrary `script` block with a nonce
 ``` typescript         
         Update app.component.ts to add the following implementation
         
