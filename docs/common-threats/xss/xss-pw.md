@@ -2,9 +2,8 @@
 
 ![pw](../../assets/uncle-pw.png)
 
-
 1 - Render HTML formatting elements in Angular
-- in "Home" page, create a "news" with formatted content by using HTML elements like <b> and <i> . Add links.
+- in "Home" page, create a "news" with formatted content by using HTML elements like `<b>` and `<i>` . Add links.
 Hint : Use `[innerHTML]` attribute to render safe HTML tags
 - create a "news" with scripting. What do you observe ? Take a look at the console.
 
