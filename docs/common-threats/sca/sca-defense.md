@@ -1,4 +1,4 @@
-# Vulnerable Component Defense
+# 5.3 Vulnerable Component Defense
 
 ## How do I prevent using vulnerable components ?
 

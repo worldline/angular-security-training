@@ -1,4 +1,4 @@
-# 2.3 XSS Defense Best Practices
+# 3.3 XSS Defense Best Practices
 
 ## What can I do to prevent XSS ?
 

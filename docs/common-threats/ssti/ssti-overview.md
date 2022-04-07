@@ -1,4 +1,4 @@
-# 3.1 SSTI Overview
+# 4.1 SSTI Overview
 
 ## SSTI in a nutshell
 

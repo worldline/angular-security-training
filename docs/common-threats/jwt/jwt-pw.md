@@ -1,6 +1,6 @@
 # 1.6 XSS Practical Work
 
-![pw](../assets/uncle-pw.png)
+![pw](../../assets/uncle-pw.png)
 
 
 1 - In app/src/services/auth/auth-jwt.service.ts, implement the "authenticateSuccess" function by following the comments

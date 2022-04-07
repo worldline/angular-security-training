@@ -1,4 +1,4 @@
-# Unprotected APIs Overview
+# 6.1 Unprotected APIs Overview
 
 - OWASP Top 10+ 2017 new topic (draft version)
 - REST API architecture growing (mobile, SPA, IoT,…)

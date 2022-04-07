@@ -1,4 +1,4 @@
-# 2.1 XSS Overview 
+# 3.1 XSS Overview 
 
 ## XSS in a nutshell
 

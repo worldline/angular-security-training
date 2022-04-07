@@ -1,4 +1,4 @@
-# XSSI Practical Work
+# 7.4 XSSI Practical Work
 
 ![pw](../../assets/uncle-pw.png)
 

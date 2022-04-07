@@ -1,4 +1,4 @@
-# 1.3 CSRF Protection in Angular 
+# 2.4 CSRF Protection in Angular 
 
 What are the defense mechanisms against CSRF available in Angular ?
 

@@ -14,7 +14,7 @@ JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and s
 
 JWT  looks like the following in its JWS compact serialization :
 
-![jwt-structure](../assets/jwt-structure.png)
+![jwt-structure](../../assets/jwt-structure.png)
 
 **JOSE Header:** Indicates to the receiver which type of signature algorithm to use for payload validation.
 

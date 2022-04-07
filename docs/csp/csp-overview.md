@@ -1,4 +1,4 @@
-# 4.1 CSP Overview
+# CSP Overview
 
 ![csp-workflow](../assets/csp-wf.png)
 

@@ -1,4 +1,4 @@
-# SSTI Protection in Angular
+# 4.3 SSTI Protection in Angular
 
 **Angular** offers ahead-of-time **AOT compilation** which turns the application into executable code:
 

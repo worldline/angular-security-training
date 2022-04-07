@@ -1,4 +1,4 @@
-# Vulnerable Components Detection
+# 5.2 Vulnerable Components Detection
 
 ## How do I know if my application has vulnerable components ?
 

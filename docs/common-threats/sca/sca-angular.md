@@ -1,4 +1,4 @@
-# Vulnerable Components Protection in Angular
+# 5.4 Vulnerable Components Protection in Angular
 
 ## Checking JavaScript libraries integrity
 
