@@ -24,6 +24,7 @@ module.exports = {
             "/common-threats/jwt/jwt-storage.md",
             "/common-threats/jwt/jwt-known-threats.md",
             "/common-threats/jwt/jwt-best-current-practices.md",
+            "/common-threats/jwt/jwt-pw.md",
             "/common-threats/csrf/csrf-overview.md",
             "/common-threats/csrf/csrf-detection.md",
             "/common-threats/csrf/csrf-defense.md",
