@@ -1,0 +1,59 @@
+// Available variables which can be used inside of strings.
+// ${workspaceRoot}: the root folder of the team
+// ${file}: the current opened file
+// ${fileBasename}: the current opened file's basename
+// ${fileDirname}: the current opened file's dirname
+// ${fileExtname}: the current opened file's extension
+// ${cwd}: the current working directory of the spawned process
+
+// Run gulp dev (server + compile)
+{
+	"version": "0.1.0",
+
+	// The command is tsc. Assumes that tsc has been installed using npm install -g typescript
+	"command": "npm",
+
+	// The command is a shell script
+	"isShellCommand": true,
+
+	// Show the output window only if unrecognized errors occur.
+	"showOutput": "always",
+    
+    "tasks": [
+        {
+            "echoCommand": true,
+            
+            "taskName": "dev mode",
+            
+            "suppressTaskName": true,            
+            
+            "args": ["run","dev"],
+            
+            "problemMatcher": "$gulp-tsc"
+        },
+        {
+            "echoCommand": true,            
+            
+            "taskName": "transpile",
+            
+            "suppressTaskName": true,            
+            
+            "args": ["run","compile"],
+            
+            "problemMatcher": "$gulp-tsc"
+        },
+        {
+            "echoCommand": true,
+            
+            "taskName": "runserver",
+            
+            "suppressTaskName": true,
+            
+            "args": ["run","serve"],
+            
+            "problemMatcher": "$gulp-tsc"
+        }                
+    ]
+
+
+}

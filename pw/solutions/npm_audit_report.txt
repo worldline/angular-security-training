@@ -1,7 +1,0 @@
-$ npm i --package-lock-only
-$ npm audit
-
-                       === npm audit security report ===
-
-[+] no known vulnerabilities found
-    Packages audited: 47808 (47783 dev, 2281 optional)

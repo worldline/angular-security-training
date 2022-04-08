@@ -1,0 +1,9 @@
+id;author;category;content;likes
+1;Bruno;Troll;I hate Javascript!;8
+2;Pierre;Success;My survey application is finally deployed.;10
+3;Régis;True fact;Angular training is awesome!!!!;1200
+4;Régis;Hater;Unit Tests are useless;-1
+5;Emmanuel;Romance;My world for Kazan;200
+6;François;Authentication;A Real stateless example with Basic Authentification at https://github.com/ffacon/tapestry5-angular-demo/tree/V0.2;7
+7;François;OpenShift;Where Tapestry meet AngularJS ? at http://tapestryangular-frafac.rhcloud.com/#/phones;77
+8;Nourredine;AB testing;See an application self-evolving in live thanks to AB testing ! http://www.adaptivui.com/;12
