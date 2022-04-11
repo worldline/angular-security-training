@@ -2,6 +2,8 @@
 
 ![pw](../../assets/uncle-pw.png)
 
+Practical Work Web-Application directory : **pw/pw-csrf**
+
 1 - Enable and configure the csrf server-side protection 
 - declare the csrf protection in `/bookstore/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java`
 - use cookie strategy
