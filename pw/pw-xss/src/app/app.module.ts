@@ -1,7 +1,7 @@
 import { NgModule, Component, AfterViewInit } from '@angular/core';
 import {APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {NgxWebstorageModule} from 'ngx-webstorage';
-                     
+
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { routing } from './app.routing';
@@ -39,8 +39,8 @@ import { Login } from './login/login';
 	],
 	providers:[
 		UserService,
-		BooksService, 
-		DataContainerService, 
+		BooksService,
+		DataContainerService,
 		ContactService,
 		AuthServerProvider,
 		Principal,

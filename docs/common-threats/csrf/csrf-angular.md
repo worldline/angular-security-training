@@ -26,17 +26,18 @@ As Angular provides solution as a client, you must investigate your back-end fra
 
 ## Configuring CSRF protection in Angular
 
-For a server that supports a cookie-based CSRF protection system, use `HttpClientXsrfModule` (in the import section of the module where your components are declared) to configure the XSRF protection (cookie name, header name, ...).
+Angular `HttpClientModule` has a built-in CSRF protection enabled by default.
 
-By default, your application will automatically send the cookie `cookieName: 'XSRF-TOKEN'`, and the header `headerName: 'X-XSRF-TOKEN'` for each request sent from this component. If you want to customize the setting (to match server's cookie name for instance) :
+For a server that supports a cookie-based CSRF protection system, use `HttpClientXsrfModule` (in the import section of the module where your components are declared) to configure the XSRF protection (cookie name, header name, ...) or to disable it.
 
 ``` typescript
 imports:[
-HttpClientXsrfModule
+HttpClientModule,
+HttpClientXsrfModule.disable()
 ]
 ```
 
-You can customize the cookie and header name with the withOptions method.
+By default, your application will automatically send the cookie `cookieName: 'XSRF-TOKEN'`, and the header `headerName: 'X-XSRF-TOKEN'` for each request sent from this component. If you want to customize the setting (to match server's cookie name for instance) :
 
 ``` typescript
 imports: [
@@ -52,4 +53,5 @@ The CSRF module implements the default interceptor HttpXsrfInterceptor.
 
 ## Further resources
 
-https://owasp.org/www-community/attacks/csrf
+[owasp.org/www-community/attacks/csrf](https://owasp.org/www-community/attacks/csrf)
+[angular.io/guide/http#security-xsrf-protection](https://angular.io/guide/http#security-xsrf-protection)

@@ -32,15 +32,12 @@ import { BookDetails } from './bookDetails/bookDetails';
 import { Basket } from './basket/basket';
 import { Profile } from './profile/profile';
 import { Login } from './login/login';
-
 import { HttpClientXsrfModule} from "@angular/common/http";
 
 @NgModule({
 	imports:[
-		BrowserModule, routing, FormsModule, ReactiveFormsModule, NgxWebstorageModule.forRoot(), HttpClientModule, HttpClientXsrfModule.withOptions({
-      cookieName: 'XSRF-TOKEN',
-      headerName: 'X-XSRF-Token'
-    }),
+		BrowserModule, routing, FormsModule, ReactiveFormsModule, NgxWebstorageModule.forRoot(), HttpClientModule,
+    HttpClientXsrfModule.disable()
 	],
 	providers:[
 		UserService,
