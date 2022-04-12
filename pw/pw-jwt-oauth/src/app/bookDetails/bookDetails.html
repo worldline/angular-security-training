@@ -1,0 +1,68 @@
+<div class="root">
+    <article class="h-product hproduct k-product">
+
+        <header>
+            <h3 class="p-name fn">{{book?.name}}</h3>
+            <p class="p-category"><a href="#">{{book?.category}}</a></p>
+        </header>
+
+        <div class="photo-data">
+            <p>
+                <a href="#">
+                    <img class="u-photo" [src]="getImagePath()" alt="Title of product" />
+                </a>
+            </p>
+        </div>
+
+        <div class="product-data">
+            <p class="rating"> 
+
+                <span class="p-rating">
+                    <img 
+                        [src]="getStarsImagePath()" 
+                        alt="Three stars" 
+                    />
+                </span>
+            </p>
+
+            <p class="e-description description">
+                {{book?.description}}
+            </p>
+
+            <div class="price-data">
+                <p class="all-prices">
+                    <span class="price p-price sale">{{ book?.price | currency:'EUR':true }}</span>
+                </p>
+            </div>
+            <div class="buyZone">
+                <div class="availability">
+                    <p><strong>Availability :</strong> immediate delivery</p>
+                </div>
+                <p class="buy" *ngIf="userService.isLogged" >
+                    <button (click)="addToBasket()" type="button">Add to basket</button>
+                </p>
+            </div>
+        </div>
+    </article>
+
+
+
+    <div class="k-review">
+        <h3>{{book?.comments?.length}} comment(s)</h3>
+        <dl class="h-review hreview" *ngFor="let comment of book?.comments">
+            <dt>
+                <span class="p-rating">
+                    <img 
+                        [src]="'assets/styles/ktheme/img/' + bookService.convertFromRating(comment.rate) + '-stars.svg'" 
+                        alt="{{bookService.convertFromRating(comment.rate)}} stars" 
+                    />
+                </span>
+                <strong class="p-reviewer h-card">{{comment.user}}</strong>
+            </dt>
+            <dd class="e-description">
+                {{comment.comment}}
+            </dd>
+        </dl>
+    </div>
+    
+</div>
