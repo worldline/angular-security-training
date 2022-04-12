@@ -44,6 +44,7 @@ export class Home implements OnInit{
 		.subscribe((news: News) => {
 			this.newsOfTheDay = news;
 			// uncomment the line below only for demo purpose, don't do this in a real situation
+      // if you want to force a given scripting which you trust and is under you strict control (never from user input), use DomSanitizer#bypassSecurityTrustHtml(String) method
       //this.newsOfTheDay.content = <string> this.sanitizer.bypassSecurityTrustHtml(this.newsOfTheDay.content);
 		});
 	}
