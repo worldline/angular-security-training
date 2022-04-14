@@ -1,8 +1,33 @@
 # 7.1 XSSI Overview
 
 A JSON vulnerability allows third party website to turn your JSON resource URL into JSONP request under some conditions.
-Exposed when a GET request is made to retrieve JSON information as an array.
-Combined to a CSRF attack. 
+Exposed when a GET request is made to retrieve JSON information as an array. Combined to a CSRF attack.
+
+## What is JSONP ?
+
+JSONP means JSON with Padding or Prefix, is a technique created before the CORS which allows GET requests to bypass
+same-origin policy.
+The same-origin policy does not prevent execution of external `<script>` tags.
+The JSON is wrapped inside a function which allows the data to be loaded in a `<script>` element as an ordinary JavaScript.
+
+``` typescript
+callbackFunction({
+  payload: {
+    username: 'ben',
+    session_id: '123'
+  }
+})
+
+```
+
+``` typescript
+<script>
+  function callbackFunction(userData) {
+      console.log(userData.payload.username);
+   }
+</script>
+<script src="http://api.example.com/userdata.jsonp?callback=callbackFunction"></script>
+```
 
 ## How XSSI works ?
 

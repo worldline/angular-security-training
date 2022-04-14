@@ -23,4 +23,9 @@ If you really need to generate templates with users inputs, you must always use 
 - At the moment of injection, the application is already compiled.
 - The injected code will simply be rendered, not executed.
 
-Another alternative is JIT compiler which compiles templates to executable template code within the browser runtime.
+AOT compiler is enabled by default starting Angular 9. (check configurations in `angular.json`)
+
+Another alternative is JIT (Just In Time) compiler which compiles templates to executable template code within the browser runtime.
+This compiler was enabled by default until Angular 8.
+
+To learn further: https://angular.io/guide/aot-compiler
