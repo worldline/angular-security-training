@@ -1,0 +1,11 @@
+id;rate;user;comment;product_id
+1;2;Laurent Wroblewski;Test comment;1
+2;4;Pierre Marot;My comment...;1
+3;2;Pierre Marot;My comment...;2
+4;3;Pierre Marot;My comment...;2
+5;1;Pierre Marot;My comment...;2
+6;4;Facon François;Very good;11
+7;4;Facon François;En Français. Faites un geste pour Docteur Souris!;12
+8;4;Facon François;Must Read!;13
+9;3;Bruno Verachten;Very helpful;13
+10;4;Nourredine Khadri;Well done !;13

@@ -12,5 +12,3 @@ For sensitive web applications like banking sites, you want to make sure that on
 In this use case, you can use a lockdown approach by starting with a default policy that blocks absolutely everything :  `default-src 'none'` and build up your white list from there.
 
 [csp setup guide book](https://owasp.org/www-pdf-archive//2019-02-22_-_How_do_I_Content_Security_Policy_-_Print.pdf)
-
-TO_DO : is CSP worth doing ? complexity with third party libraries, risk of breaking the app ....
