@@ -10,6 +10,7 @@
     - Insufficient Attack Protection
     - Cross-Site Request Forgery
     - JSONP vulnerability
+    - Service Availability Threats
 
 ## Authorization
 

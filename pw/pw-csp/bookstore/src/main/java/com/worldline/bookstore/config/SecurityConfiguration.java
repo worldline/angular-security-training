@@ -118,13 +118,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/swagger-ui/index.html").hasAuthority(AuthoritiesConstants.ADMIN);/*
         .and()
             .apply(securityConfigurerAdapter())*/; // TODO uncomment this line to activate JWT filter
-       
-       //setCspConfig(http);
+
+       setCspConfig(http);
     }
 
-    //     Add CSP hash for the following inline scripting (see https://report-uri.io/home/hash) : 
+    //     Add CSP hash for the following inline scripting (see https://report-uri.io/home/hash) :
     //    	- "document.write('<h1>Inline scripting is <b>not recommended</b>! But if you have not the choice, <b>secure your app with CSP</b></h1>');" 	==> 'sha256-lK+Y3vDnNUrD/ZPLGsnM6B+euoBxZ/MyiIbY2G5VoPw='
-    //    	- inline style ...   
+    //    	- inline style ...
     private void setCspConfig(HttpSecurity http) throws Exception {
     	http
          .headers()
@@ -132,9 +132,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
  		        "script-src" +
  			        " http://localhost:* 'unsafe-eval' 'sha256-lK+Y3vDnNUrD/ZPLGsnM6B+euoBxZ/MyiIbY2G5VoPw=' " +
  				";" +
- 			  	// add connect-src directive to adapt CSP over cross-origin requests (CORS)  
+ 			  	// add connect-src directive to adapt CSP over cross-origin requests (CORS)
 					"connect-src"+
-				  	" http://localhost:*"+ 
+				  	" http://localhost:*"+
 				";"+
 				  " style-src" +
  			        " 'self' 'unsafe-inline'"+
@@ -150,7 +150,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
  				";" +
 					" object-src" +
 					   " 'none' " +
-					";" +  
+					";" +
           " report-uri" +
 						" 'http://localhost:8080' " +
 				";" +

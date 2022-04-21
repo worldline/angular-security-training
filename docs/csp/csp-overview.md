@@ -12,9 +12,27 @@ It reduces the risk that malicious injection can cause, but it is not a replacem
 
 To enable CSP, you need to configure your web application to return the `Content-Security-Policy` HTTP header.
 
-## CSP common white-list properties
+## CSP evolution to strict CSP
 
-- `default-src` : Optional property if no other attributes are defined. In most cases, the value of this property is `default-src 'self'`  meaning the browser can only upload resources from the current website. 
+white-list CSP properties requires a lot of customization and maintenance.
+
+CSP evolution with `script-src` directive :
+
+| version 1 | version 2 | version 3 |
+| `http: ... https: ...` | `nonce-{random}` | `strict-dynamic` |
+| white-list strategy | random id associated with `<script>` tag | propagates trust to `nonced` blocks |
+| Unsecure, difficult to maintain, can be easily bypassed | restrictive with trusted external resources | with nonce, security & flexibility |
+
+A **nonce** is a random number generated for single usage to mark a `<script>` tag as trusted.
+
+::: warning
+Browsers still not support all CSP version 3 features.
+Most recent browsers version support CSP version 2.
+:::
+
+## CSP common directives
+
+- `default-src` : Default property if no other attributes are defined. In most cases, the value of this property is `default-src 'self'`  meaning the browser can only upload resources from the current website. 
   
 - `script-src` : Defines locations from which external scripts can be loaded. If your web application does not use client-side scripting, set the value to `script-src 'none'`.
     
@@ -39,6 +57,15 @@ As of today, some CSP properties may not be supported by all browsers. IE is kno
 You can verify the compatibility of CSP properties with browser with several online tools like this one: [https://caniuse.com/?search=csp](https://caniuse.com/?search=csp)
 :::
 
+## CSP Common Source List Values
+
+- `*`: Wildcard, allows any URL except data: blob: filesystem: schemes
+- `none`: Prevents loading resources from any source, even from your own!
+- `self` : Allows loading resources from the same origin (same scheme, host and port).
+- `unsafe-inline` : Allows use of inline source elements such as style attribute, onclick, or script tag bodies and javascript: URIs. This value is as it says : unsafe !
+- `nonce-rAnd0m` : Allows an inline script or CSS to execute if the script (eg: `<script nonce="rAnd0m">`) tag contains a nonce attribute matching the nonce specified in the CSP header. The nonce should be a secure random string, and should not be reused.
+- `strict-dynamic` : Allows scripts to be included by any script already marked by a nonce or hash.  Disables the whitelist and allows backward compatibility with CSP v1 and v2 as shown bellow:
+  ![csp-workflow](../assets/csp-strict-dynamic.png)
 ## Common white-list CSP example
 
 ``` typescript
@@ -49,20 +76,5 @@ Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline' 'self' ht
 [This online tool](https://csper.io/evaluator) can help you evaluate the strength of your CSP.
 :::
 
-## CSP evolution to strict CSP
+To learn further about CSP, don't hesitate to check [there Quick Reference Guide](https://content-security-policy.com/).
 
-white-list CSP properties requires a lot of customization and maintenance.
-
-CSP evolution with `script-src` directive :
-
-| version 1 | version 2 | version 3 |
-| `http: ... https: ...` | `nonce-{random}` | `strict-dynamic` |
-| white-list strategy | random id associated with `<script>` tag | propagates trust to `nonced` blocks |
-| Unsecure, can be easily bypassed | restrictive with trusted external resources | with nonce, security & flexibility |
-
-A **nonce** is a random number generated for single usage to mark a `<script>` tag as trusted.
-
-::: warning
-Browsers still not support all CSP version 3 features.
-Most recent browsers version support CSP version 2.
-:::

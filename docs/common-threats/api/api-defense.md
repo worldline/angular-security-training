@@ -1,9 +1,12 @@
 # 6.2 Unprotected API Defense
 
-
-- OAuth
-- API Management
-- Browsers
+- Consistent Input Validation to validate during code reviews.
+- API Authentication gateway to secure authentications (OAuth)
+- API Management platform allow security features like:
+    - Rate limiting and quota policies against service availability threats.
+    - Audit changes in API management systems against insider threats.
+    - Track logs of API attempts to detect spam and crawlers abuse.
+- Browsers 
 - Framework & Custom implementation
 
 ## Implementation
