@@ -1,4 +1,4 @@
-# 1.6 XSS Practical Work
+# 1.6 JWT Practical Work
 
 ![pw](../../assets/uncle-pw.png)
 

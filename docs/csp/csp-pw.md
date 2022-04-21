@@ -3,19 +3,22 @@
 
 ![pw](../assets/uncle-pw.png)
 
+Practical Work Web-Application directory : **pw/pw-csp**
+
 1 - Starter Content Security Policy
 
-- Configure a minimalistic CSP with the following value and observe the result (see console log) : `default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';`
+- Configure a minimalistic CSP in angular side (`index.html`) with the following value and observe the result (see console log) : 
+  `default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';`
        
 Hints : 
           
 - This policy allows images, scripts, AJAX, and CSS from the same origin, and does not allow any other resources to load (eg inline scripting, inline styles, object, frame, media, etc). It is a good starting point but often too restrictive for many existing sites
           
-- You can declare your CSP as a meta tag with `http-equiv` directive in index.html :`<meta http-equiv="__directive__" content="__value__">`
+- You can declare your CSP as a meta tag with `http-equiv` directive in `index.html` :`<meta http-equiv="__directive__" content="__value__">`
     
 - Update step by step the configuration in order to make the website load properly (Content-Security-Policy-Report-Only header)
        
-    - Hint : See https://content-security-policy.com/ for more details on existing CSP directives
+    - Hint : <span style="color:white; background-color:white"> add unsafe-inline or unsafe-eval wherever needed to remove console alerts </span>
         
 - Check the security level of this CSP on https://csp-evaluator.withgoogle.com/
     

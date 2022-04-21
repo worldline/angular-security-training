@@ -130,11 +130,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
          .headers()
          	.contentSecurityPolicy(
  		        "script-src" +
- 			        " http://localhost:* 'unsafe-eval' 'sha256-lK+Y3vDnNUrD/ZPLGsnM6B+euoBxZ/MyiIbY2G5VoPw=' " +
+              " 'none' "+
+ 			       // "'unsafe-eval' 'unsafe-inline' " +
  				";" +
  			  	// add connect-src directive to adapt CSP over cross-origin requests (CORS)
 					"connect-src"+
-				  	" http://localhost:*"+
+				  	" 'self'"+
 				";"+
 				  " style-src" +
  			        " 'self' 'unsafe-inline'"+
@@ -152,7 +153,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 					   " 'none' " +
 					";" +
           " report-uri" +
-						" 'http://localhost:8080' " +
+						" 'http://localhost:4200' " +
 				";" +
 					" default-src" +
  				     " 'self' ");//.reportOnly();

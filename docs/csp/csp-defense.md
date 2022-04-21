@@ -12,6 +12,8 @@ For sensitive web applications, you want to make sure that only the resources yo
 In case of whitelist strategy, you can use a lockdown approach by starting with a default policy that blocks absolutely everything :  `default-src 'none'` and build up your white list from there.
 In case of strict-dynamic strategy, you need to refactor your javascript code, include nonce generation in your application and add the nonce attribute to all your script tags.
 
-In either case, it is highly recommended to test your CSP in report only mode(`report-uri` or `report-to`) during a certain period first and resolve the alerts before applying the CSP. Also, use the same CSP in all your environments (tests and production) in order to avoid incompatibility incidents.
+In either case, it is highly recommended testing your CSP in report only mode(`report-uri` or `report-to`) during a certain period first and resolve the alerts before applying the CSP. Also, use the same CSP in all your environments (tests and production) in order to avoid incompatibility incidents.
+[This page](https://github.com/nico3333fr/CSP-useful/blob/master/csp-wtf/explained.md) can help you analyse CSP notifications that may be difficult to understand.
 
-[csp setup guide book](https://owasp.org/www-pdf-archive//2019-02-22_-_How_do_I_Content_Security_Policy_-_Print.pdf)
+To learn further:
+[OWASP CSP setup guide book](https://owasp.org/www-pdf-archive//2019-02-22_-_How_do_I_Content_Security_Policy_-_Print.pdf)
