@@ -52,6 +52,7 @@ module.exports = {
             "/common-threats/xssi/xssi-pw.md",
             "/csp/csp-overview.md",
             "/csp/csp-defense.md",
+            "/csp/csp-angular.md",
             "/csp/csp-pw.md",
             "/continuous-prevention/",
         ]

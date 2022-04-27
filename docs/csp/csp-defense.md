@@ -1,4 +1,4 @@
-# CSP Defense
+# 8.2 CSP Defense
 
 ## What are the risks of CSP ?
 
