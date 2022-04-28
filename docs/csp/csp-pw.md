@@ -45,6 +45,7 @@ Hints :
 
 ## Part 2
 
+Practical Work Web-Application directory : **pw/pw-csp-nonce**
 
 The purpose of this PW is to implement a CSP based on a dynamic nonce. The CSP will be generated server-side but loaded client-side.
 Then we will add inline scripting and secure it with a nonce.
@@ -52,6 +53,7 @@ Then we will add inline scripting and secure it with a nonce.
 1 - Implement a CSP based on a nonce, server-side:
 
 - Implement a CSPResource REST api endpoint to generate a random nonce and return a content-security-policy which declares this nonce in the "script-src" directive
+
 ``` typescript 
             package com.worldline.bookstore.web.rest;
 
@@ -147,8 +149,9 @@ Then we will add inline scripting and secure it with a nonce.
 ```              
            
 Note : Implement a CSP wrapper class (used by the CSPResource class) with 2 attributes : 
-    - `config` : stores the complete Content-Security-Policy
-    - `nonce` : stores the nonce
+
+- `config` : stores the complete Content-Security-Policy
+- `nonce` : stores the nonce
 
 - Remove the csp configuration loaded from the SecurityConfiguration.java if any
 
@@ -198,8 +201,7 @@ Note : Implement a CSP wrapper class (used by the CSPResource class) with 2 attr
 ```        
 
 Note : you will have to import and declare this new service in app.module.ts
-        
-        
+
 - Load the CSP with a meta tag and add an arbitrary `script` block with a nonce
 ``` typescript         
         Update app.component.ts to add the following implementation
@@ -258,4 +260,9 @@ Note : you will have to import and declare this new service in app.module.ts
 ```        
         
 - Test your app from http://localhost:4200 : the script should be executed without error message
-  Check that your DOM contains the Content-Security-Policy meta tag with the nonce and that the inline scripting uses this nonce. 
+  Check that your DOM contains the Content-Security-Policy meta tag with the nonce and that the inline scripting uses this nonce.
+  
+Hint: Get http://localhost:4200 and see the bottom of the "home" page. Normally a message is displayed. Check the browser's console. No error message.
+If you modify the nonce or remove it from "script" block (see app.component.ts), the script is not executed, and the message is no more displayed. An error appears in the console.
+
+Note  : 'strict-dynamic' source expression specifies that the trust is explicitly given to a script present in the markup, by accompanying it with a nonce or a hash, shall be propagated to all the scripts loaded by that root script. At the same time, any whitelist or source expressions such as 'self' or 'unsafe-inline' will be ignored.
