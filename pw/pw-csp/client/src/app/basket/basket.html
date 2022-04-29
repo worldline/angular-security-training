@@ -1,0 +1,51 @@
+<div class="k-basket k-panel">
+  <h3 class="control ui-state-active">
+
+  </h3>
+  <div class="content">
+
+  </div>
+
+  <div class="k-info-block">
+    <div class="hgroup">
+      <h3>
+        Basket ({{items.length}} item(s) )
+      </h3>
+    </div>
+    <div class="content">
+
+      <ul *ngFor="let item of items">
+        <li>
+          <a [routerLink]="['BookDetails', {id:item.product.id}]" title="Go to the product sheet">
+            <img [src]="'/data/imgs/books/' + item.product.id + '.jpg'" alt="Article" width="100" />
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['BookDetails', {id:item.product.id}]">{{item.product.name}}</a>
+        </li>
+        <li>
+          <label>
+            Quantity:
+            <input type="number" min="1" [(ngModel)]="item.qty" class="product-qty" />
+          </label>
+        </li>
+        <li class="price">{{item.qty * item.product.price | currency:'EUR':true }}</li>
+        <li>
+          <a href="#" (click)="removeProduct(item.product)">
+            <img src="/src/components/basket/delete.svg">
+          </a>
+        </li>
+      </ul>
+
+      <p *ngIf="items?.length ?? 0 > 0" class="basket-total">
+        TOTAL: <strong>{{getTotal() | currency:'EUR':true }}</strong>
+      </p>
+
+      <p class="k-buttons-bar">
+        <a routerLink="/home" class="k-button" (click)="storeBasket()">Save Basket</a>
+      </p>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,75 @@
+<div>
+  <form class="lateral-form">
+    <p>
+      <label for="nbPerPage">Results per page</label>
+      <input type="number" id="nbPerPage" name="nbPerPage" [(ngModel)]="booksPerPageFilter" />
+    </p>
+    <p>
+      <label for="bookName">Filter by name</label>
+      <input type="text" id="bookName" name="bookName" [(ngModel)]="bookNameFilter" />
+    </p>
+    <p>
+      <label for="bookOrderBy">Order By</label>
+      <select name="bookOrderBy" id="bookOrderBy" [(ngModel)]="bookOrderBy">
+        <option>name</option>
+        <option>price</option>
+        <option>rating</option>
+      </select>
+    </p>
+    <p>
+      <label for="Reverse filter">
+        Reverse filter
+      </label>
+      <input id="switchBookOrder" type="checkbox" name="switchBookOrder" [(ngModel)]="reverseOrderFilter">
+    </p>
+  </form>
+
+  <div class="k-catalog" id="list-products">
+
+    <article
+      *ngFor="let book of books | filterField:'name':bookNameFilter | updateData | orderBy:bookOrderBy:reverseOrderFilter | slice:(currentPage-1)*booksPerPageFilter:currentPage*booksPerPageFilter"
+      class="k-product hproduct">
+      <div class="photo-data">
+        <p>
+          <a [routerLink]="['/book/' + book.id]">
+            <img class="photo" [src]="'/data/imgs/books/' + book.id + '.jpg'" />
+          </a>
+        </p>
+      </div>
+
+      <p class="new" *ngIf="book.isNew">new</p>
+
+      <h3 class="fn name">
+        <a [routerLink]="['/book', book.id]" title="See Product sheet">
+          {{book.name}}
+        </a>
+      </h3>
+
+      <p class="rating {{getRatingClass(book)}}">
+
+        <span [hidden]="!book.comments">
+          <a [routerLink]="['BookDetails', {id:book.id}]">{{book.comments?.length}} comment(s)</a>
+        </span>
+        <span [hidden]="book.comments">
+          No comment
+        </span>
+      </p>
+
+      <div class="price-data">
+        <p class="all-prices">
+          <strong class="price new">{{book.price | currency:'EUR':true}}</strong>
+        </p>
+      </div>
+      <div *ngIf="userService.isLogged" class="buyZone">
+        <p class="buy">
+          <a (click)="addToBasket(book)">Add to basket</a>
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+  <kpagination (pageChange)="switchPage($event)" [startPage]="currentPage"
+    [totalNbItems]="dataContainer.filteredBooks?.length ?? 0" [nbItemsPerPage]="booksPerPageFilter"></kpagination>
+
+</div>
