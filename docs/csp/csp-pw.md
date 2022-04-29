@@ -26,7 +26,7 @@ Hints :
        
     - Hints : 
       - Use the spring security API HttpSecurity : HttpSecurity#headers()#contentSecurityPolicy("...")
-      - Set the CSP configuration in /bookstore/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java
+      - Set the CSP configuration in /server/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java
       - Bypass the angular-cli proxy in order to use the server-side CSP configuration ('ng build', then use http://localhost:8080/#/home)     
 
 2 - Configure a CSP 3
