@@ -5,7 +5,7 @@
 Practical Work Web-Application directory : **pw/pw-csrf**
 
 1 - Enable and configure the csrf server-side protection 
-- declare the csrf protection in `/bookstore/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java`
+- declare the csrf protection in `/server/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java`
 - use cookie strategy
 - make sure the cookie is NOT `HttpOnly`
 
@@ -16,7 +16,7 @@ Practical Work Web-Application directory : **pw/pw-csrf**
 - Hint : <span style="color:white; background-color:white">  verify that expected cookies (XSRF-TOKEN) is set and client-side header (X-XSRF-Token) is missing </span>
   
 3 - Enable the csrf client-side protection 
-- configure the csrf protection in `/src/app/app.module.ts`
+- configure the csrf protection in `client/src/app/app.module.ts`
     - Hint : <span style="color:white; background-color:white"> Comment HttpClientXsrfModule.disable() </span>
 - in "Home" page, add a "news" : analyze request and response's headers using the client Firefox Browser Network Monitor , what do you notice ? 
   
