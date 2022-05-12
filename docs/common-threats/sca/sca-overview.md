@@ -1,4 +1,4 @@
-# 5.1 Vulnerable Components Overview
+# 6.1 Vulnerable Components Overview
 
 - The rank of this vulnerability moved from rank 9 to rank 6 in Owasp Top 10
 

@@ -1,4 +1,4 @@
-# 5.5 Vulnerable Components Practical Work
+# 6.5 Vulnerable Components Practical Work
 
 ![pw](../../assets/uncle-pw.png)
 
