@@ -1,4 +1,4 @@
-# 7.3 XSSI protection in Angular
+# 8.3 XSSI protection in Angular
 
 Angular automatically strips the `)]}',\n` prefix if any
 Configure your server to prefix: `)]}',\n` before all your JSON responses.

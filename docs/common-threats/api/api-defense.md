@@ -1,4 +1,4 @@
-# 6.2 Unprotected API Defense
+# 7.2 Unprotected API Defense
 
 - Consistent Input Validation to validate during code reviews.
 - API Authentication gateway to secure authentications (OAuth)

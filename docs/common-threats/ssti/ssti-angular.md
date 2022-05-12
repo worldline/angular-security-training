@@ -1,4 +1,4 @@
-# 4.3 SSTI Protection in Angular
+# 5.3 SSTI Protection in Angular
 
 Angular templates are trusted by default and should be treated as executable code.
 

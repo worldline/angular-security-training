@@ -1,4 +1,4 @@
-# 8.3 CSP in Angular
+# 4.3 CSP in Angular
 
 Angular suggests completing their built-in XSS prevention with the following:
 

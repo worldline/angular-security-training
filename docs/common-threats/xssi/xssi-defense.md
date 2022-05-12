@@ -1,4 +1,4 @@
-# 7.2 XSSI Defense
+# 8.2 XSSI Defense
 
 - JSON response by POST requests only.
 - Don’t return an array or prefix your JSON response

@@ -1,4 +1,4 @@
-# 7.1 XSSI Overview
+# 8.1 XSSI Overview
 
 A JSON vulnerability allows third party website to turn your JSON resource URL into JSONP request under some conditions.
 Exposed when a GET request is made to retrieve JSON information as an array. Combined to a CSRF attack.
