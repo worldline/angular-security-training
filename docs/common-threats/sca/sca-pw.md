@@ -12,9 +12,6 @@ Hints :
 
 2 - Detect known vulnerable third party components
 - Detect known vulnerable JavaScript libraries
-- Detect known vulnerable maven dependencies
 
 Hints : 
-- npm install and execute `retire` in root folder
-      
-- Install and launch maven plugin `MavenDependencyCheck` under `bookstore` folder 
+- npm install and execute `npm audit`
