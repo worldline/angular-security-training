@@ -24,7 +24,13 @@ module.exports = {
                 path: '/jwt/',
                 collapsable: true,
                 children: [
-                   "/common-threats/jwt/jwt-overview.md",
+                   ["/common-threats/jwt/jwt-overview.md","Overview"],
+                   {
+                        title: "Overview",
+                        path: "/common-threats/jwt/jwt-overview.md",
+                        collapse: true
+                   },
+                    
                    "/common-threats/jwt/jwt-workflow.md",
                    "common-threats/jwt/jwt-storage.md",
                    "common-threats/jwt/jwt-known-threats.md",
