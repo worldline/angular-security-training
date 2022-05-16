@@ -19,7 +19,7 @@ module.exports = {
             "/prerequisites/",
             "/introduction/",
             "/common-threats/",
-            "/jwt/",
+            "/common-threats/jwt/",
             {
                 title: 'jwt',
                 path: '/jwt/',
@@ -39,7 +39,7 @@ module.exports = {
                    "/common-threats/jwt/jwt-pw.md"
                 ]
             },
-            "/csrf/",
+            "/common-threats/csrf/",
             {
                 title: 'csrf',
                 path: '/csrf/',
@@ -52,7 +52,7 @@ module.exports = {
                    "/common-threats/csrf/csrf-pw.md"
                 ]
             },
-            "/xss/",
+            "/common-threats/xss/",
             {
                 title: 'xss',
                 path: '/xss/',
@@ -65,7 +65,7 @@ module.exports = {
                    "/common-threats/xss/xss-pw.md"
                 ]
             },
-            "/csp/",
+            "/common-threats/csp/",
             {
                 title: 'csp',
                 path: '/csp/',
@@ -77,7 +77,7 @@ module.exports = {
                   "/csp/csp-pw.md"
                 ]
             },
-            "/ssti/",
+            "/common-threats/ssti/",
             {
                 title: 'ssti',
                 path: '/ssti/',
@@ -88,7 +88,7 @@ module.exports = {
                    "/common-threats/ssti/ssti-angular.md"
                 ]
             },
-            "/third-party/",
+            "/common-threats/third-party/",
             {
                 title: 'third-party',
                 path: '/sca/',
@@ -101,7 +101,7 @@ module.exports = {
                    "/common-threats/sca/sca-pw.md"
                 ]
             },
-            "/api/",
+            "/common-threats/api/",
             {
                 title: 'api',
                 path: '/api/',
@@ -112,7 +112,7 @@ module.exports = {
                   "/common-threats/api/api-pw.md"
                 ]
             },
-            "/xssi/",
+            "/common-threats/xssi/",
             {
                 title: 'xssi',
                 path: '/xssi/',
