@@ -19,6 +19,7 @@ module.exports = {
             "/prerequisites/",
             "/introduction/",
             "/common-threats/",
+            "/jwt/",
             {
                 title: 'jwt',
                 path: '/jwt/',
@@ -38,6 +39,7 @@ module.exports = {
                    "/common-threats/jwt/jwt-pw.md"
                 ]
             },
+            "/csrf/",
             {
                 title: 'csrf',
                 path: '/csrf/',
@@ -50,6 +52,7 @@ module.exports = {
                    "/common-threats/csrf/csrf-pw.md"
                 ]
             },
+            "/xss/",
             {
                 title: 'xss',
                 path: '/xss/',
@@ -62,6 +65,7 @@ module.exports = {
                    "/common-threats/xss/xss-pw.md"
                 ]
             },
+            "/csp/",
             {
                 title: 'csp',
                 path: '/csp/',
@@ -73,6 +77,7 @@ module.exports = {
                   "/csp/csp-pw.md"
                 ]
             },
+            "/ssti/",
             {
                 title: 'ssti',
                 path: '/ssti/',
@@ -83,6 +88,7 @@ module.exports = {
                    "/common-threats/ssti/ssti-angular.md"
                 ]
             },
+            "/third-party/",
             {
                 title: 'third-party',
                 path: '/sca/',
@@ -95,6 +101,7 @@ module.exports = {
                    "/common-threats/sca/sca-pw.md"
                 ]
             },
+            "/api/",
             {
                 title: 'api',
                 path: '/api/',
@@ -105,6 +112,7 @@ module.exports = {
                   "/common-threats/api/api-pw.md"
                 ]
             },
+            "/xssi/",
             {
                 title: 'xssi',
                 path: '/xssi/',
