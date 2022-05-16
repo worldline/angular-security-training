@@ -19,30 +19,22 @@ module.exports = {
             "/prerequisites/",
             "/introduction/",
             "/common-threats/",
-            "/common-threats/jwt/",
             {
                 title: 'jwt',
-                path: '/jwt/',
+                path: '/common-threats/jwt/',
                 collapsable: true,
                 children: [
-                   ["/common-threats/jwt/jwt-overview.md","Overview"],
-                   {
-                        title: "Overview",
-                        path: "/common-threats/jwt/jwt-overview.md",
-                        collapse: true
-                   },
-                    
-                   "/common-threats/jwt/jwt-workflow.md",
+                   "/common-threats/jwt/jwt-overview.md",
+                    "/common-threats/jwt/jwt-workflow.md",
                    "/common-threats/jwt/jwt-storage.md",
                    "/common-threats/jwt/jwt-known-threats.md",
                    "/common-threats/jwt/jwt-best-current-practices.md",
                    "/common-threats/jwt/jwt-pw.md"
                 ]
             },
-            "/common-threats/csrf/",
             {
                 title: 'csrf',
-                path: '/csrf/',
+                path: '/common-threats/csrf/',
                 collapsable: true,
                 children: [
                    "/common-threats/csrf/csrf-overview.md",
@@ -52,10 +44,9 @@ module.exports = {
                    "/common-threats/csrf/csrf-pw.md"
                 ]
             },
-            "/common-threats/xss/",
             {
                 title: 'xss',
-                path: '/xss/',
+                path: '/common-threats/xss/',
                 collapsable: true,
                 children: [
                    "/common-threats/xss/xss-overview.md",
@@ -65,7 +56,6 @@ module.exports = {
                    "/common-threats/xss/xss-pw.md"
                 ]
             },
-            "/common-threats/csp/",
             {
                 title: 'csp',
                 path: '/csp/',
@@ -77,10 +67,9 @@ module.exports = {
                   "/csp/csp-pw.md"
                 ]
             },
-            "/common-threats/ssti/",
             {
                 title: 'ssti',
-                path: '/ssti/',
+                path: '/common-threats/ssti/',
                 collapsable: true,
                 children: [
                    "/common-threats/ssti/ssti-overview.md",
@@ -88,10 +77,9 @@ module.exports = {
                    "/common-threats/ssti/ssti-angular.md"
                 ]
             },
-            "/common-threats/third-party/",
             {
                 title: 'third-party',
-                path: '/sca/',
+                path: '/common-threats/sca/',
                 collapsable: true,
                 children: [
                    "/common-threats/sca/sca-overview.md",
@@ -101,10 +89,9 @@ module.exports = {
                    "/common-threats/sca/sca-pw.md"
                 ]
             },
-            "/common-threats/api/",
             {
                 title: 'api',
-                path: '/api/',
+                path: '/common-threats/api/',
                 collapsable: true,
                 children: [
                   "/common-threats/api/api-overview.md",
@@ -112,10 +99,9 @@ module.exports = {
                   "/common-threats/api/api-pw.md"
                 ]
             },
-            "/common-threats/xssi/",
             {
                 title: 'xssi',
-                path: '/xssi/',
+                path: '/common-threats/xssi/',
                 collapsable: true,
                 children: [
                   "/common-threats/xssi/xssi-overview.md",
