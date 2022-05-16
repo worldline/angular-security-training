@@ -18,7 +18,15 @@ module.exports = {
         sidebar: [
             "/prerequisites/",
             "/introduction/",
-            ['/common-threats/jwt/','jwt'],
+            '/common-threats/jwt/': [
+                'jwt-overview',
+                'jwt-workflow',
+                'jwt-storage', 
+                'jwt-known-threats',
+                'jwt-best-current-practices',
+                'jwt-pw'
+            ],
+            '/common-threats/csrf/': 'auto',
             "/common-threats/",
             {
                 title: 'jwt',
