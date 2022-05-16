@@ -24,14 +24,12 @@ module.exports = {
                 path: '/jwt/',
                 collapsable: true,
                 children: [
-                   {
-                      ['/common-threats/jwt/jwt-overview.md', 'Overview'],
-                      ['/common-threats/jwt/jwt-workflow.md', 'Workflow'],
-                      ['/common-threats/jwt/jwt-storage.md', 'Storage'],
-                      ['/common-threats/jwt/jwt-known-threats.md', 'Threats'],
-                      ['/common-threats/jwt/jwt-best-current-practices.md', 'Best practices'],
-                      ['/common-threats/jwt/jwt-pw.md', 'Practical works']
-                   }
+                   "/common-threats/jwt/jwt-overview.md",
+                   "/common-threats/jwt/jwt-workflow.md",
+                   "common-threats/jwt/jwt-storage.md",
+                   "common-threats/jwt/jwt-known-threats.md",
+                   "common-threats/jwt/jwt-best-current-practices.md",
+                   "common-threats/jwt/jwt-pw.md"
                 ]
             },
             {
