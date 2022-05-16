@@ -18,6 +18,7 @@ module.exports = {
         sidebar: {
             "/prerequisites/",
             "/introduction/",
+            '/common-threats/xss/',
             '/common-threats/jwt/': [
                 'jwt-overview',
                 'jwt-workflow',
