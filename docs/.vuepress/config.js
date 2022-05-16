@@ -18,6 +18,7 @@ module.exports = {
         sidebar: [
             "/prerequisites/",
             "/introduction/",
+            "/common-threats/",
             {
                 title: 'jwt',
                 path: '/common-threats/jwt',
