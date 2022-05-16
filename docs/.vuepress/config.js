@@ -32,10 +32,10 @@ module.exports = {
                    },
                     
                    "/common-threats/jwt/jwt-workflow.md",
-                   "common-threats/jwt/jwt-storage.md",
-                   "common-threats/jwt/jwt-known-threats.md",
-                   "common-threats/jwt/jwt-best-current-practices.md",
-                   "common-threats/jwt/jwt-pw.md"
+                   "/common-threats/jwt/jwt-storage.md",
+                   "/common-threats/jwt/jwt-known-threats.md",
+                   "/common-threats/jwt/jwt-best-current-practices.md",
+                   "/common-threats/jwt/jwt-pw.md"
                 ]
             },
             {
