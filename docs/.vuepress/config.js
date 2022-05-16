@@ -19,42 +19,114 @@ module.exports = {
             "/prerequisites/",
             "/introduction/",
             "/common-threats/",
-            "/common-threats/jwt/jwt-overview.md",
-            "/common-threats/jwt/jwt-workflow.md",
-            "/common-threats/jwt/jwt-storage.md",
-            "/common-threats/jwt/jwt-known-threats.md",
-            "/common-threats/jwt/jwt-best-current-practices.md",
-            "/common-threats/jwt/jwt-pw.md",
-            "/common-threats/csrf/csrf-overview.md",
-            "/common-threats/csrf/csrf-detection.md",
-            "/common-threats/csrf/csrf-defense.md",
-            "/common-threats/csrf/csrf-angular.md",
-            "/common-threats/csrf/csrf-pw.md",
-            "/common-threats/xss/xss-overview.md",
-            "/common-threats/xss/xss-detection.md",
-            "/common-threats/xss/xss-defense.md",
-            "/common-threats/xss/xss-angular.md",
-            "/common-threats/xss/xss-pw.md",
-            "/csp/csp-overview.md",
-            "/csp/csp-defense.md",
-            "/csp/csp-angular.md",
-            "/csp/csp-pw.md",
-            "/common-threats/sca/sca-overview.md",
-            "/common-threats/sca/sca-detection.md",
-            "/common-threats/sca/sca-defense.md",
-            "/common-threats/sca/sca-angular.md",
-            "/common-threats/sca/sca-pw.md",
-            "/common-threats/ssti/ssti-overview.md",
-            "/common-threats/ssti/ssti-defense.md",
-            "/common-threats/ssti/ssti-angular.md",
-            "/common-threats/api/api-overview.md",
-            "/common-threats/api/api-defense.md",
-            "/common-threats/api/api-pw.md",
-            "/common-threats/xssi/xssi-overview.md",
-            "/common-threats/xssi/xssi-defense.md",
-            "/common-threats/xssi/xssi-angular.md",
-            "/common-threats/xssi/xssi-pw.md",
-            "/continuous-prevention/",
+            {
+                title: 'jwt',
+                path: '/jwt/',
+                collapsable: true,
+                children: [
+                   {
+                      ['/common-threats/jwt/jwt-overview.md', 'Overview'],
+                      ['/common-threats/jwt/jwt-workflow.md', 'Workflow'],
+                      ['/common-threats/jwt/jwt-storage.md', 'Storage'],
+                      ['/common-threats/jwt/jwt-known-threats.md', 'Threats'],
+                      ['/common-threats/jwt/jwt-best-current-practices.md', 'Best practices'],
+                      ['/common-threats/jwt/jwt-pw.md', 'Practical works']
+                   }
+                ]
+            },
+            {
+                title: 'csrf',
+                path: '/csrf/',
+                collapsable: true,
+                children: [
+                   {
+                      ['/common-threats/csrf/csrf-overview.md', 'Overview'],
+                      ['/common-threats/csrf/csrf-detection.md', 'Detection'],
+                      ['/common-threats/csrf/csrf-defense.md', 'Defense'],
+                      ['/common-threats/csrf/csrf-angular.md', 'Implementation'],
+                      ['/common-threats/csrf/csrf-pw.md', 'Practical works']
+                   }
+                ]
+            },
+            {
+                title: 'xss',
+                path: '/xss/',
+                collapsable: true,
+                children: [
+                   {
+                      ['/common-threats/xss/xss-overview.md', 'Overview'],
+                      ['/common-threats/xss/xss-detection.md', 'Detection'],
+                      ['/common-threats/xss/xss-defense.md', 'Defense'],
+                      ['/common-threats/xss/xss-angular.md', 'Implementation'],
+                      ['/common-threats/xss/xss-pw.md', 'Practical works']
+                   }
+                ]
+            },
+            {
+                title: 'csp',
+                path: '/csp/',
+                collapsable: true,
+                children: [
+                   {
+                      ['/csp/csp-overview.md', 'Overview'],
+                      ['/csp/csp-defense.md', 'Detection'],
+                      ['/csp/csp-angular.md', 'Implementation'],
+                      ['/csp/csp-pw.md', 'Practical works']
+                   }
+                ]
+            },
+            {
+                title: 'ssti',
+                path: '/ssti/',
+                collapsable: true,
+                children: [
+                   {
+                      ['/common-threats/ssti/ssti-overview.md', 'Overview'],
+                      ['/common-threats/ssti/ssti-defense.md', 'Defense'],
+                      ['/common-threats/ssti/ssti-angular.md', 'Implementation']
+                   }
+                ]
+            },
+            {
+                title: 'third-party',
+                path: '/sca/',
+                collapsable: true,
+                children: [
+                   {
+                      ['/common-threats/sca/sca-overview.md', 'Overview'],
+                      ['/common-threats/sca/sca-detection.md', 'Detection'],
+                      ['/common-threats/sca/sca-defense.md', 'Defense'],
+                      ['/common-threats/sca/sca-angular.md', 'Implementation'],
+                      ['/common-threats/sca/sca-pw.md', 'Practical works']
+                   }
+                ]
+            },
+            {
+                title: 'api',
+                path: '/api/',
+                collapsable: true,
+                children: [
+                   {
+                      ['/common-threats/api/api-overview.md', 'Overview'],
+                      ['/common-threats/api/api-defense.md', 'Defense'],
+                      ['/common-threats/api/api-pw.md', 'Practical works']
+                   }
+                ]
+            },
+            {
+                title: 'xssi',
+                path: '/xssi/',
+                collapsable: true,
+                children: [
+                   {
+                      ['/common-threats/xssi/xssi-overview.md', 'Overview'],
+                      ['/common-threats/sca/sca-defense.md', 'Defense'],
+                      ['/common-threats/xssi/xssi-angular.md', 'Implementation'],
+                      ['/common-threats/xssi/xssi-pw.md', 'Practical works']
+                   }
+                ]
+            },
+            "/continuous-prevention/"
         ]
     },
 }
