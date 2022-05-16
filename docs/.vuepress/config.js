@@ -15,19 +15,10 @@ module.exports = {
     themeConfig: {
 
         logo: '/logo.svg',
-        sidebar: {
+        sidebar: [
             "/prerequisites/",
             "/introduction/",
             '/common-threats/xss/',
-            '/common-threats/jwt/': [
-                'jwt-overview',
-                'jwt-workflow',
-                'jwt-storage', 
-                'jwt-known-threats',
-                'jwt-best-current-practices',
-                'jwt-pw'
-            ],
-            '/common-threats/csrf/': 'auto',
             "/common-threats/",
             {
                 title: 'jwt',
@@ -121,6 +112,6 @@ module.exports = {
                 ]
             },
             "/continuous-prevention/"
-        }
+        ]
     },
 }
