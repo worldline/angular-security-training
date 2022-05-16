@@ -18,24 +18,20 @@ module.exports = {
         sidebar: [
             "/prerequisites/",
             "/introduction/",
-            "/common-threats/",
             {
-                title: 'jwt',
-                path: '/common-threats/jwt/',
+                title: 'common-threats',
+                path: '/common-threats/',
                 collapsable: true,
                 children: [
                     {
                         title: 'jwt',
                         path: '/common-threats/jwt/',
-                        collapsable: true,
-                        children: [    
-                            "/common-threats/jwt/jwt-overview.md",
-                            "/common-threats/jwt/jwt-workflow.md",
-                            "/common-threats/jwt/jwt-storage.md",
-                            "/common-threats/jwt/jwt-known-threats.md",
-                            "/common-threats/jwt/jwt-best-current-practices.md",
-                            "/common-threats/jwt/jwt-pw.md"
-                        ]      
+                        collapsable: true      
+                    },
+                    {
+                        title: 'csrf',
+                        path: '/common-threats/csrf/',
+                        collapsable: true
                     }
                   ]
             },
