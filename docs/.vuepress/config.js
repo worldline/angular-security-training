@@ -19,17 +19,10 @@ module.exports = {
             "/prerequisites/",
             "/introduction/",
             {
-                title: 'common-threats',
-                path: '/common-threats/',
+                title: 'jwt',
+                path: '/common-threats/jwt',
                 collapsable: true,
-                children: [
-                  {
-                    title: 'jwt',
-                    path: '/common-threats/jwt/',
-                    collapsable: true,
-                    children: [["/common-threats/jwt/","jwt"]]
-                  },
-                ]
+                children: [["/common-threats/jwt/","jwt"]]
             },
             "/common-threats/",
             {
