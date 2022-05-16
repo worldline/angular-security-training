@@ -15,7 +15,7 @@ module.exports = {
     themeConfig: {
 
         logo: '/logo.svg',
-        sidebar: [
+        sidebar: {
             "/prerequisites/",
             "/introduction/",
             '/common-threats/jwt/': [
@@ -120,6 +120,6 @@ module.exports = {
                 ]
             },
             "/continuous-prevention/"
-        ]
+        }
     },
 }
