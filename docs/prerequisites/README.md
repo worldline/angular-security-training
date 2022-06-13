@@ -5,7 +5,9 @@
 
 # Development environment for practical work
 
-::: tip If it is allowed by your local security policy, you can work under a Linux VM, to get a better development experience. This is not mandatory for this training though. :::
+::: tip 
+If it is allowed by your local security policy, you can work under a Linux VM, to get a better development experience. This is not mandatory for this training though.
+:::
 
 To install Angular on your local system, you need the following:
 - Node.js v15+ (https://nodejs.org/en/download/)
