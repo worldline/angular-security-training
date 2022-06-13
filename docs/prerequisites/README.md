@@ -10,9 +10,10 @@ If it is allowed by your local security policy, you can work under a Linux VM, t
 :::
 
 To install Angular on your local system, you need the following:
-- Node.js v15+ (https://nodejs.org/en/download/)
+- Node.js v16.10+ (https://nodejs.org/en/download/)
 - npm package manager (installed with Node.js)
 - Visual Studio Code (https://code.visualstudio.com/)
+- Maven 3 (https://maven.apache.org/download.cgi)
 - Java 11 (https://www.azul.com/downloads/?architecture=x86-64-bit&package=jdk)
 
 # Practical work: Setup your project
@@ -23,16 +24,22 @@ The project used for practical works stands as the webapp backend and hosts the 
 - A client created using Angular
 
 ## Get started
-- Clone the project
+- **Clone the project**
   ```sh
   git clone https://github.com/worldline/angular-security-training.git
   ```
-- Go to first practical work
+- **Go to first practical work**
   ```sh
   cd angular-security-training/pw/pw-jwt-oauth
   ```
-- Open the "server" folder in a terminal and execute "mvn" 
-- Open the "client" folder in another terminal
-- npm install (only for the first time)
-- npm start
-- Open the url "http://localhost:4200" in a browser
+- **Open the "server" folder in a terminal and execute "mvn"** 
+  
+  **Optional** : only in case of error on jdk version during execution, export JAVA_HOME variable and re-execute mvn
+  ```sh
+  export JAVA_HOME='PATH_TO_JDK11_ROOT_FOLDER';
+  mvn
+  ```
+- **Open the "client" folder in another terminal**
+- **npm install** (only for the first time)
+- **npm start**
+- **Open the url "http://localhost:4200" in a browser**
