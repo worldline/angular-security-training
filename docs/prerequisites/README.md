@@ -9,12 +9,12 @@
 If it is allowed by your local security policy, you can work under a Linux VM, to get a better development experience. This is not mandatory for this training though.
 :::
 
-To install Angular on your local system, you need the following:
+To implement practical works on your local system, you need the following:
 - Node.js v16.10+ (https://nodejs.org/en/download/)
 - npm package manager (installed with Node.js)
-- Visual Studio Code (https://code.visualstudio.com/)
 - Maven 3 (https://maven.apache.org/download.cgi)
 - Java 11 (https://www.azul.com/downloads/?architecture=x86-64-bit&package=jdk)
+- Visual Studio Code (https://code.visualstudio.com/) or any IDE 
 
 # Practical work: Setup your project
 
