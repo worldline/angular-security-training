@@ -1,0 +1,57 @@
+<div id="container">
+
+  <header role="banner">
+
+    <h1>
+      SDCO Book Store
+      <small>All the books you need, at the highest price!</small>
+    </h1>
+
+    <p *ngIf="userService.isLogged" class="k-basket-sum">
+      <a [routerLink]="['basket']" title="See basket details">
+        <strong>
+          {{userService.basket?.getItems()?.length ?? 0}}
+        </strong>
+        item(s) in your basket
+      </a>
+    </p>
+    <p *ngIf="userService.isLogged" class="k-login-data">
+      Welcome,
+      <span id="user-name">
+        <a [routerLink]="['profile']">
+          {{userService.getUser()?.firstName}}
+          {{userService.getUser()?.lastName}}
+        </a>
+      </span>
+      [<strong><a routerLink="/login" (click)="logout()">Logout</a></strong>]
+    </p>
+
+    <p *ngIf="!userService.isLogged" id="loginLink" class="k-login-data">
+      <a [routerLink]="['login']">Sign-in</a>
+    </p>
+
+  </header>
+
+  <nav>
+    <h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+    <ul class="k-navbar">
+      <li class="home"><a [routerLink]="['home']">Home</a></li>
+      <li><a [routerLink]="['books']">Books</a></li>
+    </ul>
+  </nav>
+
+  <div id="wrapper">
+    <div id="main" role="main">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- <aside role="complementary">
+		</aside> -->
+  </div>
+
+  <footer role="contentinfo">
+    <p class="k-copyright">&copy; SDCO</p>
+    <a [routerLink]="['contact']">Contact Us</a>
+  </footer>
+
+</div>
