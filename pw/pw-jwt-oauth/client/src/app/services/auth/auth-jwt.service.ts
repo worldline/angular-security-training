@@ -22,7 +22,7 @@ export class AuthServerProvider {
     let data = {
       username: credentials.username,
       password: credentials.password,
-      rememberMe: credentials.rememberMe,
+      rememberMe: false,
     };
     return this.http
       .post('api/authenticate', data, { observe: 'response' })
@@ -43,6 +43,13 @@ export class AuthServerProvider {
     // store the jwt in the credentials ( use  storeAuthenticationToken )
     // this.storeAuthenticationToken(.....);
     // return the jwt
+
+    let bearerToken = resp.headers.get('Authorization');
+    if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') {
+      let jwt = bearerToken.slice(7, bearerToken.length);
+      this.storeAuthenticationToken(jwt, rememberMe);
+      return jwt;
+    }
     return resp;
   }
 

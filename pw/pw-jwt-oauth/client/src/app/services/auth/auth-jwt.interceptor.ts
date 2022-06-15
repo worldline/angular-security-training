@@ -35,7 +35,17 @@ export class JwtInterceptor implements HttpInterceptor {
     //   }
     // });
 
-    return next.handle(req).pipe(
+    let token = this.ng2localStorage.retrieve('authenticationToken') || this.ng2sessionStorage.retrieve('authenticationToken');
+    if (token) {
+      req = req.clone({
+        setHeaders: {
+          Authorization: 'Bearer ' + token
+        }
+      });
+    }
+
+
+      return next.handle(req).pipe(
       tap(
         (event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
