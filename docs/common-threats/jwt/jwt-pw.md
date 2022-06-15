@@ -4,7 +4,7 @@
 
 Practical Work Web-Application directory : **pw/pw-jwt-oauth/**
 
-1 - In `client/src/services/auth/auth-jwt.service.ts`, implement the `authenticateSuccess` function by following the comments.
+1 - In `client/src/app/services/auth/auth-jwt.service.ts`, implement the `authenticateSuccess` function by following the comments.
 
 2 - Implement HttpInterceptor "client/src/services/auth/auth-jwt.interceptor.ts" in order to send the JWT via the Authorization request header
 
