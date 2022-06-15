@@ -29,9 +29,9 @@ JWT  looks like the following in its JWS compact serialization :
 
 ## What is a Bearer Token ?
 
-The Bearer Token is the given name of a **JWT when it is used for authentication purpose**. 
-The Bearer Token must at least have the "sub" and "exp" property defined in the JWT Payload. 
-In the JWT authentication workflow, the bearer token becomes a signed temporary replacement for the login/password credentials.
+The Bearer Token is a **JWT used during an authentication process for authorization purpose**. 
+Bearer Tokens are part of the OAuth V2 standard and widely adopted by many APIs.
+In the JWT authorization workflow, the bearer token becomes a signed temporary replacement for the login/password credentials.
 
 ## What are JWT benefits for authentication ?
 
