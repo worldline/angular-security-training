@@ -38,7 +38,7 @@ In the JWT authorization workflow, the bearer token becomes a signed temporary r
 The main authentication methods are the following:
 
 - HTTP basic authentication: relies on a simple credential scheme with username:password. They are sent in every request with risk of exposure even if sent in a secure connection. The password management is not trivial as you have to ask the user to change their passwords regularly. This method must be avoided in modern web applications, unless you add a multi-factor authentication layer.
-- Authentication Cookies : CSRF and XSS can be mitigated if you always use HttpOnly flag and use signed cookies for authentication. This methode is incompatible with REST as it introduces a state into a stateless protocol.
+- Authentication Cookies : CSRF and XSS can be mitigated if you always use HttpOnly flag and use signed cookies for authentication. This method is incompatible with REST as it introduces a state into a stateless protocol.
 - Signature: Requires private key management. Useful for API authentication only and not adapted for browser/client authentication.
 - JWT: Token based authentication widely spread today for both browser / client (SPA) and RESTful API authentication. Secure implementation is needed to avoid potential threats.
 
