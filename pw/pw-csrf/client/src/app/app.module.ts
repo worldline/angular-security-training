@@ -45,7 +45,7 @@ import { Login } from './login/login';
     ReactiveFormsModule,
     NgxWebstorageModule.forRoot(),
     HttpClientModule,
-    HttpClientXsrfModule.disable()
+    //HttpClientXsrfModule.disable()
   ],
   providers: [
     UserService,

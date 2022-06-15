@@ -9,7 +9,7 @@ export class NewsService {
   constructor(private http: HttpClient) {}
 
   getNews(): Observable<News[]> {
-    return this.http.get<News[]>('/api/news');
+    return this.http.get<News[]>('/api/news/');
   }
 
   addLike(news: News) {
