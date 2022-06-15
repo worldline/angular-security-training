@@ -1,0 +1,9 @@
+[
+	{
+		"login": "admin",
+		"password": "admin",
+		"firstName":"john",
+		"lastName": "doe",
+		"nbItems": 0
+	}
+]

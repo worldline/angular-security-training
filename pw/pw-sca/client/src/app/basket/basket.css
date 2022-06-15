@@ -1,0 +1,10 @@
+.k-info-block{
+	width: 50%;
+}
+
+.content > ul > li {
+	display: inline-block;
+	width: 18%;
+	text-align: center;
+}
+
