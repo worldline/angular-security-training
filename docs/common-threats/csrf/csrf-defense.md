@@ -2,10 +2,6 @@
 
 ## What are the primary defense mechanisms against CSRF ?
 
-::: tip
-The most robust defense against CSRF is to make the contents of each request unpredictable using randomly generated Tokens.
-:::
-
 ### Synchronizer Tokens
 
 - **Description**: The server adds a request parameter to each form, assigning the field a different random value for each session (or for each request.) The server confirms that each subsequent request has this field and that its value matches the one assigned for the session.
