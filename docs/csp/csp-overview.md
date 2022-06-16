@@ -5,12 +5,24 @@
 Content Security Policy (CSP) is a W3C standard introduced to prevent cross-site-scripting, click-jacking and other code injection attacks resulting of malicious inputs in the trusted web page context.
 CSP defines a standard methods for web application developers to declare approved origins of content that browsers should allow loading.
 
+**CSP is a new browser security policy** :
+- Defines what it is allowed to happen in a page
+- Delivered by the server in a response header or meta tag 
+
+![image](https://user-images.githubusercontent.com/1529433/174068330-0d060e3a-a1f9-4e0f-96b4-7e254658d7e0.png)
+![image](https://user-images.githubusercontent.com/1529433/174068366-ae57dff9-d2c9-44bc-be1e-b20fa18eec95.png)
+![image](https://user-images.githubusercontent.com/1529433/174068400-0a14e41e-ecfe-47c3-b935-f576f5aff544.png)
+
 ::: warning
 CSP is not intended as a first level of defense against code injection attacks like XSS. CSP is best used as defense-in-depth. 
 It reduces the risk that malicious injection can cause, but it is not a replacement for careful input validation and output encoding.
 :::
 
+## Implementation
+
 To enable CSP, you need to configure your web application to return the `Content-Security-Policy` HTTP header.
+
+![image](https://user-images.githubusercontent.com/1529433/174067752-0b1dd582-22af-4fb2-8398-2a61fe114284.png)
 
 ## CSP evolution to strict CSP
 
@@ -70,7 +82,7 @@ Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline' 'self' ht
 ```
 
 ::: tip
-[This online tool](https://csper.io/evaluator) can help you evaluate the strength of your CSP.
+[This online tool](https://csper.io/evaluator) or [this one](https://csp-evaluator.withgoogle.com/) can help you evaluate the strength of your CSP.
 :::
 
 To learn further about CSP, don't hesitate to check [there Quick Reference Guide](https://content-security-policy.com/).
