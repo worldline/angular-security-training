@@ -11,7 +11,7 @@ CSP defines a standard methods for web application developers to declare approve
 
 ![image](https://user-images.githubusercontent.com/1529433/174068330-0d060e3a-a1f9-4e0f-96b4-7e254658d7e0.png)
 ![image](https://user-images.githubusercontent.com/1529433/174068366-ae57dff9-d2c9-44bc-be1e-b20fa18eec95.png)
-![image](https://user-images.githubusercontent.com/1529433/174068400-0a14e41e-ecfe-47c3-b935-f576f5aff544.png)
+![image](https://user-images.githubusercontent.com/1529433/174069124-fee089b7-c043-4827-985c-b3731d149c84.png)
 
 ::: warning
 CSP is not intended as a first level of defense against code injection attacks like XSS. CSP is best used as defense-in-depth. 
