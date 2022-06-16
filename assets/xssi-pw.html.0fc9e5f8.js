@@ -1,0 +1,1 @@
+const t={key:"v-a9333d56",path:"/common-threats/xssi/xssi-pw.html",title:"8.4 XSSI Practical Work",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1655382542e3,contributors:[{name:"Nourredine K",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"common-threats/xssi/xssi-pw.md"};export{t as data};

@@ -1,0 +1,1 @@
+const t={key:"v-2afd2bf4",path:"/common-threats/xssi/xssi-angular.html",title:"8.3 XSSI protection in Angular",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1655382542e3,contributors:[{name:"Nourredine K",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"common-threats/xssi/xssi-angular.md"};export{t as data};
