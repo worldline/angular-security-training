@@ -18,10 +18,7 @@ white-list CSP properties requires a lot of customization and maintenance.
 
 CSP evolution with `script-src` directive :
 
-| version 1 | version 2 | version 3 |
-| `http: ... https: ...` | `nonce-{random}` | `strict-dynamic` |
-| white-list strategy | random id associated with `<script>` tag | propagates trust to `nonced` blocks |
-| Unsecure, difficult to maintain, can be easily bypassed | restrictive with trusted external resources | with nonce, security & flexibility |
+![image](https://user-images.githubusercontent.com/1529433/174065897-e3d89da5-7228-4954-a2e4-6154f878c96c.png)
 
 A **nonce** is a random number generated for single usage to mark a `<script>` tag as trusted.
 
