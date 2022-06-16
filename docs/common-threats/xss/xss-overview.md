@@ -2,9 +2,7 @@
 
 ## XSS in a nutshell
 
-XSS (Cross Site Scripting) happens when an attacker enters a malicious script in a web application through a web request.
-
-The script is included in dynamic content that is reflected back to the victim's web browser without validation for malicious content.
+Cross-Site Scripting (XSS) is a web application vulnerability that occurs when **untrusted data from the user** is processed by the web application **without validation** and is reflected back to the browser **without encoding or escaping**, resulting in code execution at the browser engine.
 
 ![xss-wf](../../assets/xss-wf.png)
 
