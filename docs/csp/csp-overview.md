@@ -60,6 +60,10 @@ Most recent browsers version support CSP version 2.
 - `plugin-types` : Identifies the set of plugins that can be invoked via objects, embeds, or applets, defined using MIME types.
     
 - `base-uri` : Allows URLs in the src attribute of any tag.
+  
+- `report-uri`: Instructs the browser to POST a reports of policy failures to this URI. 
+You can also use **Content-Security-Policy-Report-Only** as the HTTP header name to instruct the browser to only send reports (does not block anything). 
+This directive is deprecated in CSP Level 3 in favor of the report-to directive.
 
 ::: warning
 As of today, some CSP properties may not be supported by all browsers. IE is known to have limited support for CSP
