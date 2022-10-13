@@ -89,26 +89,28 @@ module.exports = {
                    "/common-threats/sca/sca-pw.md"
                 ]
             },
+
+            "/advanced/",
             {
-                title: 'api',
-                path: '/common-threats/api/',
-                collapsable: true,
-                children: [
-                  "/common-threats/api/api-overview.md",
-                  "/common-threats/api/api-defense.md",
-                  "/common-threats/api/api-pw.md"
-                ]
+                 title: 'api',
+                 path: '/common-threats/api/',
+                 collapsable: true,
+                 children: [
+                    "/common-threats/api/api-overview.md",
+                    "/common-threats/api/api-defense.md",
+                    "/common-threats/api/api-pw.md"
+                 ]
             },
             {
-                title: 'xssi',
-                path: '/common-threats/xssi/',
-                collapsable: true,
-                children: [
-                  "/common-threats/xssi/xssi-overview.md",
-                  "/common-threats/sca/sca-defense.md",
-                  "/common-threats/xssi/xssi-angular.md",
-                  "/common-threats/xssi/xssi-pw.md"
-                ]
+                 title: 'xssi',
+                 path: '/common-threats/xssi/',
+                 collapsable: true,
+                 children: [
+                     "/common-threats/xssi/xssi-overview.md",
+                     "/common-threats/xssi/xssi-defense.md",
+                     "/common-threats/xssi/xssi-angular.md",
+                     "/common-threats/xssi/xssi-pw.md"
+                 ]
             },
            "/continuous-prevention/"
         ]

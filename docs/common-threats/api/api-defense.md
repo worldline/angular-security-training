@@ -16,7 +16,7 @@ Protection based on custom implementation: Filters, Interceptors, Annotations (J
 Hide template portions depending on user profile: 
 - Mitigation (not a protection!)
 - Combined with server-side API protection
-- Client-side implementation : ngIf directive or dedicated module (ng2Shiro, sdco-angular-shiro, …)
+- Client-side implementation : ngIf directive or dedicated module.
 
 ## Cross-origin resource sharing (CORS)
 
