@@ -9,11 +9,11 @@ It is a mix of 2 protection patterns : "Double submit cookie" and "Custom header
 
 ## cookie-to-header workflow
 
-1. After authentication, the server-side sends a random CSRF token in a cookie.
-2. Angular reads the token from the cookie.
-3. Angular puts token in request header.
-4. For each request, the browser sends the cookie and the request header.
-5. Server extract and compares both tokens received from the client.
+1. During authentication, the server sends a random CSRF token in a cookie `XSRF-TOKEN`.
+2. Angular reads the token from the cookie `XSRF-TOKEN`.
+3. Angular puts token in request header `X-XSRF-TOKEN`.
+4. For each request, the browser sends the cookie **and** the request header.
+5. Server extract and compares **both** tokens received from the client.
 6. Server decides to verify the action only if the tokens match.
 
 ![cookie-to-header](../../assets/cookie-to-header.png)

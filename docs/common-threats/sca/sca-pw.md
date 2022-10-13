@@ -11,7 +11,4 @@ Hints :
 - if CSP is configured, you will have to update it in order to allow external resources from CDN (add appropriate hash in `script-src` directive - work only for Chrome) 
 
 2 - Detect known vulnerable third party components
-- Detect known vulnerable JavaScript libraries
-
-Hints : 
-- npm install and execute `npm audit`
+- execute `npm audit` and review the report.

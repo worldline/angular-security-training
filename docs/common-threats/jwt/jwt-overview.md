@@ -12,7 +12,7 @@ JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and s
 
 ## What is JWT Structure ?
 
-JWT  looks like the following in its JWS compact serialization :
+JWT looks like the following in its JWS compact serialization :
 
 ![jwt-structure](../../assets/jwt-structure.png)
 
@@ -29,9 +29,9 @@ JWT  looks like the following in its JWS compact serialization :
 
 ## What is a Bearer Token ?
 
-The Bearer Token is a **JWT used during an authentication process for authorization purpose**. 
+The Bearer Token is a **JWT used during an authentication process**. 
 Bearer Tokens are part of the OAuth V2 standard and widely adopted by many APIs.
-In the JWT authorization workflow, the bearer token becomes a signed temporary replacement for the login/password credentials.
+In the JWT authentication workflow, the bearer token becomes a signed temporary replacement for the login/password credentials.
 
 ## What are JWT benefits for authentication ?
 

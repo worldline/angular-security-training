@@ -4,7 +4,7 @@
 
 **Software composition Analysis** (SCA) tools enable you to **perform automated scan** of all client-side and server-side components, and their dependencies used in your web application.
 These SCA tools continuously monitor vulnerabilities databases like NVD or OSS Index and alert you of potential threats in your project.
-Here is a list of SCA tools we recommend to use: Dependency-Track, Dependency-Check, retire.js
+Here is a list of SCA tools we recommend to use: Dependency-Track, Dependency-Check
 
 ::: warning
 SCA reports requires further analysis from your end in order to identify the real impact based on your context and filter out false positives.
@@ -33,7 +33,7 @@ Usage :
 - Features:
     - Scan all maven dependencies
     - Access to the NVD and check CVE
-    - Generate a complete report (HTML format): vulnerabilitties, criticality level, CVE code, patched versions ...
+    - Generate a complete report (HTML format): vulnerabilities, criticality level, CVE code, patched versions ...
     
 - Execute the maven command mvn org.owasp:dependency-check-maven:check
 

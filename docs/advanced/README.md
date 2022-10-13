@@ -1,4 +1,4 @@
-# 3 Advanced
+# 3- Advanced Threats
 
 Additional best practices to learn further about securing angular application:
 
