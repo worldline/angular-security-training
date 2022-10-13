@@ -2,7 +2,7 @@ module.exports = {
     // site config
     base: '/angular-security-training/',
     lang: 'en-US',
-    title: 'Angular Security Hardening Training',
+    title: 'Angular Security Training',
     description: 'Learn how to prevent common threats in your Angular web application !',
     head: [
         ['link', { rel: 'icon', href: '/logo.svg' }],

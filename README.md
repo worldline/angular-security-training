@@ -1,4 +1,4 @@
-# Worldline's Angular Security Hardening training material
+# Worldline's Angular Security training material
 
 ## Train with us
 You can follow the training here: https://worldline.github.io/angular-security-training/
