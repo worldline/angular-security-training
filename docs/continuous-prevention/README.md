@@ -1,4 +1,4 @@
-# 3. Global recommendations
+# 4. Global recommendations
 
 
 - Use the latest Angular possible

@@ -93,23 +93,23 @@ module.exports = {
             "/advanced/",
             {
                  title: 'api',
-                 path: '/common-threats/api/',
+                 path: '/advanced/api/',
                  collapsable: true,
                  children: [
-                    "/common-threats/api/api-overview.md",
-                    "/common-threats/api/api-defense.md",
-                    "/common-threats/api/api-pw.md"
+                    "/advanced/api/api-overview.md",
+                    "/advanced/api/api-defense.md",
+                    "/advanced/api/api-pw.md"
                  ]
             },
             {
                  title: 'xssi',
-                 path: '/common-threats/xssi/',
+                 path: '/advanced/xssi/',
                  collapsable: true,
                  children: [
-                     "/common-threats/xssi/xssi-overview.md",
-                     "/common-threats/xssi/xssi-defense.md",
-                     "/common-threats/xssi/xssi-angular.md",
-                     "/common-threats/xssi/xssi-pw.md"
+                     "/advanced/xssi/xssi-overview.md",
+                     "/advanced/xssi/xssi-defense.md",
+                     "/advanced/xssi/xssi-angular.md",
+                     "/advanced/xssi/xssi-pw.md"
                  ]
             },
            "/continuous-prevention/"
