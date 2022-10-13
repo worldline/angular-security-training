@@ -15,9 +15,8 @@ Practical Work Web-Application directory : **[pw/pw-csrf](https://github.com/wor
 - in "Home" page, add a "news" : analyze request and response's headers using the client Firefox Browser Network Monitor , what do you notice ? 
 - Hint : <span style="color:white; background-color:white">  verify that expected cookies (XSRF-TOKEN) is set and client-side header (X-XSRF-Token) is missing </span>
   
-3 - Enable the csrf client-side protection 
-- configure the csrf protection in `client/src/app/app.module.ts`
-    - Hint : <span style="color:white; background-color:white"> Comment HttpClientXsrfModule.disable() </span>
+3 - Notice the csrf client-side protection 
+
 - in "Home" page, add a "news" : analyze request and response's headers using the client Firefox Browser Network Monitor , what do you notice ? 
   
   - Hint : <span style="color:white; background-color:white">  verify that expected cookies (XSRF-TOKEN) is set and client-side header (X-XSRF-Token) is set with the same value </span>
