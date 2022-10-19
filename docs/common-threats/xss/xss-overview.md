@@ -24,3 +24,8 @@ This attack happens mostly because the web application or API uses inputs from a
 | DOM based                 | Modifying the DOM environment in the victim browser.                                                               | Introduced by DOM modification.|![image](https://user-images.githubusercontent.com/1529433/174054599-3d7619d8-571c-4ada-9a05-9a7d3f3b5898.png)|[Microsoft, Apple, Google,...](https://www.acunetix.com/blog/articles/chronicles-dom-based-xss/)                                                |
 | Mutation                  | Looks like safe (or just a syntax error) in itself but become active after mutation process                        | Mutated by browser.            | ![image](https://user-images.githubusercontent.com/1529433/174054791-2beee000-a47f-431f-bcac-fba3a6018e43.png)|[Google search bar](https://www.acunetix.com/blog/web-security-zone/mutation-xss-in-google-search/)                                                                                                 |
 | Blind Cross-Site scripting| Script is saved on server side and reflected back in the backend application.                                      |                                |                   |[Tesla](https://samcurry.net/cracking-my-windshield-and-earning-10000-on-the-tesla-bug-bounty-program/)|
+
+
+## Further resources
+
+[owasp.org/www-community/attacks/xss/](https://owasp.org/www-community/attacks/xss/)

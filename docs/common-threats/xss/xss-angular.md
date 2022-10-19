@@ -54,6 +54,6 @@ abstract class DomSanitizer implements Sanitizer {
   abstract bypassSecurityTrustResourceUrl(value: string): SafeResourceUrl
 }
 ```
-##Further resources
+## Further resources
 
-https://owasp.org/www-community/attacks/xss/
+[angular.io/guide/security#server-side-xss-protection](https://angular.io/guide/security#server-side-xss-protection)
