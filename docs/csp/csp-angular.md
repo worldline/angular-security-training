@@ -20,7 +20,7 @@ Content-Security-Policy:
 ```
 Note that using these headers requires you to refactor code that is not compatible with CSP
 
-To learn further please check this page: https://web.dev/strict-csp/
+To learn further please check this page: [web.dev/strict-csp/](https://web.dev/strict-csp/)
 
 - Use Trusted Types by configuring your web server to emit HTTP headers with one of the following Angular policies:
 

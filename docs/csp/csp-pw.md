@@ -20,28 +20,28 @@ Hints :
        
     - Hint : <span style="color:white; background-color:white"> add unsafe-inline or unsafe-eval wherever needed to remove console alerts </span>
         
-- Check the security level of this CSP on https://csp-evaluator.withgoogle.com/
+- Check the security level of this CSP on [csp-evaluator.withgoogle.com/](https://csp-evaluator.withgoogle.com/)
     
 - Declare the CSP server-side     
        
     - Hints : 
-      - Use the spring security API HttpSecurity : HttpSecurity#headers()#contentSecurityPolicy("...")
-      - Set the CSP configuration in /server/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java
-      - Bypass the angular-cli proxy in order to use the server-side CSP configuration ('ng build', then use http://localhost:8080/#/home)     
+      - Use the spring security API HttpSecurity : `HttpSecurity#headers()#contentSecurityPolicy("..."`)
+      - Set the CSP configuration in `/server/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java`
+      - Bypass the angular-cli proxy in order to use the server-side CSP configuration (`ng build`, then use `http://localhost:8080/#/home`)     
 
 2 - Configure a CSP 3
 
 - Use CSP to secure your app against inline scripting
   
-    - In index.html, declare an arbitrary inline scripting : `<script>document.write('<h1>Inline scripting is <b>not recommended</b>! But if you have not the choice, <b>secure your app with CSP</b></h1>');</script>"`
+    - In `index.html`, declare an arbitrary inline scripting : `<script>document.write('<h1>Inline scripting is <b>not recommended</b>! But if you have not the choice, <b>secure your app with CSP</b></h1>');</script>"`
   
     - Update the CSP in order to block the inline scripting.
   
     - Update the CSP in order to allow this inline scripting securely (consider CSP3 SHA-256 hash syntax)
     
-    - Hints : To generate the hash, use this online tool : https://report-uri.io/home/hash (beware of spaces and carriage returns...)
+    - Hints : To generate the hash, use this online tool : [report-uri.io/home/hash](https://report-uri.io/home/hash) (beware of spaces and carriage returns...)
     
-- Check the security level of this CSP on https://csp-evaluator.withgoogle.com/ 
+- Check the security level of this CSP on [csp-evaluator.withgoogle.com/](https://csp-evaluator.withgoogle.com/)
 
 ## Part 2
 
@@ -52,7 +52,7 @@ Then we will add inline scripting and secure it with a nonce.
 
 1 - Implement a CSP based on a nonce, server-side:
 
-- Implement a CSPResource REST api endpoint to generate a random nonce and return a content-security-policy which declares this nonce in the "script-src" directive
+- Implement a CSPResource REST api endpoint to generate a random nonce and return a content-security-policy which declares this nonce in the `script-src` directive
 
 ``` typescript 
             package com.worldline.bookstore.web.rest;
@@ -150,10 +150,10 @@ Then we will add inline scripting and secure it with a nonce.
            
 Note : Implement a CSP wrapper class (used by the CSPResource class) with 2 attributes : 
 
-- `config` : stores the complete Content-Security-Policy
+- `config` : stores the complete `Content-Security-Policy`
 - `nonce` : stores the nonce
 
-- Remove the csp configuration loaded from the SecurityConfiguration.java if any
+- Remove the csp configuration loaded from the `SecurityConfiguration.java` if any
 
 
 2 - Client-side implementation:
@@ -200,7 +200,7 @@ Note : Implement a CSP wrapper class (used by the CSPResource class) with 2 attr
 
 ```        
 
-Note : you will have to import and declare this new service in app.module.ts
+Note : you will have to import and declare this new service in `app.module.ts`
 
 - Load the CSP with a meta tag and add an arbitrary `script` block with a nonce
 ``` typescript         
@@ -259,10 +259,10 @@ Note : you will have to import and declare this new service in app.module.ts
         
 ```        
         
-- Test your app from http://localhost:4200 : the script should be executed without error message
-  Check that your DOM contains the Content-Security-Policy meta tag with the nonce and that the inline scripting uses this nonce.
+- Test your app from `http://localhost:4200` : the script should be executed without error message
+  Check that your DOM contains the `Content-Security-Policy` meta tag with the nonce and that the inline scripting uses this nonce.
   
-Hint: Get http://localhost:4200 and see the bottom of the "home" page. Normally a message is displayed. Check the browser's console. No error message.
-If you modify the nonce or remove it from "script" block (see app.component.ts), the script is not executed, and the message is no more displayed. An error appears in the console.
+Hint: Get `http://localhost:4200` and see the bottom of the "home" page. Normally a message is displayed. Check the browser's console. No error message.
+If you modify the nonce or remove it from `script` block (see `app.component.ts`), the script is not executed, and the message is no more displayed. An error appears in the console.
 
-Note  : 'strict-dynamic' source expression specifies that the trust is explicitly given to a script present in the markup, by accompanying it with a nonce or a hash, shall be propagated to all the scripts loaded by that root script. At the same time, any whitelist or source expressions such as 'self' or 'unsafe-inline' will be ignored.
+Note  : `strict-dynamic` source expression specifies that the trust is explicitly given to a script present in the markup, by accompanying it with a nonce or a hash, shall be propagated to all the scripts loaded by that root script. At the same time, any whitelist or source expressions such as `self` or `unsafe-inline` will be ignored.
