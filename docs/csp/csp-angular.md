@@ -22,7 +22,7 @@ Note that using these headers requires you to refactor code that is not compatib
 
 To learn further please check this page: [web.dev/strict-csp/](https://web.dev/strict-csp/)
 
-- Use Trusted Types by configuring your web server to emit HTTP headers with one of the following Angular policies:
+- Use [Trusted Types](https://w3c.github.io/trusted-types/dist/spec/#introduction) (an API that allows applications to lock down DOM-XSS injection sinks to only accept non-spoofable, typed values in place of strings) by configuring your web server to emit HTTP headers with one of the following Angular policies:
 
     - `angular`  This policy is used in security-reviewed code that is internal to Angular, and is required for Angular to function when Trusted Types are enforced. Any inline template values or content sanitized by Angular is treated as safe by this policy.
 

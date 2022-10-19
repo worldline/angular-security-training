@@ -54,6 +54,6 @@ The Application servers become safer and faster by **delegating authentication t
   
 - A commercial product like LDAP capable of issuing JWTs.
     
-- A completely external third-party authentication provider such as for example Auth0.
+- A completely external third-party authentication provider such as for example OAuth.
 
 Another benefit is to make the application server completely stateless and no need to store password digests in application server database.
