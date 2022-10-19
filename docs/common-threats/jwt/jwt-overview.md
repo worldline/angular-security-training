@@ -20,7 +20,9 @@ JWT looks like the following in its JWS compact serialization :
 
 **JOSE Header:** Indicates to the receiver which type of signature algorithm to use for payload validation.
 
-**JWS Payload:** Can contain any information but note that **the content is not encrypted**. So any information that you put in the token is readable by anyone who intercepts it. It also indicates the bearer standard properties for JWT Based Authentication:
+**JWS Payload:** Can contain any information but note that **the content is not encrypted**. So any information that you put in the token is readable by anyone who intercepts it.
+It is possible to use JSON Web Encryption (JWE) to encrypt the content of the payload which is then signed with JWS.
+It also indicates the bearer standard properties for JWT Based Authentication:
 
 - `iss` means the issuing entity, in this case, our authentication server 
 - `iat` is the timestamp of creation of the JWT
