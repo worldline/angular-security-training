@@ -10,6 +10,8 @@ JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and s
   
 - Used to **authenticate an API**.
 
+It contains all important information about an entity, meaning that **no database queries are necessary** and **the session doesn’t need to be saved on the server**.
+
 ## What is JWT Structure ?
 
 JWT looks like the following in its JWS compact serialization :
