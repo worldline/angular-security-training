@@ -2,7 +2,7 @@
 
 ## XSS in a nutshell
 
-Cross-Site Scripting (XSS) is a web application vulnerability that occurs when **untrusted data from the user** is processed by the web application **without validation** and is reflected back to the browser **without encoding or escaping**, resulting in code execution at the browser engine.
+Cross-Site Scripting (XSS) is a vulnerability that occurs when **untrusted data from the user** is processed by the web application **without validation** and is reflected back to the browser **without encoding or escaping**, resulting in **code execution** at the browser engine.
 
 ![xss-wf](../../assets/xss-wf.png)
 
@@ -12,7 +12,7 @@ The impact of XSS is moderate for reflected and DOM XSS, and severe for stored X
 
 ## What causes XSS ?
 
-This attack happens mostly because the web application or API uses inputs from any users within the output it generates without proper validation or encoding.
+This attack happens mostly because the web application or API **uses inputs from any users within the output** it generates **without proper validation or encoding**.
 
 ## How XSS attacks happen ?
 

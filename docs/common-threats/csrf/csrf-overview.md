@@ -2,7 +2,7 @@
 
 ## CSRF in a nutshell
 
-CSRF (Cross-Site Request Forgery) is an attack where a malicious website causes a logged-on user’s web browser to perform an unwanted action on a trusted site.
+CSRF (Cross-Site Request Forgery) is an attack where a malicious website causes a logged-on user’s web browser to **perform an unwanted action on a trusted site**.
 
 ![csrf-wf-1](../../assets/csrf-wf-1.png)
 
@@ -14,7 +14,7 @@ CSRF (Cross-Site Request Forgery) is an attack where a malicious website causes 
 
 ## Why CSRF can be dangerous ?
 
-A successful CSRF attack can force the user to perform state changing requests like transferring funds, changing their email address, and so forth. If the victim is an administrative account, CSRF can compromise the entire web application.
+A successful CSRF attack can **force the user** to perform state changing requests like transferring funds, changing their email address, and so forth. If the victim is an **administrator account**, CSRF can **compromise the entire web application**.
 
 ## What are CSRF famous real life cases ?
 
@@ -28,5 +28,5 @@ A successful CSRF attack can force the user to perform state changing requests l
 
 ## What makes CSRF attacks possible ?
 
-Browser requests automatically include all cookies including session cookies. The attackers use social engineering to trick users which browsers cannot distinguish between legitimate authorized requests and forged authenticated requests.
+Browser requests automatically **include all cookies including session cookies**. The attackers use **social engineering** to trick users which browsers cannot distinguish between **legitimate authorized requests** and **forged authenticated requests**.
 
