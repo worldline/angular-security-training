@@ -73,7 +73,6 @@ module.exports = {
                 collapsable: true,
                 children: [
                    "/common-threats/ssti/ssti-overview.md",
-                   "/common-threats/ssti/ssti-defense.md",
                    "/common-threats/ssti/ssti-angular.md"
                 ]
             },

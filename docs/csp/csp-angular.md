@@ -3,8 +3,8 @@
 Angular suggests completing their built-in XSS prevention with the following:
 
 - Use Content-Security-Policy HTTP header:
-  We recommend you to use strict CSP instead of allow-list CSP as it is more effective and does not need customization.
-  You can choose to use Nonce-based strict CSP or Hash-based strict CSP.
+  We recommend you to **use strict CSP** instead of allow-list CSP as it is more effective and does not need customization.
+  You can choose to use **Nonce-based** strict CSP or **Hash-based** strict CSP.
 
 ``` typescript
 Content-Security-Policy:
@@ -18,7 +18,7 @@ Content-Security-Policy:
   object-src 'none';
   base-uri 'none';
 ```
-Note that using these headers requires you to refactor code that is not compatible with CSP
+Note that using these headers requires you to refactor code that is not compatible with CSP.
 
 To learn further please check this page: [web.dev/strict-csp/](https://web.dev/strict-csp/)
 

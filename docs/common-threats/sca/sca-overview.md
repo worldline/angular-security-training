@@ -2,9 +2,9 @@
 
 - The rank of this vulnerability moved from rank 9 to rank 6 in Owasp Top 10 2021
 
-- Components (libraries, framework, software modules,...) run with the same privileges as the application.
+- Components (libraries, framework, software modules,...) run with the **same privileges** as the application.
 
-- If a vulnerable component is exploited, the attack can result to serious data loss or server takeover.
+- If a vulnerable component is exploited, the attack can result to serious **data loss** or **server takeover**.
 
 - Scope:
 

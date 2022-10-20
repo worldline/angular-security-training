@@ -2,20 +2,20 @@
 
 ![csp-workflow](../assets/csp-wf.png)
 
-Content Security Policy (CSP) is a W3C standard introduced to prevent cross-site-scripting, click-jacking and other code injection attacks resulting of malicious inputs in the trusted web page context.
-CSP defines a standard methods for web application developers to declare approved origins of content that browsers should allow loading.
+Content Security Policy (CSP) is a W3C **standard** introduced to **prevent** cross-site-scripting, click-jacking and other **code injection attacks** resulting of malicious inputs in the trusted web page context.
+CSP defines a standard methods for web application developers to **declare approved origins** of content that **browsers should allow loading**.
 
 **CSP is a new browser security policy** :
-- Defines what it is allowed to happen in a page
-- Delivered by the server in a response header or meta tag 
+- Defines **what it is allowed to happen** in a page
+- Delivered by the server in a **response header** or meta tag 
 
 ![image](https://user-images.githubusercontent.com/1529433/174068330-0d060e3a-a1f9-4e0f-96b4-7e254658d7e0.png)
 ![image](https://user-images.githubusercontent.com/1529433/174068366-ae57dff9-d2c9-44bc-be1e-b20fa18eec95.png)
 ![image](https://user-images.githubusercontent.com/1529433/174069124-fee089b7-c043-4827-985c-b3731d149c84.png)
 
 ::: warning
-CSP is not intended as a first level of defense against code injection attacks like XSS. CSP is best used as defense-in-depth. 
-It reduces the risk that malicious injection can cause, but it is not a replacement for careful input validation and output encoding.
+CSP is not intended as a first level of defense against code injection attacks like XSS. **CSP is best used as defense-in-depth.** 
+It **reduces the risk** that malicious injection can cause, but it is **not a replacement** for careful input validation and output encoding.
 :::
 
 ## Implementation
@@ -26,7 +26,7 @@ To enable CSP, you need to configure your web application to return the `Content
 
 ## CSP evolution to strict CSP
 
-white-list CSP properties requires a lot of customization and maintenance.
+White-list CSP properties requires a lot of customization and **maintenance**.
 
 CSP evolution with `script-src` directive :
 
@@ -66,7 +66,7 @@ You can also use **Content-Security-Policy-Report-Only** as the HTTP header name
 This directive is deprecated in CSP Level 3 in favor of the report-to directive.
 
 ::: warning
-As of today, some CSP properties may not be supported by all browsers. IE is known to have limited support for CSP
+As of today, some CSP properties **may not be supported by all browsers**. IE is known to have limited support for CSP.
 You can verify the compatibility of CSP properties with browser with several online tools like this one: [https://caniuse.com/?search=csp](https://caniuse.com/?search=csp)
 :::
 
@@ -82,7 +82,15 @@ You can verify the compatibility of CSP properties with browser with several onl
 ## Common white-list CSP example
 
 ``` typescript
-Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com https://themes.googleusercontent.com; frame-src https://www.slideshare.net www.youtube.com twitter.com; object-src 'none'; font-src 'self' data: https://themes.googleusercontent.com https://fonts.googleapis.com; script-src 'strict-dynamic' 'nonce-rAnd0m123' 'unsafe-inline' 'self' https://www.google.com twitter.com https://themes.googleusercontent.com; base-uri 'none'; img-src 'self' https://www.google.com data: https://pbs.twimg.com https://img.youtube.com twitter.com
+Content-Security-Policy: 
+  default-src 'self'; 
+  style-src 'unsafe-inline' 'self' https://fonts.googleapis.com https://themes.googleusercontent.com;
+  frame-src https://www.slideshare.net www.youtube.com twitter.com; 
+  object-src 'none'; 
+  font-src 'self' data: https://themes.googleusercontent.com https://fonts.googleapis.com; 
+  script-src 'strict-dynamic' 'nonce-rAnd0m123' 'unsafe-inline' 'self' https://www.google.com twitter.com https://themes.googleusercontent.com;
+  base-uri 'none'; 
+  img-src 'self' https://www.google.com data: https://pbs.twimg.com https://img.youtube.com twitter.com
 ```
 
 ::: tip

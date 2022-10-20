@@ -1,9 +1,9 @@
 # 5.3 SSTI Protection in Angular
 
-Angular templates are trusted by default and should be treated as executable code.
+Angular templates **are trusted by default** and should be treated as executable code.
 
 ::: warning
-Never generate templates by adding user inputs to template syntax !
+**Never** generate templates by adding user inputs to template syntax !
 
 It will expose your application to XSS attacks and enable attackers to inject arbitrary code.
 
@@ -23,7 +23,7 @@ If you really need to generate templates with users inputs, you must always use 
 - At the moment of injection, the application is already compiled.
 - The injected code will simply be rendered, not executed.
 
-AOT compiler is enabled by default starting Angular 9. (check configurations in `angular.json`)
+**AOT compiler is enabled by default starting Angular 9.** (check configurations in `angular.json`)
 
 Another alternative is JIT (Just In Time) compiler which compiles templates to executable template code within the browser runtime.
 This compiler was enabled by default until Angular 8.
