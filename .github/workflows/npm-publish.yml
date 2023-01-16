@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: cd pw\pw-jwt-aouth\client && npm ci
-      - run: cd pw\pw-jwt-oauth\client && npm test
+      - run: cd pw/pw-jwt-aouth/client && npm ci
+      - run: cd pw/pw-jwt-oauth/client && npm test
 
   publish-npm:
     needs: build
@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: cd pw\pw-jwt-aouth\client && npm ci
-      - run: cd pw\pw-jwt-oauth\client && npm publish
+      - run: cd pw/pw-jwt-aouth/client && npm ci
+      - run: cd pw/pw-jwt-oauth/client && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
