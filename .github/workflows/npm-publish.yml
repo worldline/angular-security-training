@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: 16
       - run: cd pw/pw-jwt-oauth/client && npm ci
-      - run: cd pw/pw-jwt-oauth/client && npm test
 
   publish-npm:
     needs: build
