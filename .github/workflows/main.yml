@@ -1,10 +1,17 @@
-- name: Check PR title
-  run: |
-   title="${{ github.event.pull_request.title }}"
-   if [[ $title =~ ^octocat ]]; then
-   echo "PR title starts with 'octocat'"
-   exit 0
-   else
-   echo "PR title did not start with 'octocat'"
-   exit 1
-   fi
+name: test-action
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [pull_request]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title
+        run: |
+          title="${{ github.event.pull_request.title }}"
+          if [[ $title =~ ^test ]]; then
+          echo $title
+          exit 0
+          else
+          echo "Pas content"
+          exit 1
+          fi
