@@ -12,7 +12,6 @@
   <groupId>nicob.nicolegrimpeur.bookstore</groupId>
   <artifactId>bookstore</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   <name>Bookstore</name>
 
   <distributionManagement>
