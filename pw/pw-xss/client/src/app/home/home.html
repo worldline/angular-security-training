@@ -22,9 +22,9 @@
 		</tfoot>
 		<tbody>
         <tr class="gradeA" *ngFor="let currentNew of news">
-            <td>{{currentNew.author}}</td>
-            <td>{{currentNew.category}}</td>
-            <td>{{currentNew.content}}</td>
+            <td [innerHtml] = 'currentNew.author' ></td>
+            <td [innerHtml] = 'currentNew.category'></td>>
+            <td [innerHtml] = 'currentNew.content'></td>
             <td><button class="btn" (click)="addLike(currentNew)"><img src="assets/styles/ktheme/img/like.png" /> {{currentNew.likes}}</button></td>
             <td><button class="btn" (click)="deleteNews(currentNew)"><img src="assets/styles/ktheme/img/delete.png"/></button></td>
         </tr>
