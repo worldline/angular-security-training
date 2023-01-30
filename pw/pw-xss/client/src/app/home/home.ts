@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { NewsService } from '../services/newsService';
 import { News } from '../beans/news';
-// import {DomSanitizer} from '@angular/platform-browser'
+import {DomSanitizer} from '@angular/platform-browser'
 
 @Component({
   selector: 'home',
@@ -15,17 +15,17 @@ export class Home implements OnInit {
   news: News[] = [];
   newsOfTheDay: News = {};
   nextNews: News = {};
-  //trustedUrl: string;
+  trustedUrl: string = '';
   constructor(
     private newsService: NewsService,
-    // private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
     // javascript: URLs are dangerous if attacker controlled.
     // Angular sanitizes them in data binding, but you can
     // explicitly tell Angular to trust this value:
-    //this.trustedUrl = <string> this.sanitizer.bypassSecurityTrustUrl('javascript:alert("Don\'t forget to add a comment in the bottom please!")');
+    this.trustedUrl = <string> this.sanitizer.bypassSecurityTrustUrl('javascript:alert("Don\'t forget to add a comment in the bottom please!")');
     this.updateNews();
   }
 
@@ -38,7 +38,7 @@ export class Home implements OnInit {
       this.newsOfTheDay = news;
       // uncomment the line below only for demo purpose, don't do this in a real situation
       // if you want to force a given scripting which you trust and is under you strict control (never from user input), use DomSanitizer#bypassSecurityTrustHtml(String) method
-      //this.newsOfTheDay.content = <string> this.sanitizer.bypassSecurityTrustHtml(this.newsOfTheDay.content);
+      this.newsOfTheDay.content = <string> this.sanitizer.bypassSecurityTrustHtml('<svg width="400" height="180"><rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/></svg>');
     });
   }
 
