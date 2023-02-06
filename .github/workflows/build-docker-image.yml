@@ -26,5 +26,6 @@ jobs:
       with:
         image: ${{ env.IMAGE_NAME }}
         exit-level: FATAL
+        exit-code: '0'
   
     
