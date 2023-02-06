@@ -1,4 +1,3 @@
-#Vérifie le titre des pull request de façon non sécurisé (sensible aux injections de codes)
 name: test-action
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [pull_request]
@@ -7,8 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check PR title
+      env :
+      title: "${{ github.event.pull_request.title }}"    #detecte    l'event pull request
         run: |
-          title="${{ github.event.pull_request.title }}"    #detecte    l'event pull request
           if [[ $title =~ ^test ]]; then
           echo $title
           exit 0
