@@ -1,15 +1,18 @@
-name: Build Docker Image
+name: Docker Image CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the docker image
-      run: docker build . --file pw/pw-jwt-oauth/server/src/main/docker/Dockerfile --tag pw-jwt-oauth:$(date +%s)
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file ./docker/Dockerfile --tag my-image-name:$(date +%s)
