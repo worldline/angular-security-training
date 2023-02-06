@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Check PR title
       env :
-      title: "${{ github.event.pull_request.title }}"    #le titre est mis en tant que variable d'env
+      title: "${{ github.event.pull_request.title }}"    #le titre est mis en tant que variable d'env!
         run: |
           if [[ $title =~ ^test ]]; then
           echo $title
