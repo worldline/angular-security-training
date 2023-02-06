@@ -35,15 +35,21 @@ export class AuthServerProvider {
   // In case of authentication success , get the JWT from the response and store it in client storage
   authenticateSuccess(resp: HttpResponse<any>, rememberMe: boolean) {
     // BearerToken to retrieve from Authorization Header ( use resp.headers.get )
-    //  let bearerToken = resp.headers.get('....');
-    // Verify the content of the authorization header is indeed a bearer token  and not null ( use slice on string)
-    //  if (bearerToken && ...)
-    // retrieve the token by removing the "Bearer" string with slice function
-    //  let jwt = bearerToken.slice(.....);
-    // store the jwt in the credentials ( use  storeAuthenticationToken )
-    // this.storeAuthenticationToken(.....);
+    let bearerToken = resp.headers.get("Authorization");
+    console.log(bearerToken)
+
+    let jwt;
+
+    // Verify the content of the authorization header is indeed a bearer token and not null ( use slice on string)
+    if(bearerToken?.slice(0,6) == "Bearer"){
+      // retrieve the token by removing the "Bearer" string with slice function
+      jwt = bearerToken.slice(7);
+
+      // store the jwt in the credentials ( use  storeAuthenticationToken )
+      this.storeAuthenticationToken(jwt, rememberMe)
+    }
     // return the jwt
-    return resp;
+    return jwt;
   }
 
   loginWithToken(jwt: string, rememberMe: boolean) {
