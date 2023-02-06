@@ -38,7 +38,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v4.3.0
       with:
-        images: docker/my-image-name:$(date +%s)
+        images: ${{ secrets.DOCKER_USERNAME }}/tp_gr11_pl_seb
       
     - name: Build and push Docker image
       uses: docker/build-push-action@v4.0.0
