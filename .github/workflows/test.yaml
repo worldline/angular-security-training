@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Check PR title
         run: |
-          title="${{ github.event.pull_request.title }}"
+          title="${{ github.event.pull_request.title }}"    #detecte    l'event pull request
           if [[ $title =~ ^test ]]; then
           echo $title
           exit 0
