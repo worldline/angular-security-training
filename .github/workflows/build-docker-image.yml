@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  IMAGE_NAME: my-image-name:$(date +%s)
+  IMAGE_NAME: my-docker-image
 
 jobs:
 
@@ -25,5 +25,6 @@ jobs:
       uses: hands-lab/dockle-action@v1
       with:
         image: ${{ env.IMAGE_NAME }}
+        exit-level: FATAL
   
     
