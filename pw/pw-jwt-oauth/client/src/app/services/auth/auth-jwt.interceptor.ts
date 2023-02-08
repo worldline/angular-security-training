@@ -24,15 +24,14 @@ export class JwtInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    //  retrieve jwt token from client storage (local or session) with the key 'authenticationToken'
     let token = this.ng2localStorage.retrieve('authenticationToken') || this.ng2sessionStorage.retrieve('authenticationToken');
-
-    //  verify token is present
+    // get the JWT token from the client's storage
     if (token) {
-      //  set authorization header in the request with the token : 'Authorization: Bearer __token__'
+      // check if the token is present
       req = req.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`
+          // set authorization header
         }
       });
     }
