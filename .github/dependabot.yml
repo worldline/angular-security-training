@@ -8,9 +8,7 @@ updates:
    # Enable version updates for npm
   - package-ecosystem: "npm"
     # Look for `package.json` and `lock` files in the `root` directory
-    directory: "/"
-    paths:
-    - "/pw/pw-sca/client"
+    directory: "/pw/pw-sca/client"
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "daily"
@@ -18,7 +16,7 @@ updates:
    # Enable version updates for Docker
   - package-ecosystem: "maven"
     # Look for a `maven file` in the `root` directory
-    directory: "/"
+    directory: "/pw/pw-sca/server"
     # Check for updates once a week
     schedule:
       interval: "daily"
