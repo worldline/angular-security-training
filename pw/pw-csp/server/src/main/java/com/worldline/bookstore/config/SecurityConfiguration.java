@@ -121,7 +121,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             "font-src 'self';"                  +
             "img-src 'self';"                   +
             "style-src 'self' 'unsafe-inline';" +
-            "script-src 'self' 'unsafe-inline';");
+            "script-src 'sha256-lK+Y3vDnNUrD/ZPLGsnM6B+euoBxZ/MyiIbY2G5VoPw=' 'strict-dynamic';");
             //.reportOnly();
     }
 
