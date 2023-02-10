@@ -511,7 +511,7 @@
       <plugin>
         <groupId>com.spotify</groupId>
         <artifactId>docker-maven-plugin</artifactId>
-        <version>0.4.10</version>
+        <version>1.2.2</version>
         <configuration>
           <imageName>bookstore</imageName>
           <dockerDirectory>src/main/docker</dockerDirectory>
