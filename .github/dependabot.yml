@@ -13,7 +13,7 @@ updates:
     - "/pw/pw-sca/client"
     # Check the npm registry for updates every day (weekdays)
     schedule:
-      interval: "daily"*
+      interval: "daily"
  
    # Enable version updates for Docker
   - package-ecosystem: "maven"
