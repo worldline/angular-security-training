@@ -3,6 +3,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 
 @Injectable()
 // This service gets the Content-Security-Policy and a random nonce from a REST api endpoint /api/csp
+
 export class CspConfig {
 
   private _config: any;
@@ -20,9 +21,9 @@ export class CspConfig {
   load(): Promise<any> {
     return this.http.get('/api/csp')
       .toPromise()
-      .then(data => {
-        this._config = data['value'];
-        this._nonce = data['nonce'];
+      .then((data: any) => {
+        this._config = data['value'] ?? '';
+        this._nonce = data['nonce'] ?? '';
         return data;
       })
   }
