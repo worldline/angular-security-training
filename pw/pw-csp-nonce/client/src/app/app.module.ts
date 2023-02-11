@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Router } from '@angular/router';
 
+import { CspConfig } from './services/cspConfigService';
 import { UserService } from './services/userService';
 import { BooksService } from './services/booksService';
 import { DataContainerService } from './services/dataContainerService';
@@ -50,6 +51,7 @@ import { Login } from './login/login';
   ],
   providers: [
     UserService,
+    CspConfig,
     BooksService,
     DataContainerService,
     ContactService,
