@@ -1,22 +1,17 @@
-# Use the latest version of the Alpine Linux image as the base image
-FROM node:latest
+# Use an official Ubuntu image as the base image
+FROM ubuntu:20.04
 
-# Set environment variables for the non-root user
-ENV HOME /home/node
-ENV NODE_USER node
-ENV UID 1000
+# Update the package list and upgrade the installed packages
+RUN apt-get update && apt-get upgrade -y
 
-# Create a non-root user with a specified UID
-RUN adduser -u $UID $NODE_USER
+# Install the necessary packages
+RUN apt-get install -y nano curl wget
 
-# Set the working directory to the non-root user's home directory
-WORKDIR $HOME
+# Set the working directory
+WORKDIR /app
 
-# Set the user for subsequent commands to the non-root user
-USER $NODE_USER
+# Copy the application code to the working directory
+COPY . .
 
-# Install the latest version of npm
-RUN npm install -g npm@latest
-
-# Set the default command to run when the container starts
-CMD ["node"] 
+# Specify the command to run when the container starts
+CMD [ "/bin/bash" ]
