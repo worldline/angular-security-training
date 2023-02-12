@@ -37,6 +37,8 @@ jobs:
       uses: luke142367/Docker-Lint-Action@v1.1.1
       with:
         target: ./docker/Dockerfile
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v2.1.0
