@@ -18,20 +18,25 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Build the Docker image
-      run: docker build . --file ./docker/Dockerfile --tag ${{ env.IMAGE_NAME }}
+    # - name: Build the Docker image
+    #   run: docker build . --file ./docker/Dockerfile --tag ${{ env.IMAGE_NAME }}
 
-    - name: Runs dockle
-      id: dockle_check
-      uses: hands-lab/dockle-action@v1
+    # - name: Runs dockle
+    #   id: dockle_check
+    #   uses: hands-lab/dockle-action@v1
+    #   with:
+    #     image: ${{ env.IMAGE_NAME }}
+    #     exit-level: FATAL
+    #     exit-code: '1'
+
+    # - name: Stop workflow if FATAL vulnerability detected
+    #   if: steps.dockle_check.outputs.exit_code == 1
+    #   run: exit ${{ steps.dockle_check.outputs.exit_code }}
+
+    - name: lint
+      uses: luke142367/Docker-Lint-Action@v1.0.0
       with:
-        image: ${{ env.IMAGE_NAME }}
-        exit-level: FATAL
-        exit-code: '1'
-
-    - name: Stop workflow if FATAL vulnerability detected
-      if: steps.dockle_check.outputs.exit_code == 1
-      run: exit ${{ steps.dockle_check.outputs.exit_code }}
+        target: ./docker/Dockerfile
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v2.1.0
