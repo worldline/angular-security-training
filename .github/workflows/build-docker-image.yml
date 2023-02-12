@@ -33,8 +33,8 @@ jobs:
     #   if: steps.dockle_check.outputs.exit_code == 1
     #   run: exit ${{ steps.dockle_check.outputs.exit_code }}
 
-    - name: lint
-      uses: luke142367/Docker-Lint-Action@v1.0.0
+    - name: Docker Lint
+      uses: luke142367/Docker-Lint-Action@v1.1.1
       with:
         target: ./docker/Dockerfile
 
