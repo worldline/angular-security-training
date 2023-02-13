@@ -1,0 +1,38 @@
+# Nom de l'Action : Scorecard
+# Le workflow s'exécute lorsque quelqu'un pousse des modifications sur la branche principale
+on:
+  push:
+    branches:
+      - main
+
+# Définition de l'emploi qui sera exécuté
+jobs:
+  build-and-deploy:
+    # Définit la plateforme d'exécution de l'emploi
+    runs-on: ubuntu-latest
+    
+    # Les étapes du travail
+    steps:
+      # Étape 1: Checkout
+      - name: Checkout 🛎️
+        # Utilise l'action Github pour cloner le dépôt
+        uses: actions/checkout@v3.0.0
+
+      # Étape 2: Installation et construction
+      - name: Install and Build 🔧
+        # Utilise l'Action Scorecard pour installer et construire les dépendances de votre projet
+        uses: ossf/scorecard-action@main
+        # Paramètres pour la sortie des résultats de l'Action Scorecard
+        with:
+          results_file: results.sarif
+          results_format: sarif
+
+      # Étape 3: Téléversement de l'artefact
+      - name: "Upload artifact"
+        # Utilise l'Action d'Upload d'artefact pour téléverser les fichiers générés par les étapes précédentes
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        # Paramètres pour le téléversement de l'artefact
+        with:
+          name: SARIF file
+          path: results.sarif
+          retention-days: 5
