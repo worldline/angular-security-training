@@ -1,0 +1,18 @@
+name: test-action
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [pull_request]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title
+        env :
+          title: "${{ github.event.pull_request.title }}"    #le titre est mis en tant que variable d'env!
+        run: |
+          if [[ $title =~ ^test ]]; then
+          echo $title
+          exit 0
+          else
+          echo "Pas content"
+          exit 1
+          fi
