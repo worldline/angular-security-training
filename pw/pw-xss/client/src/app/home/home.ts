@@ -25,7 +25,7 @@ export class Home implements OnInit {
     // javascript: URLs are dangerous if attacker controlled.
     // Angular sanitizes them in data binding, but you can
     // explicitly tell Angular to trust this value:
-    this.trustedUrl = <string> this.sanitizer.bypassSecurityTrustUrl('javascript:alert("Don\'t forget to add a comment in the bottom please!")');
+    this.trustedUrl = <string> this.sanitizer.bypassSecurityTrustUrl('<button id="myButton" onclick="alert(\'Button was clicked!\')">Click Me!</button>');
     this.updateNews();
   }
 
