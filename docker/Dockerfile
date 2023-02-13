@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 RUN apt-get update && apt-get upgrade -y
 
 # Install the necessary packages
-RUN apt-get install -y nano=7.2 curl=7.87.0
+RUN apt-get install -y nano=4.8-1ubuntu1
 
 # Set the working directory
 WORKDIR /app
