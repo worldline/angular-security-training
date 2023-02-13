@@ -1,5 +1,4 @@
-name: Build and Deploy to github pages
-
+name: Scorecard action
 on:
   push:
     branches:
@@ -18,3 +17,14 @@ jobs:
           results_format: sarif
           publish_results: true
 
+      - name: "Upload artifact"
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # v3.1.0
+        with:
+          name: SARIF file
+          path: results.sarif
+          retention-days: 5
+
+      - name: "Upload to code-scanning"
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: results.sarif
