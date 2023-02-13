@@ -1,0 +1,16 @@
+name: GitHub Actions Scorecard
+
+on: [push, pull_request]
+
+jobs:
+  scorecard:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run GitHub Actions Scorecard
+      uses: github/actions-scorecard@v1
+      with:
+        args: --print-markdown > scorecard.md
