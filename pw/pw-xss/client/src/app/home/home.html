@@ -1,5 +1,5 @@
 <div>
-	<h1>{{message}}</h1>
+	<h1><a [href]="trustedUrl">{{message}}</a></h1>
 	<table class="k-data-table">
 		<caption>Latest news from Web &amp; Mobile Framework Team</caption>
 		<thead>
@@ -22,9 +22,9 @@
 		</tfoot>
 		<tbody>
         <tr class="gradeA" *ngFor="let currentNew of news">
-            <td>{{currentNew.author}}</td>
-            <td>{{currentNew.category}}</td>
-            <td>{{currentNew.content}}</td>
+            <td [innerHtml] = 'currentNew.author' ></td>
+            <td [innerHtml] = 'currentNew.category'></td>>
+            <td [innerHtml] = 'currentNew.content'></td>
             <td><button class="btn" (click)="addLike(currentNew)"><img src="assets/styles/ktheme/img/like.png" /> {{currentNew.likes}}</button></td>
             <td><button class="btn" (click)="deleteNews(currentNew)"><img src="assets/styles/ktheme/img/delete.png"/></button></td>
         </tr>
@@ -41,7 +41,7 @@
     <section class="k-panel">
         <h4 class="control"><a href="#">And the news of the day is...</a></h4>
         <div class="content">
-            <p><i>{{newsOfTheDay.content}}</i> from <b>{{newsOfTheDay.author}}</b></p>
+            <p> <span [innerHTML]="newsOfTheDay.content"></span> from <b>{{newsOfTheDay.author}}</b></p>
         </div>
     </section>
 </div>
