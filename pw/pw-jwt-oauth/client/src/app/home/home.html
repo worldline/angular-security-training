@@ -29,12 +29,10 @@
             <td><button *ngIf="principal.isAdmin()" class="btn" (click)="deleteNews(currentNew)"><img src="assets/styles/ktheme/img/delete.png"/></button></td> <!-- Si jamais l'utilisateur est un admin, il peut liker les posts -->
             <!-- *ngIf permet de poser des conditions à la présence de la balise -->
         </tr>
-        <tr class="gradeA" *ngIf="principal.isUser">  <!-- *ngIf permet de poser des conditions à la présence de la balise -->
-        	<!--- Si on est connecté, on peut poster des news -->
-            <td><input type="text" placeholder="author" [(ngModel)]="nextNews.author"/></td>
-            <td><input type="text" placeholder="category" [(ngModel)]="nextNews.category"/></td>
-            <td><input type="text" placeholder="content" [(ngModel)]="nextNews.content"/></td>
-            <!--On utilise ngModel pour synchroniser les données dans le formulaires avec les propriétés des composants parents et enfants--> 
+        <tr class="gradeA" *ngIf="principal.isUser()">
+            <td><input type="text" [(ngModel)]="nextNews.author" placeholder="author"/></td>
+            <td><input type="text" [(ngModel)]="nextNews.category" placeholder="category"/></td>
+            <td><input type="text" [(ngModel)]="nextNews.content" placeholder="content"/></td>
             <td></td>
             <td><button class="btn" (click)="addNews()"><img src="assets/styles/ktheme/img/add.png"/></button></td>
         </tr>
