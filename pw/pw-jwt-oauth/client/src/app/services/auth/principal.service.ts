@@ -56,8 +56,9 @@ export class Principal {
 
   //Si l'utilisateur est connecté et qu'il appartient aux admins, return true
   isAdmin(): boolean { 
-      return true;
+      
     if (this._identity && this._identity.authorities.indexOf("ROLE_ADMIN") !== -1) { 
+      return true;
     } else {
       return false; //Sinon return false
     }
@@ -66,7 +67,6 @@ export class Principal {
   //Si l'utilsateur est connecté et qu'il fait parti des utilisateurs et qu'il n'est PAS admin, return true sinon return false
   isUser(): boolean {
     if (this.isIdentityResolved() && this._identity.authorities.indexOf("ROLE_USER") !== -1 && !this.isAdmin) { //
-    
         return true;
     } else {
       return false;
