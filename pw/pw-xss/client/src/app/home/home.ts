@@ -25,7 +25,7 @@ export class Home implements OnInit {
     // javascript: URLs are dangerous if attacker controlled.
     // Angular sanitizes them in data binding, but you can
     // explicitly tell Angular to trust this value:
-    this.trustedUrl = <string> this.sanitizer.bypassSecurityTrustUrl('<button id="myButton" onclick="alert(\'Button was clicked!\')">Click Me!</button>');
+    this.trustedUrl = <string> this.sanitizer.bypassSecurityTrustUrl('javascript:alert("Don\'t forget to add a comment in the bottom please!")');
     this.updateNews();
   }
 
@@ -38,7 +38,7 @@ export class Home implements OnInit {
       this.newsOfTheDay = news;
       // uncomment the line below only for demo purpose, don't do this in a real situation
       // if you want to force a given scripting which you trust and is under you strict control (never from user input), use DomSanitizer#bypassSecurityTrustHtml(String) method
-      this.newsOfTheDay.content = <string> this.sanitizer.bypassSecurityTrustHtml('<svg width="400" height="180"><rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/></svg>');
+      this.newsOfTheDay.content = <string> this.sanitizer.bypassSecurityTrustHtml('<button id="myButton" onclick="alert(\'Button was clicked!\')">Click Me!</button>');
     });
   }
 
