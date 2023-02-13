@@ -90,18 +90,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/register").permitAll()
+                .antMatchers("/api/news/like/**").authenticated()  //Permet de dire que pour acceder à /api/news/like/** il faut d'abord s'authentifier au site, donc une personne sans compte ou pas connectée ne pourra pas liker un post.
+                .antMatchers("/api/register").permitAll()   
                 .antMatchers("/api/activate").permitAll()
                 .antMatchers("/api/authenticate").permitAll()
                 .antMatchers("/api/account/reset_password/init").permitAll()
                 .antMatchers("/api/account/reset_password/finish").permitAll()
                 .antMatchers("/api/profile-info").permitAll()
-                .antMatchers("/api/**").permitAll() // authenticated() <== for tests!! //TODO remove it
+                //.antMatchers("/api/**").permitAll() // authenticated() <== for tests!! //TODO remove it
                 .antMatchers("/management/health").permitAll()
                 .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
                 .antMatchers("/v2/api-docs/**").hasAuthority(AuthoritiesConstants.ADMIN)
-        // .and()
-        // .apply(securityConfigurerAdapter())
+        .and()
+        .apply(securityConfigurerAdapter())
         ;
         // TODO uncomment this line to activate JWT filter
 
