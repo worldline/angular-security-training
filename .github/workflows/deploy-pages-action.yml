@@ -11,14 +11,10 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3.0.0
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install and Build 🔧
         uses: ossf/scorecard-action@main
         with:
-          results_file: results.sarif
-          results_format: sarif
+          results_file: results.json
+          results_format: json
           publish_results: true
 
-      - name: "Upload to code-scanning"
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: results.sarif
