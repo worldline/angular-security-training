@@ -1,6 +1,5 @@
 name: Build and Deploy to github pages
 
-
 on:
   push:
     branches:
