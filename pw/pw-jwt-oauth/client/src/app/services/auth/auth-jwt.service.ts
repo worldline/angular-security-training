@@ -34,7 +34,6 @@ export class AuthServerProvider {
   // Get JWT in case of authentication success and store it in client storage
   authenticateSuccess(resp: HttpResponse<any>, rememberMe: boolean) {
     let bearerToken = resp.headers.get("Authorization");
-    console.log(bearerToken)
     let jwt;
 
     // Verify the bearerToken
