@@ -29,7 +29,7 @@
         <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
         <hibernate.version>5.6.0.Final</hibernate.version>
         <hikaricp.version>2.4.6</hikaricp.version>
-        <jackson.version>2.13.0</jackson.version>
+        <jackson.version>2.14.2</jackson.version>
         <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
         <java.version>11</java.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
