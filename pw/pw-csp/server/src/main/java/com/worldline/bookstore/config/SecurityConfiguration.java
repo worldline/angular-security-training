@@ -120,7 +120,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .headers()
                 .contentSecurityPolicy(
                         "script-src" +
-                                "'sha256-NMaNzUFqQujFs0yAlq5uj75gaB2CSShP13JecXAnXg0=' 'self' " +
+                                "'sha256-bnvMlzCkExJuk27zX9Elb1jJxyvN4DcATdP+klZg6VY=' 'self' " +
                                 ";" +
                                 // add connect-src directive to adapt CSP over cross-origin requests (CORS)
                                 "connect-src" +
@@ -145,7 +145,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                                 " 'http://localhost:4200' " +
                                 ";" +
                                 " default-src" +
-                                " 'self' ");// .reportOnly();
+                                " 'self' " +
+                                ";" +
+                                " require-trusted-types-for" +
+                                " 'script' " +
+                                ";" +
+                                " trusted-types angular");// .reportOnly();
     }
 
     private JWTConfigurer securityConfigurerAdapter() {
