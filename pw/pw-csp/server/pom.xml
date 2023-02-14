@@ -33,7 +33,7 @@
     <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
     <java.version>11</java.version>
     <jhipster.server.version>1.1.9</jhipster.server.version>
-    <jjwt.version>0.7.0</jjwt.version>
+    <jjwt.version>0.9.1</jjwt.version>
     <liquibase-slf4j.version>2.0.0</liquibase-slf4j.version>
     <liquibase.version>3.5.3</liquibase.version>
     <logstash-logback-encoder.version>4.7</logstash-logback-encoder.version>
