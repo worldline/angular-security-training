@@ -4,7 +4,16 @@
     <!-- autorize font in csp policy -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'unsafe-inline' 'self'; font-src 'self'; require-trusted-types-for 'script'; trusted-types angular;"
+      content="default-src 'self';
+              script-src 'sha256-bnvMlzCkExJuk27zX9Elb1jJxyvN4DcATdP+klZg6VY=' 'self';
+              connect-src 'self';
+              img-src 'self';
+              style-src 'self' 'unsafe-inline' ;
+              font-src 'self';
+              base-uri 'self';
+              object-src 'none';
+              trusted-types angular;
+              require-trusted-types-for 'script'"
     />
 
     <meta charset="utf-8" />
@@ -20,10 +29,15 @@
            - This is inline scripting. Not recommended, only for test purpose !
            - To secure inline scripting, use CSP 3 sha256 hash syntax  : "script-src ... 'sha256-lK+Y3vDnNUrD/ZPLGsnM6B+euoBxZ/MyiIbY2G5VoPw='
       -->
-    <!-- <script>
-      document.write(
+    <script>
+      const escapeHTMLPolicy = trustedTypes.createPolicy("angular", {
+        createHTML: (string) => string,
+      });
+      const escaped = escapeHTMLPolicy.createHTML(
         "<h1>Inline scripting is <b>not recommended</b>! But if you have not the choice, <b>secure your app with CSP</b></h1>"
       );
-    </script> -->
+      console.log(escaped instanceof TrustedHTML); // true
+      document.write(escaped);
+    </script>
   </body>
 </html>
