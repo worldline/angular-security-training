@@ -30,7 +30,7 @@
     <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
     <hibernate.version>5.6.0.Final</hibernate.version>
     <hikaricp.version>2.4.6</hikaricp.version>
-    <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
     <java.version>11</java.version>
     <jhipster.server.version>1.1.9</jhipster.server.version>
     <jjwt.version>0.7.0</jjwt.version>
