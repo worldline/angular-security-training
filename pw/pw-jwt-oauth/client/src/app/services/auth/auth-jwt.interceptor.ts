@@ -18,7 +18,8 @@ export class JwtInterceptor implements HttpInterceptor {
     private ng2localStorage: LocalStorageService,
     private ng2sessionStorage: SessionStorageService,
     private router: Router
-  ) {}
+  ) {
+  }
 
   intercept(
     req: HttpRequest<any>,
