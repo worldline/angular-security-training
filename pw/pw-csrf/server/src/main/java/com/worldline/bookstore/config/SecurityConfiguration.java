@@ -23,6 +23,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -81,8 +82,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(http401UnauthorizedEntryPoint())
                 .and()
                 .csrf()
-                .disable() // <== for tests!! //TODO remove it
-                //.csrfTokenRepository(....)
+                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                .and()
                 .headers()
                 .frameOptions()
                 .disable()
@@ -97,15 +98,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/account/reset_password/init").permitAll()
                 .antMatchers("/api/account/reset_password/finish").permitAll()
                 .antMatchers("/api/profile-info").permitAll()
-                .antMatchers("/api/**").permitAll() // authenticated() <== for tests!! //TODO remove it
+                //.antMatchers("/api/**").permitAll() // authenticated() <== for tests!! //TODO remove it
                 .antMatchers("/management/health").permitAll()
                 .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
                 .antMatchers("/v2/api-docs/**").hasAuthority(AuthoritiesConstants.ADMIN)
-        // .and()
-        // .apply(securityConfigurerAdapter())
+        .and()
+        .apply(securityConfigurerAdapter())
         ;
-        // TODO uncomment this line to activate JWT filter
-
     }
 
     private JWTConfigurer securityConfigurerAdapter() {
