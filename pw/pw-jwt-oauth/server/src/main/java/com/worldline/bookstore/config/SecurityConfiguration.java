@@ -103,7 +103,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .apply(securityConfigurerAdapter())
         ;
-        // TODO uncomment this line to activate JWT filter
+        // Uncomment line 103 & 104 to activate the JWT configurer
 
     }
 
