@@ -24,9 +24,8 @@ export class CspConfig {
             .toPromise()
             .then(data => {
 
-                //this.csp = data;
-                //this._config = data!['value'];
-                //this._nonce = data['nonce'];
+                this._config = JSON.parse(JSON.stringify(data))['value'];
+                this._nonce = JSON.parse(JSON.stringify(data))['nonce'];
                 return data;
             })
     }
