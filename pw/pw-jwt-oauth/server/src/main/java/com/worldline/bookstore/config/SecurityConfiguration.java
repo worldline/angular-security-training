@@ -100,10 +100,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/management/health").permitAll()
                 .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
                 .antMatchers("/v2/api-docs/**").hasAuthority(AuthoritiesConstants.ADMIN)
-        // .and()
-        // .apply(securityConfigurerAdapter())
+                .and()
+                .apply(securityConfigurerAdapter())
         ;
-        // TODO uncomment this line to activate JWT filter
+        // Uncomment line 103 & 104 to activate the JWT configurer
 
     }
 
