@@ -13,7 +13,6 @@ import { CspConfig } from './services/cspConfigService';
 export class AppComponent {
   private csp: string = "";
   private nonce: string = "";
-  private modifiedNonce: string = "";
 
   constructor(
     private router: Router,
@@ -22,14 +21,11 @@ export class AppComponent {
 
     cspConfig.load().then(
       data => {
-
         this.csp = data['value'];
-        //this.nonce = data['nonce'];
-        this.nonce = "z";
+        this.nonce = data['nonce'];
 
         console.debug('csp : ' + this.csp);
         console.debug('nonce : ' + this.nonce);
-        console.debug('modified nonce : ' + this.modifiedNonce);
 
         // can't use the Meta#addTags() method to set CSP because it will insert the meta tag too late, so we add it "manually"
         var meta = "<meta http-equiv=\"Content-Security-Policy\" content=\"" + this.csp + "\">";
@@ -39,8 +35,8 @@ export class AppComponent {
         // Add secure inline scripting (a script block with a nonce)
         // The script will just render a message at the bottom of the page
         // (here, we don't use document.write method otherwise it will replace the whole page rendering)
-        var yourHtmlString = // nonce='" + this.nonce + "'
-          "<script>" +
+        var yourHtmlString =
+          "<script nonce='" + this.nonce + "'>" +
           "document.getElementsByTagName('body')[0].appendChild(" +
           "document.createRange().createContextualFragment(" +
           "'<h1>Inline scripting is <b>not recommended</b>! But if you have not the choice, <b>secure your app with CSP</b></h1>'));</script>";
