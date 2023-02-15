@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import {Principal} from '../services/auth/principal.service'; //On fait le lien à principal.service pour avoir les fonctions isAdmin, IsUser...
 import { NewsService } from '../services/newsService';
 import { News } from '../beans/news';
 
@@ -15,7 +15,7 @@ export class Home implements OnInit {
   newsOfTheDay: News = {};
   nextNews: News = {};
 
-  constructor(private newsService: NewsService) {}
+  constructor(private newsService: NewsService, public principal: Principal) {} //On veut pouvoir savoir les permissions de l'utilisateur 
 
   ngOnInit() {
     this.updateNews();

@@ -54,6 +54,29 @@ export class Principal {
     return this.authenticated;
   }
 
+  //Si l'utilsateur est connecté et qu'il fait parti des utilisateurs et qu'il n'est PAS admin, return true sinon return false
+  isUser(): boolean {
+
+    if (this._identity && ( this._identity.authorities.indexOf("ROLE_USER")!==-1 || this._identity.authorities.indexOf("ROLE_ADMIN")!== -1  )) 
+    { 
+      return true;
+    } 
+    else 
+    {
+      return false; //Sinon return false
+    }
+  }
+
+  //Si l'utilisateur est connecté et qu'il appartient aux admins, return true
+  isAdmin(): boolean { 
+      
+    if (this._identity && this._identity.authorities.indexOf("ROLE_ADMIN") !== -1) { 
+      return true;
+    } else {
+      return false; //Sinon return false
+    }
+  }
+
   isIdentityResolved(): boolean {
     return this._identity !== undefined;
   }

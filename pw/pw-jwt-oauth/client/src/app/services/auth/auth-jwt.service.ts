@@ -43,8 +43,15 @@ export class AuthServerProvider {
     // store the jwt in the credentials ( use  storeAuthenticationToken )
     // this.storeAuthenticationToken(.....);
     // return the jwt
+    let bearerToken = resp.headers.get('Authorization');  // On récupère notre Bearer token de l'entête de requete crée dans auth-jwt.interceptor.ts
+    if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') {    /*Si le bearerToken existe et qu'on a bien le format bearer + token alors on peut continuer*/
+      let jwt = bearerToken.slice(7, bearerToken.length);          /*on récupère ainsi le token jwt de l'utilisateur via slice() */
+      this.storeAuthenticationToken(jwt, rememberMe);              /*On garde le token en place avec un système de rememberMe*/
+      return jwt;                                                  /*On retourne le token jwt de l'utilisateur pour prouver son authenticité*/
+    }
     return resp;
   }
+
 
   loginWithToken(jwt: string, rememberMe: boolean) {
     if (jwt) {
