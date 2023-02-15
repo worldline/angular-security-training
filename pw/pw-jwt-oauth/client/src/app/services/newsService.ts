@@ -9,7 +9,8 @@ export class NewsService {
   constructor(private http: HttpClient) {}
 
   getNews(): Observable<News[]> {
-    return this.http.get<News[]>('/api/news');
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.get<News[]>('http://localhost:8080/api/news', {headers: headers});
   }
 
   addLike(news: News) {
