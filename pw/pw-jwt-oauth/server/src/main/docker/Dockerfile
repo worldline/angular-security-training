@@ -4,7 +4,7 @@ ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     JHIPSTER_SLEEP=0
 
 # add directly the war
-ADD *.war /app.war
+#ADD *.war /app.war
 
 VOLUME /tmp
 EXPOSE 8080
