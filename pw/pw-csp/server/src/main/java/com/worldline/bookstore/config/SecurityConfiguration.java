@@ -118,7 +118,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .contentSecurityPolicy(
           "script-src" +
             " 'none' "+
-            // "'unsafe-eval' 'unsafe-inline' " +
+             "'self" +
             ";" +
             // add connect-src directive to adapt CSP over cross-origin requests (CORS)
             "connect-src"+
