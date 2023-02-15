@@ -1,0 +1,116 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pw/pw-csp-nonce/client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: /pw/pw-csp-nonce/server
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /pw/pw-csp-nonce/server/src/main/docker
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pw/pw-csp/client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: /pw/pw-csp/server
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /pw/pw-csp/server/src/main/docker
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pw/pw-csrf/client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: /pw/pw-csrf/server
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /pw/pw-csrf/server/src/main/docker
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pw/pw-jsonp/client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: /pw/pw-jsonp/server
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /pw/pw-jsonp/server/src/main/docker
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pw/pw-jwt-oauth/client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: /pw/pw-jwt-oauth/server
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /pw/pw-jwt-oauth/server/src/main/docker
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pw/pw-sca/client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: /pw/pw-sca/server
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /pw/pw-sca/server/src/main/docker
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /pw/pw-xss/client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: /pw/pw-xss/server
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /pw/pw-xss/server/src/main/docker
+    schedule:
+      interval: daily

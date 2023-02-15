@@ -1,0 +1,4 @@
+#Define code owners for the branches
+#Approval from code owners should be requested before each pull request not made by a code owner
+
+*  @Giraud-Pierre
