@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class CSPResource {
 
-    public CSPwrapper test = CSPwrapper();
+    // public CSPwrapper test = CSPwrapper();
     private final Logger log = LoggerFactory.getLogger(CSPResource.class);
 
     /** Used for Script Nonce */
