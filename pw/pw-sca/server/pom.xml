@@ -26,10 +26,10 @@
         <commons-io.version>2.11.0</commons-io.version>
         <commons-lang.version>3.4</commons-lang.version>
         <frontend-maven-plugin.version>1.3</frontend-maven-plugin.version>
-        <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
+        <hibernate-validator.version>8.0.0.Final</hibernate-validator.version>
         <hibernate.version>5.6.0.Final</hibernate.version>
         <hikaricp.version>2.4.6</hikaricp.version>
-        <jackson.version>2.13.0</jackson.version>
+        <jackson.version>2.14.2</jackson.version>
         <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
         <java.version>11</java.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
@@ -41,7 +41,7 @@
         <m2e.apt.activation>jdt_apt</m2e.apt.activation>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
-        <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
+        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -609,7 +609,7 @@
                     </plugin>
                     <plugin>
                         <artifactId>maven-clean-plugin</artifactId>
-                        <version>2.5</version>
+                        <version>3.2.0</version>
                         <configuration>
                             <filesets>
                                 <fileset>
@@ -670,7 +670,7 @@
                     <plugin>
                         <groupId>net.alchim31.maven</groupId>
                         <artifactId>scala-maven-plugin</artifactId>
-                        <version>3.2.2</version>
+                        <version>4.8.0</version>
                         <executions>
                             <execution>
                                 <id>compile</id>
