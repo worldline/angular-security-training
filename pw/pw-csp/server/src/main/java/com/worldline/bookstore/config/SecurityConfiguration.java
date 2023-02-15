@@ -105,7 +105,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         ;
         // TODO uncomment this line to activate JWT filter
 
-        // setCspConfig(http);
+        setCspConfig(http);
 
     }
 
@@ -116,34 +116,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       http
         .headers()
         .contentSecurityPolicy(
-          "script-src" +
-            " 'none' "+
-            // "'unsafe-eval' 'unsafe-inline' " +
-            ";" +
-            // add connect-src directive to adapt CSP over cross-origin requests (CORS)
-            "connect-src"+
-            " 'self'"+
-            ";"+
-            " style-src" +
-            " 'self' 'unsafe-inline'"+
-            ";" +
-            " font-src" +
-            " 'self' "+
-            ";" +
-            " img-src" +
-            " 'self' " +
-            ";" +
-            " child-src" +
-            " 'self' " +
-            ";" +
-            " object-src" +
-            " 'none' " +
-            ";" +
-            " report-uri" +
-            " 'http://localhost:4200' " +
-            ";" +
-            " default-src" +
-            " 'self' ");//.reportOnly();
+            "default-src 'none';"               +
+            "connect-src 'self';"               +
+            "font-src 'self';"                  +
+            "img-src 'self';"                   +
+            "style-src 'self' 'unsafe-inline';" +
+            "script-src 'sha256-lK+Y3vDnNUrD/ZPLGsnM6B+euoBxZ/MyiIbY2G5VoPw=' 'strict-dynamic';");
+            //.reportOnly();
     }
 
     private JWTConfigurer securityConfigurerAdapter() {

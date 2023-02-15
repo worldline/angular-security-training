@@ -1,8 +1,7 @@
 package com.worldline.bookstore.web.rest;
 
 public class CSP {
-
-  /*private String value;
+  private String value;
   private String nonce;
 
   public String getNonce() {
@@ -29,5 +28,5 @@ public class CSP {
   @Override
   public String toString() {
     return "CSP [value=" + value + ", nonce=" + nonce + "]";
-  }*/
+  }
 }
