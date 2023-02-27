@@ -25,15 +25,15 @@
             <td>{{currentNew.author}}</td>
             <td>{{currentNew.category}}</td>
             <td>{{currentNew.content}}</td>
-            <td><button class="btn" (click)="addLike(currentNew)"><img src="assets/styles/ktheme/img/like.png" /> {{currentNew.likes}}</button></td>
-            <td><button class="btn" (click)="deleteNews(currentNew)"><img src="assets/styles/ktheme/img/delete.png"/></button></td>
+            <td><button class="btn" *ngIf="isAdmin() || isUser()" (click)="addLike(currentNew)"><img src="assets/styles/ktheme/img/like.png" /> {{currentNew.likes}}</button></td> <!--uniquement authentifié-->
+            <td><button class="btn" *ngIF="isAdmin()" (click)="deleteNews(currentNew)"><img src="assets/styles/ktheme/img/delete.png"/></button></td> <!--uniquement admin-->
         </tr>
-        <tr class="gradeA">
+        <tr *ngIF="isUser()" class="gradeA">
             <td><input type="text" [(ngModel)]="nextNews.author" placeholder="author"/></td>
             <td><input type="text" [(ngModel)]="nextNews.category" placeholder="category"/></td>
             <td><input type="text" [(ngModel)]="nextNews.content" placeholder="content"/></td>
             <td></td>
-            <td><button class="btn" (click)="addNews()"><img src="assets/styles/ktheme/img/add.png"/></button></td>
+            <td><button class="btn"  (click)="addNews()"><img src="assets/styles/ktheme/img/add.png"/></button></td> <!--uniquement utilisateur-->
         </tr>
         </tbody>
     </table>
