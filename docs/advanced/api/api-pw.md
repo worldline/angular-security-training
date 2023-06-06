@@ -1,6 +1,6 @@
 # 7.3 Unprotected API Practical Work
 
-![pw](../../assets/uncle-pw.png)
+![pw](../../assets/pw-coding.png)
 
 ## Part 1
 

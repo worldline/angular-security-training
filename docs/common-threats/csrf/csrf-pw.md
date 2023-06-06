@@ -1,6 +1,6 @@
 # 2.5 CSRF Practical Work
 
-![pw](../../assets/uncle-pw.png)
+![pw](../../assets/pw-coding.png)
 
 Practical Work Web-Application directory : **[pw/pw-csrf](https://github.com/worldline/angular-security-training/tree/main/pw/pw-csrf)**
 

@@ -1,6 +1,6 @@
 # 6.5 Vulnerable Components Practical Work
 
-![pw](../../assets/uncle-pw.png)
+![pw](../../assets/pw-coding.png)
 
 1 - Load a js script from Content Delivery Network (CDN) with SRI
 -  In index.html, load the minified version 3.2.1 of "jquery" from `cdnjs.cloudflare.com` (take care of the version number)  

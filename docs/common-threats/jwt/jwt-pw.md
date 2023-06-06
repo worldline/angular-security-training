@@ -1,6 +1,6 @@
 # 1.6 JWT Practical Work
 
-![pw](../../assets/uncle-pw.png)
+![pw](../../assets/pw-coding.png)
 
 Practical Work Web-Application directory : **pw/pw-jwt-oauth/**
 

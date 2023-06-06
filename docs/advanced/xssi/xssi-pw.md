@@ -1,6 +1,6 @@
 # 8.4 XSSI Practical Work
 
-![pw](../../assets/uncle-pw.png)
+![pw](../../assets/pw-coding.png)
 
 1 - Configure protection against JSONP vulnerability:
 

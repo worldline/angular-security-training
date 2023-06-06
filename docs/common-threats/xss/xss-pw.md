@@ -1,6 +1,6 @@
 # 3.5 XSS Practical Work
 
-![pw](../../assets/uncle-pw.png)
+![pw](../../assets/pw-coding.png)
 
 Practical Work Web-Application directory : **pw/pw-xss**
 

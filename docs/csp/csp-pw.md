@@ -1,7 +1,7 @@
 # 4.4 CSP Practical Work
 ## Part 1
 
-![pw](../assets/uncle-pw.png)
+![pw](../assets/pw-coding.png)
 
 Practical Work Web-Application directory : **pw/pw-csp**
 
