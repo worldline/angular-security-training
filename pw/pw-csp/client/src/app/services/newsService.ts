@@ -26,14 +26,14 @@ export class NewsService {
 		*/
     return this.http
       .delete('/api/news/' + news.id, { responseType: 'text' })
-      .pipe(switchMap(this.getNews));
+      .pipe(switchMap(()=>this.getNews()));
   };
 
   addNews(news: News): Observable<News[]> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http
       .post('/api/news', news, { headers: headers })
-      .pipe(switchMap(this.getNews));
+      .pipe(switchMap(()=>this.getNews()));
   }
 
   randomNews(): Observable<News> {
