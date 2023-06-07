@@ -15,6 +15,6 @@ Practical Work Web-Application directory : **pw/pw-xss**
 2 - Use DomSanitizer service
 - Transform the "Welcome" message (see "Home" page) to a link which displays an alert popup (use `javascript:alert` syntax).
   - Hint : <span style="color:white; background-color:white"> Check commented lines  for trustedUrl in home.html and home.ts </span>
-- (Just for the demo, don't do this in a real situation) to sanitize the "newsOfTheDay" content in order to execute some basic and safe scripting based on DOM even listener (onclick, ...) 
+- (Just for the demo, don't do this in a real situation) Sanitize the "newsOfTheDay" content in order to execute some basic and safe scripting based on DOM even listener (onclick, ...) 
   - Hint : <span style="color:white; background-color:white"> Check commented lines  for bypassSecurityTrustHtml and innerHtml in home.html and home.ts </span>    
     
