@@ -1,0 +1,1 @@
+const t={key:"v-34b20ccd",path:"/common-threats/jwt/jwt-workflow.html",title:"1.2 JWT Workflow",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1686140481e3,contributors:[{name:"Sara MOURAD",email:"sara.mourad@worldline.com",commits:1}]},filePathRelative:"common-threats/jwt/jwt-workflow.md"};export{t as data};

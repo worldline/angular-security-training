@@ -1,0 +1,1 @@
+const t={key:"v-4a3aeb3f",path:"/common-threats/",title:"2- Common Threats",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1686140481e3,contributors:[{name:"Sara MOURAD",email:"sara.mourad@worldline.com",commits:1}]},filePathRelative:"common-threats/README.md"};export{t as data};

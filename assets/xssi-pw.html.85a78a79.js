@@ -1,0 +1,1 @@
+const a={key:"v-3a702880",path:"/advanced/xssi/xssi-pw.html",title:"8.4 XSSI Practical Work",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1686140481e3,contributors:[{name:"Sara MOURAD",email:"sara.mourad@worldline.com",commits:1}]},filePathRelative:"advanced/xssi/xssi-pw.md"};export{a as data};

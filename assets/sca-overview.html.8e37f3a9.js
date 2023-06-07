@@ -1,0 +1,1 @@
+const e={key:"v-9e3e9c32",path:"/common-threats/sca/sca-overview.html",title:"6.1 Vulnerable Components Overview",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1686140481e3,contributors:[{name:"Sara MOURAD",email:"sara.mourad@worldline.com",commits:1}]},filePathRelative:"common-threats/sca/sca-overview.md"};export{e as data};

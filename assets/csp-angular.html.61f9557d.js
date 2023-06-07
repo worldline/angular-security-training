@@ -1,0 +1,1 @@
+const a={key:"v-0b15ef8c",path:"/csp/csp-angular.html",title:"4.3 CSP in Angular",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1686140481e3,contributors:[{name:"Sara MOURAD",email:"sara.mourad@worldline.com",commits:1}]},filePathRelative:"csp/csp-angular.md"};export{a as data};
