@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { NewsService } from '../services/newsService';
 import { News } from '../beans/news';
-// import {DomSanitizer} from '@angular/platform-browser'
+//import {DomSanitizer} from '@angular/platform-browser'
 
 @Component({
   selector: 'home',
@@ -15,10 +15,10 @@ export class Home implements OnInit {
   news: News[] = [];
   newsOfTheDay: News = {};
   nextNews: News = {};
-  //trustedUrl: string;
+//  trustedUrl: string = '';
   constructor(
     private newsService: NewsService,
-    // private sanitizer: DomSanitizer
+//    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
@@ -38,7 +38,7 @@ export class Home implements OnInit {
       this.newsOfTheDay = news;
       // uncomment the line below only for demo purpose, don't do this in a real situation
       // if you want to force a given scripting which you trust and is under you strict control (never from user input), use DomSanitizer#bypassSecurityTrustHtml(String) method
-      //this.newsOfTheDay.content = <string> this.sanitizer.bypassSecurityTrustHtml(this.newsOfTheDay.content);
+      //this.newsOfTheDay.content = <string> this.sanitizer.bypassSecurityTrustHtml(this.newsOfTheDay.content as string);
     });
   }
 
