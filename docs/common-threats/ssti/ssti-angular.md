@@ -15,8 +15,6 @@ If you really need to generate templates with users inputs, you must always use 
 - Compiles HTML templates and components into JavaScript files long before they are served to the client.
 - No templates to read and no risky client-side HTML or JavaScript evaluation
 
-![ssti-aot](../../assets/ssti-aot.png)
-
 **AOT compilation** effectively stops template injection attacks:
 
 - At the moment of injection, the application is already compiled.
