@@ -10,11 +10,9 @@ Practical Work Web-Application directory : **pw/pw-csp**
 - Configure a minimalistic CSP in angular side (`index.html`) with the following value and observe the result (see console log) : 
   `default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';`
        
-Hints : 
-          
-- This policy allows images, scripts, AJAX, and CSS from the same origin, and does not allow any other resources to load (eg inline scripting, inline styles, object, frame, media, etc). It is a good starting point but often too restrictive for many existing sites
-          
-- You can declare your CSP as a meta tag with `http-equiv` directive in `index.html` :`<meta http-equiv="__directive__" content="__value__">`
+  - Hints : 
+    - This policy allows images, scripts, AJAX, and CSS from the same origin, and does not allow any other resources to load (eg inline scripting, inline styles, object, frame, media, etc). It is a good starting point but often too restrictive for many existing sites
+    - You can declare your CSP as a meta tag with `http-equiv` directive in `index.html` :`<meta http-equiv="__directive__" content="__value__">`
     
 - Update step by step the configuration in order to make the website load properly (Content-Security-Policy-Report-Only header)
        
@@ -27,7 +25,7 @@ Hints :
     - Hints : 
       - Use the spring security API HttpSecurity : `HttpSecurity#headers()#contentSecurityPolicy("..."`)
       - Set the CSP configuration in `/server/src/main/java/com/worldline/bookstore/config/SecurityConfiguration.java`
-      - Bypass the angular-cli proxy in order to use the server-side CSP configuration (`ng build`, then use `http://localhost:8080/#/home`)     
+      - (if necessary) Bypass the angular-cli proxy in order to use the server-side CSP configuration (`ng build`, then use `http://localhost:8080/#/home`)     
 
 2 - Configure a CSP 3
 
