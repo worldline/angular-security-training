@@ -37,7 +37,7 @@ Practical Work Web-Application directory : **pw/pw-csp**
   
     - Update the CSP in order to allow this inline scripting securely (consider CSP3 SHA-256 hash syntax)
     
-    - Hints : To generate the hash, use this online tool : [report-uri.io/home/hash](https://report-uri.io/home/hash) (beware of spaces and carriage returns...)
+    - Hints : To generate the hash of the script content, use this online tool : [report-uri.io/home/hash](https://report-uri.io/home/hash) (beware of spaces and carriage returns...)
     
 - Check the security level of this CSP on [csp-evaluator.withgoogle.com/](https://csp-evaluator.withgoogle.com/)
 
