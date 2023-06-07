@@ -28,4 +28,4 @@ If you really need to generate templates with users inputs, you must always use 
 Another alternative is JIT (Just In Time) compiler which compiles templates to executable template code within the browser runtime.
 This compiler was enabled by default until Angular 8.
 
-To learn further: https://angular.io/guide/aot-compiler
+To learn further: [https://angular.io/guide/aot-compiler](https://angular.io/guide/aot-compiler)
