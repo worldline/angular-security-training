@@ -37,7 +37,7 @@ import { Basket } from './basket/basket';
 import { Profile } from './profile/profile';
 import { Login } from './login/login';
 
-// import {CspConfig} from './services/cspConfigService';
+import { CspConfig } from './services/cspConfigService';
 
 @NgModule({
   imports: [
@@ -49,6 +49,7 @@ import { Login } from './login/login';
     HttpClientModule,
   ],
   providers: [
+    CspConfig,
     UserService,
     BooksService,
     DataContainerService,
@@ -86,4 +87,4 @@ import { Login } from './login/login';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

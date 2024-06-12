@@ -105,8 +105,52 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         ;
         // TODO uncomment this line to activate JWT filter
 
+        // setCspConfig(http);
+
     }
 
+    // Add CSP hash for the following inline scripting (see
+    // https://report-uri.io/home/hash) :
+    // - "document.write('<h1>Inline scripting is <b>not recommended</b>! But if you
+    // have not the choice, <b>secure your app with CSP</b></h1>');" ==>
+    // 'sha256-lK+Y3vDnNUrD/ZPLGsnM6B+euoBxZ/MyiIbY2G5VoPw='
+    // - inline style ...
+
+    /*
+     * private void setCspConfig(HttpSecurity http) throws Exception {
+     * http
+     * .headers()
+     * .contentSecurityPolicy(
+     * "script-src" +
+     * " 'none' " +
+     * // "'unsafe-eval' 'unsafe-inline' " +
+     * ";" +
+     * // add connect-src directive to adapt CSP over cross-origin requests (CORS)
+     * "connect-src" +
+     * " 'self'" +
+     * ";" +
+     * " style-src" +
+     * " 'self' 'unsafe-inline'" +
+     * ";" +
+     * " font-src" +
+     * " 'self' " +
+     * ";" +
+     * " img-src" +
+     * " 'self' " +
+     * ";" +
+     * " child-src" +
+     * " 'self' " +
+     * ";" +
+     * " object-src" +
+     * " 'none' " +
+     * ";" +
+     * " report-uri" +
+     * " 'http://localhost:4200' " +
+     * ";" +
+     * " default-src" +
+     * " 'self' ");// .reportOnly();
+     * }
+     */
     private JWTConfigurer securityConfigurerAdapter() {
         return new JWTConfigurer(tokenProvider);
     }
