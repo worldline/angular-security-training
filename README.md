@@ -3,7 +3,7 @@
 ## Train with us
 You can follow the training here: https://worldline.github.io/angular-security-training/
 
-Most chapters include some practical work to do on your own machine, the corrections are available here: [Corrections folder](https://github.com/worldline/angular-security-training/tree/main/corrections)
+Most chapters include some practical work to do on your own machine, the corrections are available [here](https://github.com/worldline/angular-security-training/tree/solutions/pw)
 
 ## Contribute
 
