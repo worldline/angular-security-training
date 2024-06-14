@@ -33,4 +33,4 @@ Explain the result ?  How can we change this result ?
 5 - Try to understand the spring implementation of the csrf protection. Take a look at the following source files : 
 - `org.springframework.security.web.csrf.CsrfFilter` class : <span style="color:white; background-color:white"> the csrf filter, check that token from header and from cookie match. Otherwise, redirect to error page with HTTP 403 status</span>
 - `org.springframework.security.web.csrf.CookieCsrfTokenRepository` class : <span style="color:white; background-color:white"> used for CSRF token repository strategy (session, cookie, ...) </span>
-- `org.springframework.security.config.annotation.web.configurers.CrsfConfigurer` class : <span style="color:white; background-color:white"> Adds CSRF protection for the methods  (uses antMatchers)</span>
+- `org.springframework.security.config.annotation.web.configurers.CsrfConfigurer` class : <span style="color:white; background-color:white"> Adds CSRF protection for the methods  (uses antMatchers)</span>
