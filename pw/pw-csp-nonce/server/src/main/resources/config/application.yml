@@ -44,7 +44,7 @@ spring:
         mode: XHTML
     web:
         resources:
-            static-locations: file:./../dist/,file:./../src/,file:./../data/,file:./../node_modules
+            static-locations: file:./../client/dist/test
 
 security:
     basic:
