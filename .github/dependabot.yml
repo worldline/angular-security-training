@@ -1,0 +1,129 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+   # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files 
+    directory: "/pw/pw-csp-nonce/client"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+      
+   # Enable version updates for maven
+  - package-ecosystem: "maven"
+    # Look for a `maven file` 
+    directory: "/pw/pw-csp-nonce/server"
+    # Check for updates once a week
+    schedule:
+      interval: "daily"
+      
+      
+      
+    # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files
+    directory: "/pw/pw-csp/client"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+      
+   # Enable version updates for maven
+  - package-ecosystem: "maven"
+    # Look for a `maven file` 
+    directory: "/pw/pw-csp/server"
+    # Check for updates once a week
+    schedule:
+      interval: "daily"
+      
+      
+      
+        # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files
+    directory: "/pw/pw-csrf/client"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+      
+   # Enable version updates for maven
+  - package-ecosystem: "maven"
+    # Look for a `maven file
+    directory: "/pw/pw-csrf/server"
+    # Check for updates once a week
+    schedule:
+      interval: "daily"
+      
+      
+      
+        # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files
+    directory: "/pw/pw-jsonp/client"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+      
+   # Enable version updates for maven
+  - package-ecosystem: "maven"
+    # Look for a `maven file`
+    directory: "/pw/pw-jsonp/server"
+    # Check for updates once a week
+    schedule:
+      interval: "daily"
+      
+   
+     # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files
+    directory: "/pw/pw-jwt-oauth/client"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+      
+   # Enable version updates for maven
+  - package-ecosystem: "maven"
+    # Look for a `maven file`
+    directory: "/pw/pw-jwt-oauth/server"
+    # Check for updates once a week
+    schedule:
+      interval: "daily"
+  
+  
+     # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files
+    directory: "/pw/pw-sca/client"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+      
+   # Enable version updates for maven
+  - package-ecosystem: "maven"
+    # Look for a `maven file`
+    directory: "/pw/pw-sca/server"
+    # Check for updates once a week
+    schedule:
+      interval: "daily"
+   
+   
+      # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files
+    directory: "/pw/pw-xss/client"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
+      
+   # Enable version updates for maven
+  - package-ecosystem: "maven"
+    # Look for a `maven file`
+    directory: "/pw/pw-xss/server"
+    # Check for updates once a week
+    schedule:
+      interval: "daily"
+   
+

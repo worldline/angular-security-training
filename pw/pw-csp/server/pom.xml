@@ -22,7 +22,7 @@
   <properties>
     <jaxb.api.version>2.3.1</jaxb.api.version>
     <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx256m</argLine>
-    <assertj-core.version>3.5.2</assertj-core.version>
+    <assertj-core.version>3.24.2</assertj-core.version>
     <awaitility.version>1.7.0</awaitility.version>
     <commons-io.version>2.11.0</commons-io.version>
     <commons-lang.version>3.4</commons-lang.version>
@@ -33,7 +33,7 @@
     <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
     <java.version>11</java.version>
     <jhipster.server.version>1.1.9</jhipster.server.version>
-    <jjwt.version>0.7.0</jjwt.version>
+    <jjwt.version>0.9.1</jjwt.version>
     <liquibase-slf4j.version>2.0.0</liquibase-slf4j.version>
     <liquibase.version>3.5.3</liquibase.version>
     <logstash-logback-encoder.version>4.7</logstash-logback-encoder.version>
@@ -82,7 +82,7 @@
     <sonar.surefire.reportsPath>${project.testresult.directory}/surefire-reports</sonar.surefire.reportsPath>
     <sonar.tests>${project.basedir}/src/test/</sonar.tests>
 
-    <sortpom-maven-plugin.version>2.5.0</sortpom-maven-plugin.version>
+    <sortpom-maven-plugin.version>3.2.1</sortpom-maven-plugin.version>
     <!-- Spring properties -->
     <springfox.version>2.6.1</springfox.version>
     <undertow.version>2.2.13.Final</undertow.version>
@@ -492,7 +492,7 @@
           <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
-            <version>3.0.1</version>
+            <version>3.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -580,7 +580,7 @@
         <plugins>
           <plugin>
             <artifactId>maven-clean-plugin</artifactId>
-            <version>2.5</version>
+            <version>3.2.0</version>
             <configuration>
               <filesets>
                 <fileset>
