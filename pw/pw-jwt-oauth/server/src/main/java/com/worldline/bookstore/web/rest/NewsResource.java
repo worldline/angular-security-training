@@ -1,7 +1,7 @@
 package com.worldline.bookstore.web.rest;
 
 import com.worldline.bookstore.domain.News;
-
+import com.worldline.bookstore.security.AuthoritiesConstants;
 import com.worldline.bookstore.repository.NewsRepository;
 import com.worldline.bookstore.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.security.access.annotation.Secured; /* On importe ce package afin de pouvoir sécuriser des méthodes ou des classes  */
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -42,7 +42,7 @@ public class NewsResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PostMapping("/news")
-
+    @Secured({ AuthoritiesConstants.USER})  /*On protège la méthode createNews avec @Secured(), tout les personnes ayant le rôle USER peuvent créer une news */
     public ResponseEntity<News> createNews(@Valid @RequestBody News news) throws URISyntaxException {
         log.debug("REST request to save News : {}", news);
         if (news.getId() != null) {
@@ -68,7 +68,7 @@ public class NewsResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping("/news")
-
+    @Secured({ AuthoritiesConstants.USER, AuthoritiesConstants.ADMIN })/*On protège la méthode update avec @Secured(), tout les personnes ayant le rôle USER et ADMIN peuvent l'utiliser*/
     public ResponseEntity<News> updateNews(@Valid @RequestBody News news) throws URISyntaxException {
         log.debug("REST request to update News : {}", news);
         if (news.getId() == null) {
@@ -86,7 +86,7 @@ public class NewsResource {
      * @return the ResponseEntity with status 200 (OK) and the list of news in body
      */
     @GetMapping("/news")
-
+    /*Tout le monde peut voir les news */
     public List<News> getAllNews() {
         log.debug("REST request to get all News");
         List<News> news = newsRepository.findAll();
@@ -101,7 +101,6 @@ public class NewsResource {
      *         with status 404 (Not Found)
      */
     @GetMapping("/news/{id}")
-
     public ResponseEntity<News> getNews(@PathVariable Long id) {
         log.debug("REST request to get News : {}", id);
         var optNews = newsRepository.findById(id);
@@ -115,7 +114,7 @@ public class NewsResource {
      * @return the ResponseEntity with status 200 (OK)
      */
     @DeleteMapping("/news/{id}")
-
+    @Secured({AuthoritiesConstants.ADMIN}) /*Seuls les admins peuvent supprimer une news */
     public ResponseEntity<Void> deleteNews(@PathVariable Long id) {
         log.debug("REST request to delete News : {}", id);
         newsRepository.deleteById(id);
@@ -131,7 +130,6 @@ public class NewsResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PostMapping("/news/like/{id}")
-
     public ResponseEntity<News> addLikeforNews(@PathVariable Long id) throws URISyntaxException {
         log.debug("REST request to add like to News : {}", id);
         var optNews = newsRepository.findById(id);

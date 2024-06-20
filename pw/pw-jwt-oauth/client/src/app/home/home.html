@@ -25,10 +25,11 @@
             <td>{{currentNew.author}}</td>
             <td>{{currentNew.category}}</td>
             <td>{{currentNew.content}}</td>
-            <td><button class="btn" (click)="addLike(currentNew)"><img src="assets/styles/ktheme/img/like.png" /> {{currentNew.likes}}</button></td>
-            <td><button class="btn" (click)="deleteNews(currentNew)"><img src="assets/styles/ktheme/img/delete.png"/></button></td>
+            <td><button *ngIf="principal.isAuthenticated()" class="btn" (click)="addLike(currentNew)"><img src="assets/styles/ktheme/img/like.png" /> {{currentNew.likes}}</button></td>  <!-- Si jamais l'utilisateur est connecté, il peut liker les posts -->
+            <td><button *ngIf="principal.isAdmin()" class="btn" (click)="deleteNews(currentNew)"><img src="assets/styles/ktheme/img/delete.png"/></button></td> <!-- Si jamais l'utilisateur est un admin, il peut liker les posts -->
+            <!-- *ngIf permet de poser des conditions à la présence de la balise -->
         </tr>
-        <tr class="gradeA">
+        <tr class="gradeA" *ngIf="principal.isUser()">
             <td><input type="text" [(ngModel)]="nextNews.author" placeholder="author"/></td>
             <td><input type="text" [(ngModel)]="nextNews.category" placeholder="category"/></td>
             <td><input type="text" [(ngModel)]="nextNews.content" placeholder="content"/></td>
