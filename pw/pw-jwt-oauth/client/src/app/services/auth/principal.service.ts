@@ -16,6 +16,20 @@ export class Principal {
     this.authenticationState.next(this._identity);
   }
 
+  isAdmin(){
+    if (this._identity.include == "Admin"){
+      return(true)
+    }
+    return(false)
+  }
+
+  isUser(){
+    if (this._identity == "User"){
+      return(true)
+    }
+    return(false)
+  }
+
   identity(force?: boolean): Promise<any> {
     if (force === true) {
       this._identity = undefined;

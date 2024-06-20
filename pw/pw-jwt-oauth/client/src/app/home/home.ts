@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { NewsService } from '../services/newsService';
 import { News } from '../beans/news';
+import { Principal } from '../services/auth/principal.service';
 
 @Component({
   selector: 'home',
@@ -15,7 +16,15 @@ export class Home implements OnInit {
   newsOfTheDay: News = {};
   nextNews: News = {};
 
-  constructor(private newsService: NewsService) {}
+  constructor(
+        private newsService: NewsService,
+        public principal: Principal
+         ) {}
+
+
+  isAdmin(){ return this.principal.isAdmin();}
+  isUser(){ return this.principal.isUser();}
+  
 
   ngOnInit() {
     this.updateNews();
