@@ -1,0 +1,1 @@
+const e={key:"v-61d9b359",path:"/common-threats/sca/sca-pw.html",title:"6.5 Vulnerable Components Practical Work",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1746516883e3,contributors:[{name:"Nourredine K.",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"common-threats/sca/sca-pw.md"};export{e as data};

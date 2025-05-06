@@ -1,0 +1,1 @@
+const e={key:"v-a053926a",path:"/advanced/xssi/xssi-defense.html",title:"8.2 XSSI Defense",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1746516883e3,contributors:[{name:"Nourredine K.",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"advanced/xssi/xssi-defense.md"};export{e as data};

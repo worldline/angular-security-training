@@ -1,0 +1,1 @@
+const t={key:"v-894dd596",path:"/common-threats/csrf/csrf-pw.html",title:"2.5 CSRF Practical Work",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1746516883e3,contributors:[{name:"Nourredine K.",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"common-threats/csrf/csrf-pw.md"};export{t as data};

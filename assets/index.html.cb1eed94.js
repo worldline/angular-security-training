@@ -1,0 +1,1 @@
+const e={key:"v-6096668b",path:"/prerequisites/",title:"Prerequisites",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Get started",slug:"get-started",children:[]}],git:{updatedTime:1746516883e3,contributors:[{name:"Nourredine K.",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"prerequisites/README.md"};export{e as data};

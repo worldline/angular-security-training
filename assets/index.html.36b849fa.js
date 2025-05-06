@@ -1,0 +1,1 @@
+const e={key:"v-5e4edb7a",path:"/continuous-prevention/",title:"4. Global recommendations",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1746516883e3,contributors:[{name:"Nourredine K.",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"continuous-prevention/README.md"};export{e as data};

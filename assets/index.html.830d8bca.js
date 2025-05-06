@@ -1,0 +1,1 @@
+const e={key:"v-4a3aeb3f",path:"/common-threats/",title:"2- Common Threats",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1746516883e3,contributors:[{name:"Nourredine K.",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"common-threats/README.md"};export{e as data};

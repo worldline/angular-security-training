@@ -1,0 +1,1 @@
+const e={key:"v-638c1d18",path:"/advanced/",title:"3- Advanced Threats",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1746516883e3,contributors:[{name:"Nourredine K.",email:"nourredine.k@gmail.com",commits:1}]},filePathRelative:"advanced/README.md"};export{e as data};
